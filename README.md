@@ -1,2 +1,2 @@
 # Panda Web Project
- A web project with my buddies using HTML, CSS, minimal Javascript, Servlet and JSP
+ A web project with my buddies trying to figure out HTML, CSS, some Javascript, Servlet and JSP
