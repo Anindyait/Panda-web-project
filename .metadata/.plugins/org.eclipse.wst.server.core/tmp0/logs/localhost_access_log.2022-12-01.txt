@@ -1,0 +1,11 @@
+127.0.0.1 - - [01/Dec/2022:00:57:19 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [01/Dec/2022:00:57:19 +0530] "GET /Project1/Product HTTP/1.1" 200 10212
+0:0:0:0:0:0:0:1 - - [01/Dec/2022:00:57:19 +0530] "GET /Project1/Bootstrap/CSS/style1.css HTTP/1.1" 200 5131
+0:0:0:0:0:0:0:1 - - [01/Dec/2022:00:57:19 +0530] "GET /Project1/CSS/style1.css HTTP/1.1" 404 782
+0:0:0:0:0:0:0:1 - - [01/Dec/2022:00:57:19 +0530] "GET /Project1/Pics/panda.png HTTP/1.1" 200 44643
+0:0:0:0:0:0:0:1 - - [01/Dec/2022:00:57:19 +0530] "GET /Project1/Pics/search1.png HTTP/1.1" 200 13412
+0:0:0:0:0:0:0:1 - - [01/Dec/2022:00:57:19 +0530] "GET /Project1/Pics/scene3.jpg HTTP/1.1" 200 124237
+0:0:0:0:0:0:0:1 - - [01/Dec/2022:00:57:19 +0530] "GET /Project1/Pics/scene2.jpg HTTP/1.1" 200 156582
+0:0:0:0:0:0:0:1 - - [01/Dec/2022:00:57:19 +0530] "GET /Project1/Pics/scene1.jpg HTTP/1.1" 200 341226
+0:0:0:0:0:0:0:1 - - [01/Dec/2022:00:57:21 +0530] "GET /Project1/header.html HTTP/1.1" 200 4062
+0:0:0:0:0:0:0:1 - - [01/Dec/2022:00:57:21 +0530] "GET /favicon.ico HTTP/1.1" 404 762

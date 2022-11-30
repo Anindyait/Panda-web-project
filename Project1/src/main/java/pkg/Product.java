@@ -46,9 +46,9 @@ public class Product extends HttpServlet {
 		RequestDispatcher rd2=request.getRequestDispatcher("product.html"); 
 		rd2.include(request, response); 
 		
-		//pw.println("<h2>"+"Product"+"</h2>");
-		//RequestDispatcher rd1=request.getRequestDispatcher("footer.html"); 
-		//rd1.include(request, response); 
+		pw.println("<h2>"+"Product"+"</h2>");
+		RequestDispatcher rd1=request.getRequestDispatcher("footer.html"); 
+		rd1.include(request, response); 
 
         pw.close();
 		
