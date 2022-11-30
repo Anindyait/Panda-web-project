@@ -1,0 +1,23 @@
+
+.top {
+	font-family: 'Product Sans';
+	text-align: center;
+	padding : 0.1%;
+	background-color: aquamarine;
+	border-radius: 34px;
+}
+
+.top:hover {
+	background-color: teal;
+	color: white !important;
+	text-align: center;
+	}
+
+.bottom {
+	background-color: black;
+	color: white;
+	text-align: center;
+	font-size: 10px;
+	padding: 25px 50px 75px;
+	border-radius: 34px;
+}

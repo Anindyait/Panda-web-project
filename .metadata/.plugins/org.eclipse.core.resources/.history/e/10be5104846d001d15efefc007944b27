@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Index Page</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			crossorigin="anonymous">
+	</script>
+	<script>
+		$(function () {
+			$("#header").load("header.html");
+			$("#footer").load("footer.html");
+		});
+	</script>
+	<link rel="stylesheet" href="CSS/style1.css">
+
+</head>
+<body>
+	<!-- <?php $IPATH = $_SERVER["DOCUMENT_ROOT"]."/php/"; include($IPATH, "headernav.html"); ?> -->
+	<div id="header"></div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<!--<h1>Hello</h1>-->
+
+	<div class="cards_container">
+		<div class="card_fairing">
+			<div class="card">
+				<a href="Product" title="sup">
+					<img src="Pics/yellow.jpg" width="100%" />
+
+					<div class="card_text">Item 1</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="card_fairing">
+			<div class="card">
+				<a href="#" title="sup">
+					<img src="Pics/red.jpg" width="100%" />
+
+					<div class="card_text">Item 2</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="card_fairing">
+			<div class="card">
+				<a href="#" title="sup">
+					<img src="Pics/item4.jpg" width="100%" />
+
+					<div class="card_text">Item 3</div>
+				</a>
+			</div>
+		</div>
+
+
+		<div class="card_fairing">
+			<div class="card">
+				<a href="#" title="sup">
+					<img src="Pics/item6.jpg" width="100%" />
+
+					<div class="card_text">Item 4</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="card_fairing">
+			<div class="card">
+				<a href="#" title="sup">
+					<img src="Pics/item2.jpg" width="100%" />
+
+					<div class="card_text">Item 5</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="card_fairing">
+			<div class="card">
+				<a href="#" title="sup">
+					<img src="Pics/item3.jpg" width="100%" />
+
+					<div class="card_text">Item 6</div>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+</body>
+</html>

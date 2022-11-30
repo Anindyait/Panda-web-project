@@ -1,0 +1,147 @@
+
+Nov 22, 2022 19:55:30.63 NEW SESSION
+Nov 22, 2022 19:55:30.63 [24584:11540:1122/195530.060:ERROR:device_event_log_impl.cc(215)] [19:55:30.060] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 19:58:55.613 [18800:24528:1122/195855.613:ERROR:device_event_log_impl.cc(215)] [19:58:55.602] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 19:59:49.799 [27620:22316:1122/195949.799:ERROR:device_event_log_impl.cc(215)] [19:59:49.799] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:01:00.11 [17396:22252:1122/200100.011:ERROR:device_event_log_impl.cc(215)] [20:01:00.014] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:01:08.875 [23748:9496:1122/200108.875:ERROR:device_event_log_impl.cc(215)] [20:01:08.875] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:01:17.359 [12424:24868:1122/200117.359:ERROR:device_event_log_impl.cc(215)] [20:01:17.359] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:01:34.817 [14916:21268:1122/200134.816:ERROR:device_event_log_impl.cc(215)] [20:01:34.816] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:01:43.206 [4156:13236:1122/200143.205:ERROR:device_event_log_impl.cc(215)] [20:01:43.206] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:12:06.493 [19920:27012:1122/201206.493:ERROR:device_event_log_impl.cc(215)] [20:12:06.493] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:12:15.07 [27040:16904:1122/201215.007:ERROR:device_event_log_impl.cc(215)] [20:12:15.011] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:12:23.932 [8264:24332:1122/201223.932:ERROR:device_event_log_impl.cc(215)] [20:12:23.932] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:12:54.296 [18476:24832:1122/201254.296:ERROR:device_event_log_impl.cc(215)] [20:12:54.299] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:14:50.396 [26720:19132:1122/201450.396:ERROR:device_event_log_impl.cc(215)] [20:14:50.396] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:15:36.586 [10048:26980:1122/201536.586:ERROR:device_event_log_impl.cc(215)] [20:15:36.586] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:15:44.949 [26152:26180:1122/201544.949:ERROR:device_event_log_impl.cc(215)] [20:15:44.944] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:20:22.271 [20376:23796:1122/202022.271:ERROR:device_event_log_impl.cc(215)] [20:20:22.271] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+
+Nov 22, 2022 20:28:17.905 NEW SESSION
+Nov 22, 2022 20:28:17.905 [27468:26112:1122/202817.904:ERROR:device_event_log_impl.cc(215)] [20:28:17.903] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:28:26.518 [27240:18160:1122/202826.518:ERROR:device_event_log_impl.cc(215)] [20:28:26.517] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:29:16.206 [24208:22056:1122/202916.206:ERROR:device_event_log_impl.cc(215)] [20:29:16.205] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:29:33.788 [24864:18488:1122/202933.788:ERROR:device_event_log_impl.cc(215)] [20:29:33.787] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:30:07.676 [28448:28460:1122/203007.676:ERROR:device_event_log_impl.cc(215)] [20:30:07.676] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:35:52.380 [28256:26364:1122/203552.379:ERROR:device_event_log_impl.cc(215)] [20:35:52.380] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:42:57.347 [27844:12776:1122/204257.347:ERROR:device_event_log_impl.cc(215)] [20:42:57.347] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+
+Nov 22, 2022 20:44:10.259 NEW SESSION
+Nov 22, 2022 20:44:10.259 [14940:26752:1122/204410.258:ERROR:device_event_log_impl.cc(215)] [20:44:10.258] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:44:47.211 [2264:15992:1122/204447.211:ERROR:device_event_log_impl.cc(215)] [20:44:47.212] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:45:24.136 [20124:21208:1122/204524.136:ERROR:device_event_log_impl.cc(215)] [20:45:24.135] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 20:46:48.491 [18416:12396:1122/204648.491:ERROR:device_event_log_impl.cc(215)] [20:46:48.491] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 22:54:52.371 [19984:21124:1122/225452.371:ERROR:device_event_log_impl.cc(215)] [22:54:52.371] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 22:56:53.917 [8728:26856:1122/225653.917:ERROR:device_event_log_impl.cc(215)] [22:56:53.916] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 22:58:21.111 [20096:25028:1122/225821.110:ERROR:device_event_log_impl.cc(215)] [22:58:21.110] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 22:58:43.867 [12696:11088:1122/225843.867:ERROR:device_event_log_impl.cc(215)] [22:58:43.866] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+
+Nov 22, 2022 23:10:06.20 NEW SESSION
+Nov 22, 2022 23:10:06.20 [24752:23948:1122/231006.019:ERROR:device_event_log_impl.cc(215)] [23:10:06.019] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 23:13:17.727 [12452:5884:1122/231317.727:ERROR:device_event_log_impl.cc(215)] [23:13:17.727] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 23:25:24.554 [9868:17416:1122/232524.554:ERROR:device_event_log_impl.cc(215)] [23:25:24.554] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 23:27:57.815 [6804:27456:1122/232757.815:ERROR:device_event_log_impl.cc(215)] [23:27:57.815] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 23:29:55.371 [11292:28720:1122/232955.371:ERROR:device_event_log_impl.cc(215)] [23:29:55.371] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 22, 2022 23:38:03.192 [21948:21840:1122/233803.192:ERROR:device_event_log_impl.cc(215)] [23:38:03.192] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 24:03:17.27 [21060:18260:1123/000317.027:ERROR:device_event_log_impl.cc(215)] [00:03:17.027] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 24:07:06.275 [16620:16192:1123/000706.275:ERROR:device_event_log_impl.cc(215)] [00:07:06.263] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 24:17:12.104 [12392:27856:1123/001712.104:ERROR:device_event_log_impl.cc(215)] [00:17:12.104] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 24:20:05.798 [9120:27664:1123/002005.797:ERROR:device_event_log_impl.cc(215)] [00:20:05.797] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 24:26:04.243 [16188:24504:1123/002604.242:ERROR:device_event_log_impl.cc(215)] [00:26:04.242] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 09:03:45.985 [16188:22304:1123/090345.985:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 23, 2022 09:03:46.251 [16188:27432:1123/090346.251:ERROR:get_updates_processor.cc(260)] PostClientToServerMessage() failed during GetUpdates with error 2
+Nov 23, 2022 09:03:46.261 [16188:24504:1123/090346.261:ERROR:device_event_log_impl.cc(215)] [09:03:46.254] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Nov 23, 2022 09:03:48.482 [16188:22304:1123/090348.482:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 23, 2022 09:03:54.862 [16188:22304:1123/090354.861:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -105
+Nov 23, 2022 09:03:54.870 [16188:20096:1123/090354.870:ERROR:get_updates_processor.cc(260)] PostClientToServerMessage() failed during GetUpdates with error 2
+Nov 23, 2022 10:09:47.862 [8044:18256:1123/100947.862:ERROR:device_event_log_impl.cc(215)] [10:09:47.862] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 10:10:12.444 [23592:29600:1123/101012.444:ERROR:device_event_log_impl.cc(215)] [10:10:12.444] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 10:13:52.452 [740:21644:1123/101352.452:ERROR:device_event_log_impl.cc(215)] [10:13:52.452] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+
+Nov 23, 2022 10:14:57.391 NEW SESSION
+Nov 23, 2022 10:14:57.391 [29012:24428:1123/101457.390:ERROR:device_event_log_impl.cc(215)] [10:14:57.390] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 13:40:40.601 [29012:24428:1123/134040.600:ERROR:device_event_log_impl.cc(215)] [13:40:40.600] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Nov 23, 2022 17:52:47.647 [29012:31712:1123/175247.646:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 23, 2022 17:52:47.670 [29012:17620:1123/175247.670:ERROR:get_updates_processor.cc(260)] PostClientToServerMessage() failed during GetUpdates with error 2
+Nov 23, 2022 17:52:49.56 [29012:31712:1123/175249.056:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 23, 2022 17:52:56.390 [29012:31712:1123/175256.390:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -105
+Nov 23, 2022 17:52:56.390 [29012:2568:1123/175256.390:ERROR:get_updates_processor.cc(260)] PostClientToServerMessage() failed during GetUpdates with error 2
+Nov 23, 2022 19:09:52.469 [29012:31712:1123/190952.468:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 23, 2022 19:09:55.411 [29012:31712:1123/190955.411:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+
+Nov 23, 2022 20:00:48.422 NEW SESSION
+Nov 23, 2022 20:00:48.422 [28396:23660:1123/200048.422:ERROR:device_event_log_impl.cc(215)] [20:00:48.422] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 20:06:39.45 [13356:24468:1123/200639.045:ERROR:device_event_log_impl.cc(215)] [20:06:39.044] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 20:07:10.92 [26508:22536:1123/200710.092:ERROR:device_event_log_impl.cc(215)] [20:07:10.092] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+
+Nov 23, 2022 20:28:39.108 NEW SESSION
+Nov 23, 2022 20:28:39.108 [29044:19296:1123/202839.107:ERROR:device_event_log_impl.cc(215)] [20:28:39.107] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 20:32:08.791 [4656:5572:1123/203208.791:ERROR:device_event_log_impl.cc(215)] [20:32:08.790] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 20:33:34.698 [28256:29096:1123/203334.698:ERROR:device_event_log_impl.cc(215)] [20:33:34.698] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 21:05:15.724 [15540:28792:1123/210515.724:ERROR:device_event_log_impl.cc(215)] [21:05:15.724] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 21:06:37.358 [24884:29584:1123/210637.358:ERROR:device_event_log_impl.cc(215)] [21:06:37.358] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 21:56:34.492 [28260:12792:1123/215634.492:ERROR:device_event_log_impl.cc(215)] [21:56:34.493] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 22:12:56.110 [31392:21572:1123/221256.110:ERROR:device_event_log_impl.cc(215)] [22:12:56.110] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 22:14:16.117 [25904:22608:1123/221416.117:ERROR:device_event_log_impl.cc(215)] [22:14:16.117] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 22:18:24.940 [26760:24596:1123/221824.940:ERROR:device_event_log_impl.cc(215)] [22:18:24.940] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 22:19:03.235 [20688:17852:1123/221903.234:ERROR:device_event_log_impl.cc(215)] [22:19:03.235] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 22:19:48.48 [8428:22716:1123/221948.048:ERROR:device_event_log_impl.cc(215)] [22:19:48.047] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 22:20:10.145 [4876:1940:1123/222010.145:ERROR:device_event_log_impl.cc(215)] [22:20:10.145] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 22:51:25.08 [19228:5648:1123/225125.008:ERROR:device_event_log_impl.cc(215)] [22:51:25.007] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 22:51:57.228 [29856:28380:1123/225157.228:ERROR:device_event_log_impl.cc(215)] [22:51:57.228] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 22:58:28.750 [19156:16444:1123/225828.750:ERROR:device_event_log_impl.cc(215)] [22:58:28.749] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 23:13:56.393 [22900:25756:1123/231356.393:ERROR:device_event_log_impl.cc(215)] [23:13:56.392] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 23, 2022 23:14:17.272 [31356:23212:1123/231417.272:ERROR:device_event_log_impl.cc(215)] [23:14:17.272] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+
+Nov 26, 2022 01:01:13.773 NEW SESSION
+Nov 26, 2022 01:01:13.773 [13248:3920:1126/010113.772:ERROR:device_event_log_impl.cc(215)] [01:01:13.772] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+
+Nov 26, 2022 17:37:57.267 NEW SESSION
+Nov 26, 2022 17:37:57.267 [10396:20288:1126/173757.260:ERROR:device_event_log_impl.cc(215)] [17:37:57.260] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 26, 2022 17:41:53.456 [27756:32220:1126/174153.456:ERROR:device_event_log_impl.cc(215)] [17:41:53.455] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 26, 2022 17:44:00.150 [29480:12672:1126/174400.150:ERROR:device_event_log_impl.cc(215)] [17:44:00.149] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+
+Nov 26, 2022 18:00:25.944 NEW SESSION
+Nov 26, 2022 18:00:25.944 [29108:9308:1126/180025.943:ERROR:device_event_log_impl.cc(215)] [18:00:25.944] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 26, 2022 18:04:15.814 [33304:6376:1126/180415.814:ERROR:device_event_log_impl.cc(215)] [18:04:15.813] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 26, 2022 18:06:42.08 [23936:34524:1126/180642.008:ERROR:device_event_log_impl.cc(215)] [18:06:42.007] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+
+Nov 26, 2022 18:21:36.973 NEW SESSION
+Nov 26, 2022 18:21:36.973 [23916:15084:1126/182136.973:ERROR:device_event_log_impl.cc(215)] [18:21:36.973] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 26, 2022 18:21:54.951 [28000:20440:1126/182154.951:ERROR:device_event_log_impl.cc(215)] [18:21:54.951] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 26, 2022 18:23:56.706 [19004:25628:1126/182356.706:ERROR:device_event_log_impl.cc(215)] [18:23:56.706] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 26, 2022 18:26:54.622 [4804:2648:1126/182654.622:ERROR:device_event_log_impl.cc(215)] [18:26:54.622] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+
+Nov 26, 2022 19:54:56.781 NEW SESSION
+Nov 26, 2022 19:54:56.781 [20816:31724:1126/195456.780:ERROR:device_event_log_impl.cc(215)] [19:54:56.780] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 26, 2022 20:51:28.975 [8624:14764:1126/205128.975:ERROR:device_event_log_impl.cc(215)] [20:51:28.974] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Nov 26, 2022 23:06:25.517 [8624:8924:1126/230625.517:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 26, 2022 23:06:26.875 [8624:8924:1126/230626.875:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 26, 2022 23:06:27.233 [8624:14764:1126/230627.233:ERROR:device_event_log_impl.cc(215)] [23:06:27.232] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Nov 27, 2022 10:19:24.725 [8624:8924:1127/101924.725:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 27, 2022 10:19:24.756 [8624:10400:1127/101924.756:ERROR:get_updates_processor.cc(260)] PostClientToServerMessage() failed during GetUpdates with error 2
+Nov 27, 2022 10:19:26.184 [8624:8924:1127/101926.184:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 27, 2022 11:43:45.453 [8624:8924:1127/114345.453:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 27, 2022 11:43:48.114 [8624:8924:1127/114348.113:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 27, 2022 14:50:22.329 [8624:8924:1127/145022.328:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 27, 2022 14:50:22.343 [8624:2020:1127/145022.343:ERROR:get_updates_processor.cc(260)] PostClientToServerMessage() failed during GetUpdates with error 2
+Nov 27, 2022 14:50:23.991 [8624:8924:1127/145023.991:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 27, 2022 15:06:35.486 [8624:8924:1127/150635.486:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 27, 2022 15:06:37.994 [8624:8924:1127/150637.994:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 27, 2022 19:19:07.527 [8624:8924:1127/191907.527:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 27, 2022 19:19:08.953 [8624:8924:1127/191908.953:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 27, 2022 22:42:42.460 [8624:8924:1127/224242.460:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 27, 2022 22:42:45.162 [8624:8924:1127/224245.162:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 28, 2022 10:10:13.591 [8624:8924:1128/101013.591:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 28, 2022 10:10:13.694 [8624:1180:1128/101013.591:ERROR:get_updates_processor.cc(260)] PostClientToServerMessage() failed during GetUpdates with error 2
+Nov 28, 2022 10:10:15.34 [8624:8924:1128/101015.032:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 28, 2022 14:27:26.286 [8624:8924:1128/142726.286:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 28, 2022 14:27:26.321 [8624:9568:1128/142726.321:ERROR:get_updates_processor.cc(260)] PostClientToServerMessage() failed during GetUpdates with error 2
+Nov 28, 2022 14:27:27.754 [8624:8924:1128/142727.754:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 28, 2022 15:06:10.47 [8624:8924:1128/150610.047:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 28, 2022 17:49:00.424 [8624:8924:1128/174900.424:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 28, 2022 17:49:01.791 [8624:8924:1128/174901.791:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 28, 2022 19:00:35.315 [8624:8924:1128/190035.314:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 28, 2022 19:00:36.738 [8624:8924:1128/190036.738:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 28, 2022 21:10:05.488 [8624:8924:1128/211005.487:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Nov 28, 2022 21:10:08.121 [8624:8924:1128/211008.121:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
