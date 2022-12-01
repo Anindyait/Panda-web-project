@@ -149,3 +149,7 @@ Nov 28, 2022 21:10:08.121 [8624:8924:1128/211008.121:ERROR:connection_factory_im
 Dec 01, 2022 22:03:14.336 NEW SESSION
 Dec 01, 2022 22:03:14.336 [22336:21808:1201/220314.330:ERROR:device_event_log_impl.cc(215)] [22:03:14.330] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
 Dec 01, 2022 22:04:02.324 [17680:18812:1201/220402.324:ERROR:device_event_log_impl.cc(215)] [22:04:02.324] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 01, 2022 22:48:14.592 [17680:22940:1201/224814.579:ERROR:cast_socket.cc(321)] [192.168.0.116:8009, auth=SSL_VERIFIED] CANCELLED - Aborting DoConnectLoop.
+Dec 01, 2022 23:02:32.591 [17680:22940:1201/230232.591:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
+Dec 01, 2022 23:02:33.437 [17680:18812:1201/230233.437:ERROR:device_event_log_impl.cc(215)] [23:02:33.424] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Dec 01, 2022 23:02:34.893 [17680:22940:1201/230234.893:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -106
