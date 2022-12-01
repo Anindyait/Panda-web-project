@@ -40,9 +40,20 @@ public class ProductExperiment extends HttpServlet {
 		
 		String title = request.getParameter("title");
 		String desc = request.getParameter("desc");
+		
 		//request.setAttribute("<Name>", what to replace with);
+		//set Title
 		request.setAttribute("Title", title);
+		
+		//set Description
 		request.setAttribute("Description", desc);
+		
+		//disable sizes
+		request.setAttribute("disabled_xs", "disabled");
+		//request.setAttribute("disabled_s", "disabled");
+		//request.setAttribute("disabled_m", "disabled");
+		//request.setAttribute("disabled_l", "disabled");
+		//request.setAttribute("disabled_xl", "disabled");
 		request.getRequestDispatcher("productExperiment.jsp").forward(request, response);
 
 		pw.close();

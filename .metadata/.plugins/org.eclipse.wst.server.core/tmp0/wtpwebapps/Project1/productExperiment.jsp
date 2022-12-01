@@ -71,9 +71,33 @@
 
                         <div class="text">
                             
-                            <!-- to be replaced by java -->
+                            <!--Title-->
+                                                                         <!-- to be replaced by java -->
                             <div class="Title" style="margin: 0px auto"><%= request.getAttribute("Title") %></div>
+                            
+                            <!--Price-->
                             <div class="Price">&#8377;200.00</div>
+
+                            <!--size selectors-->
+                            <div class="size-selector-container">
+                            											<!-- disable size if not available through servlet -->
+                                <input type="radio" class="btn-check" <%= request.getAttribute("disabled_xs") %> name="btnradio" id="btnradio_xs" autocomplete="off">
+                                <label class="btn btn-outline-dark size-selector" for="btnradio_xs">XS</label>
+                            
+                                <input type="radio" class="btn-check" <%= request.getAttribute("disabled_s") %> name="btnradio" id="btnradio_s" autocomplete="off">
+                                <label class="btn btn-outline-dark size-selector" for="btnradio_s">S</label>
+                            
+                                <input type="radio" class="btn-check" <%= request.getAttribute("disabled_m") %> name="btnradio" id="btnradio_m" autocomplete="off">
+                                <label class="btn btn-outline-dark size-selector" for="btnradio_m">M</label>
+
+                                <input type="radio" class="btn-check" <%= request.getAttribute("disabled_l") %> name="btnradio" id="btnradio_l" autocomplete="off">
+                                <label class="btn btn-outline-dark size-selector" for="btnradio_l">L</label>
+
+                                <input type="radio" class="btn-check" <%= request.getAttribute("disabled_xl") %> name="btnradio" id="btnradio_xl" autocomplete="off">
+                                <label class="btn btn-outline-dark size-selector" for="btnradio_xl">XL</label>
+                            </div>
+
+                            <!--Description-->
                             <div class="desc overflow-auto">
                                 <!-- to be replaced by java -->
                                 <div class="Description opacity-75"><%= request.getAttribute("Description") %></div>
