@@ -114,7 +114,9 @@ public class Register extends HttpServlet {
 			}
 			else {
 															//mysql username and password
-				pstm  = con.prepareStatement("insert into user_table values(?, ?, ?, ?, ?, ?, ?, ?)");
+				pstm  = con.prepareStatement("insert into user_table "
+											+ "(first_name, last_name, email, phone, dob, gender, address, password) "
+											+ "values(?, ?, ?, ?, ?, ?, ?, ?)");
 				pstm.setString(1, first_name); 					// goes to 1st q mark
 				pstm.setString(2, last_name); 
 				pstm.setString(3, email); 
