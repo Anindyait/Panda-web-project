@@ -70,7 +70,7 @@
                     </li>
 
                 </ul>
-              
+             
             
 
         </nav>
@@ -79,8 +79,8 @@
 
             <!-- <input type="button"  value="   " data-bs-toggle="collapse" class="btn btn-secondary login-button round"/> -->
 
-            <a href="#profile" class="right-links"><img class ="profile-icon" src="Pics/icons8-male-user-50-ticked.png" class="profile-icon"></a>
-            <a href="#profile" class="right-links"><img class ="profile-icon" src="Pics/icons8-male-user-50.png" class="profile-icon" hidden></a>
+            <a href="#profile" class="right-links"><img class ="profile-icon" src="Pics/icons8-male-user-50.png" class="profile-icon" <%= request.getAttribute("not_logged_in")%>></a>
+            <a href="#profile" class="right-links"><img class ="profile-icon" src="Pics/icons8-male-user-50-ticked.png" class="profile-icon" <%= request.getAttribute("logged_in")%>></a>
 
             <input type="checkbox" id="box" style="visibility:hidden"/>
             <label  id="search" for="box"><input type="text" class="search-textbox"/><img src="Pics/search1.png" width="47px"></label>
