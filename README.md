@@ -65,5 +65,5 @@ ProductExperiment.java - can spit product page in jsp (productExperiment.jsp) de
 
 Run list.html through server and click on first product to understand the above(watch the url too).
  
-Collaboartors : Anindya Biswas, Priyanka Mazumdar...
+Collaboartors : Anindya Biswas, Priyanka Mazumdar, Rikathi...
 boom boom 
