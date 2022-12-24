@@ -49,6 +49,8 @@ productExperiment.jsp - Basically product.html in a JSP format, use it change fi
 
 Index.html - Just like your existence, useless. I need to delete that.
 
+
+
 <---Project1\src\main\webapp\Bootstrap\CSS--->
 
 style.css - The secret sauce!
@@ -64,3 +66,4 @@ ProductExperiment.java - can spit product page in jsp (productExperiment.jsp) de
 Run list.html through server and click on first product to understand the above(watch the url too).
  
 Collaboartors : Anindya Biswas, Priyanka Mazumdar...
+boom boom 
