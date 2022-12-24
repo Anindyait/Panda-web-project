@@ -1,13 +1,13 @@
-<span style="background-color: #FFFF00">A web project with my buddies trying to figure out HTML, CSS, some Javascript, Servlet and JSP
-</span>
+#A web project with my buddies trying to figure out HTML, CSS, some Javascript, Servlet and JSP
+
 
 <---Project1\src\main\webapp--->
 
-Pics - All the test images.
+##Pics - All the test images.
 
-footer.html - Very bad footer which I need to work on.
+##footer.html - Very bad footer which I need to work on.
 
-header.html - Guess what? contains the header.
+##header.html - Guess what? contains the header.
 
 list.html - Grid view of products.
 
