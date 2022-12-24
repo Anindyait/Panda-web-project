@@ -8,7 +8,7 @@
 	</script>
 	<script>
 		$(function () {
-			$("#header").load("header.jsp");
+			$("#header").load("header.html");
 			$("#footer").load("footer.html");
 		});
 	</script>
@@ -36,11 +36,9 @@
 					
                     <br>
 					
-                    <div class="server-side-check" style="text-align: left;" <%= request.getAttribute("wrong_password")%> >Incorrect Password!</div>
-                    <div class="server-side-check" style="text-align: left;" <%= request.getAttribute("wrong_email")%> >Email ID not found!</div>
+                    <div class="server-side-check" style="text-align: left;">Incorrect Password!</div>
+                    <div class="server-side-check" style="text-align: left;">Email ID not found!</div>
                     <br>
-
-                    
                     <form action="Login" name="form1" class="needs-validation" novalidate method="post">
                         <div class="form-floating mb-3" >
                             <input name="email" type = "email" class = "form-control"  id = "email" placeholder="mikehunt@panda.com" required>
@@ -65,7 +63,7 @@
                                 <button type="submit" class="btn btn-dark form-submit">Login</button>
                             </div>
                             <div class="col">
-                                <a href="Register">
+                                <a href="register.html">
                                     <div type="sub" class="btn btn-outline-dark form-submit">Sign in</div>
                                 </a>
                             </div>

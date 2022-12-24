@@ -1,6 +1,18 @@
 @import url('https://fonts.cdnfonts.com/css/product-sans');
 
+@font-face {
+    font-family: 'Product';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Product Sans'), url('ProductSans-Regular.woff') format('woff');
+    }
 
+	@font-face {
+		font-family: 'Open Sans Regular';
+		font-style: normal;
+		font-weight: normal;
+		src: local('Open Sans Regular'), url('OpenSans-Regular.woff') format('woff');
+		}
 
 /* width */
 ::-webkit-scrollbar {
@@ -33,7 +45,8 @@ td,th{
 }
 
 .font{
-	font-family:'Product Sans', sans-serif;
+	font-family:'Product';
+	
 }
 
 a:link{

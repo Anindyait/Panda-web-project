@@ -34,6 +34,8 @@ public class Login extends HttpServlet {
 		request.setAttribute("wrong_password", "hidden");
 	   	request.setAttribute("wrong_email", "hidden");
 	   	
+	   	request.setAttribute("not_logged_in", "");
+		request.setAttribute("logged_in", "hidden");
     	request.getRequestDispatcher("login.jsp").include(request, response);
 	}
 
@@ -69,8 +71,8 @@ public class Login extends HttpServlet {
 				if(rs.getString("password").equals(password))
 				{
 					System.out.println("Success!");
-					request.setAttribute("not_logged_in", "hidden");
-					request.setAttribute("logged_in", "");
+					request.setAttribute("not_logged_in", "");
+					request.setAttribute("logged_in", "hidden");
 			    	request.getRequestDispatcher("postRegister.html").include(request, response);
 
 				}

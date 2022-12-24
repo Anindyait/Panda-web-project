@@ -33,7 +33,8 @@ public class Login extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setAttribute("wrong_password", "hidden");
 	   	request.setAttribute("wrong_email", "hidden");
-	   	
+	   	request.setAttribute("not_logged_in", "");
+		request.setAttribute("logged_in", "hidden");
     	request.getRequestDispatcher("login.jsp").include(request, response);
 	}
 
