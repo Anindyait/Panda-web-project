@@ -54,7 +54,7 @@ public class Login extends HttpServlet {
 			PreparedStatement pstm;
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "anindya"); //DriverManager is a class 
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); //DriverManager is a class 
 			
 			
 			

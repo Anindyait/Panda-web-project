@@ -59,7 +59,7 @@ public class Pm extends HttpServlet {
 			Connection con;
 			PreparedStatement pstm; 			       //class to prepare statement
 			Class.forName("com.mysql.cj.jdbc.Driver"); //Class is a class
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "anindya"); //DriverManager is a class 
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); //DriverManager is a class 
 														//jdbc:mysql then ip address then port no. then db name
 														//mysql username and password
 			Statement stmt = con.createStatement();
