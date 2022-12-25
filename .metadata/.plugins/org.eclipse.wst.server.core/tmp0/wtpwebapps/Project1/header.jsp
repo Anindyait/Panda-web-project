@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Header</title>
-	
+	<link rel="icon" href="Pics/panda.png">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="Bootstrap/CSS/style1.css">
 </head>
@@ -79,8 +80,8 @@
 
             <!-- <input type="button"  value="   " data-bs-toggle="collapse" class="btn btn-secondary login-button round"/> -->
 
-            <a href="#profile" class="right-links"><img class ="profile-icon" src="Pics/icons8-male-user-50.png" class="profile-icon" <%= request.getAttribute("not_logged_in")%>></a>
-            <a href="#profile" class="right-links"><img class ="profile-icon" src="Pics/icons8-male-user-50-ticked.png" class="profile-icon" <%= request.getAttribute("logged_in")%>></a>
+            <a href="Profile" class="right-links"><img class ="profile-icon" src="Pics/icons8-male-user-50<%= request.getAttribute("logged_in")%>.png" class="profile-icon"></a>
+            <!--<a href="Profile" class="right-links"><img class ="profile-icon" src="Pics/icons8-male-user-50-ticked.png" class="profile-icon"></a>-->
 
             <input type="checkbox" id="box" style="visibility:hidden"/>
             <label  id="search" for="box"><input type="text" class="search-textbox"/><img src="Pics/search1.png" width="47px"></label>

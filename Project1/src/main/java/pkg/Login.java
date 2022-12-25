@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,7 +34,7 @@ public class Login extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setAttribute("wrong_password", "hidden");
 	   	request.setAttribute("wrong_email", "hidden");
-	   	
+
     	request.getRequestDispatcher("login.jsp").include(request, response);
 	}
 
@@ -59,7 +60,7 @@ public class Login extends HttpServlet {
 			
 			
 			
-			pstm = con.prepareStatement("select email, password from user_table where email = ?;");
+			pstm = con.prepareStatement("select email, password, first_name from user_table where email = ?;");
 			pstm.setString(1, email);
 			
 			ResultSet rs = pstm.executeQuery();
@@ -69,9 +70,17 @@ public class Login extends HttpServlet {
 				if(rs.getString("password").equals(password))
 				{
 					System.out.println("Success!");
-					request.setAttribute("not_logged_in", "hidden");
-					request.setAttribute("logged_in", "");
-			    	request.getRequestDispatcher("postRegister.html").include(request, response);
+					request.setAttribute("logged_in", "ticked");
+					
+					//Cookies
+					Cookie ck  =new Cookie("email", email);
+					ck.setMaxAge(60 * 60 * 24);
+					response.addCookie(ck);
+					
+					//Post log in page
+				   	request.setAttribute("first_name", rs.getString("first_name"));
+
+			    	request.getRequestDispatcher("profile.jsp").include(request, response);
 
 				}
 				else

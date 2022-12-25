@@ -8,7 +8,7 @@
 	</script>
 	<script>
 		$(function () {
-			$("#header").load("header.html");
+			$("#header").load("header.jsp");
 			$("#footer").load("footer.html");
 		});
 	</script>
@@ -45,7 +45,7 @@ $(document).ready(function(){
     var d = new Date();
     var option = '<option selected disabled value="">year</option>';
     selectedYear ="year";
-    for (var i=1930;i <= d.getFullYear();i++){// years start i
+    for (var i=1930;i <= 2022;i++){// years start i
         option += '<option value="'+ i + '">' + i + '</option>';
     }
     $('#year').append(option);
