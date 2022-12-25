@@ -66,7 +66,7 @@
                             </div>
                             <div class="col">
                                 <a href="Register">
-                                    <div type="sub" class="btn btn-outline-dark form-submit">Sign in</div>
+                                    <div type="sub" class="btn btn-outline-dark form-submit">Sign up</div>
                                 </a>
                             </div>
                         </div>
