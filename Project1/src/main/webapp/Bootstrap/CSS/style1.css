@@ -75,19 +75,6 @@ a:hover{
 }
 
 
-.bottom {
-	background-color: black;
-	color: white;
-	width: stretch;
-	text-align: center;
-	font-size: 10px;
-	padding: 25px 50px 75px;
-	border-radius: 30px 30px 0px 0px;
-	position:absolute;
-	left:0px;
-	right:0px;
-}
-
 .cardnew {
 	font-family: 'Product Sans';
 	
@@ -200,7 +187,7 @@ a:hover{
 .nav-link1 {
 	padding: 3px 7px 3px 7px;
 	letter-spacing: 1px;
-	border-radius: 15px;
+	border-radius: 10px;
 	text-align: center;
 }
 	.nav-link1:hover {
@@ -260,6 +247,52 @@ a:hover{
 
 }
 
+.dropdown1 {
+	position: relative;
+	display: inline-block;
+  }
+
+  .dropdown-menu{
+	padding: 10px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+
+  }
+
+  .dropdown-item{
+	border-radius: 20px;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+  }
+
+  .dropdown-item:hover{
+	text-decoration: none;
+	background-color: #ebfceb;
+	transition: 0.5s;
+  }
+
+  .dropdown-item:active{
+	background-color: #519451;
+	transition: 0.5s;
+  }
+
+.dropdown-content {
+
+	visibility: hidden;
+	position: absolute;
+	margin-left: -10px;
+	padding: 20px;
+	background-color: #f1f1f1;
+	width: 200px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 100;
+  }
+  
+  .dropdown1:hover .dropdown-content 
+  {
+  visibility: visible;
+  transition: 1s;
+  }
+  
 .header-adjustment{
 	padding-bottom: 7rem;
 }
@@ -543,7 +576,7 @@ a.product-link:hover{
 		border-radius: 30px;
 		width:420px;
 		
-		
+	
 	}
 }
 
@@ -553,6 +586,7 @@ a.product-link:hover{
 	padding: 20px;
 	border-radius: 30px;
 	background-color: #ebfceb;
+	animation: fadeUp 1s;
 }
 
 .about-head:hover{
@@ -665,3 +699,107 @@ a.product-link:hover{
 
 
 /*End of Sick Animations*/
+
+.index-link{
+	padding: 8px 25px 8px 25px;
+	font-size: medium;
+	border-radius: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 7px;
+}
+
+.index-link-container{
+	padding-bottom: 20px;
+	width: 96%;
+	margin: 0 auto;
+	display:flex;
+	overflow-x:scroll;
+}
+
+.index-link-container::-webkit-scrollbar{
+	display: none;
+}
+
+.bamboo{
+	background-color: #e0fbe0;
+	border: 0px solid #1e981e;
+	color:#057e05;
+}
+
+.bamboo:hover{
+	background-color:#affcaf;
+	border: 0px solid #1e981e;
+
+	color:#006300;
+}
+
+.bamboo:not(:disabled):not(.disabled):active, .bamboo:not(:disabled):not(.disabled).active,
+.show > .bamboo.dropdown-toggle {
+  color: rgb(25, 109, 54);
+  background-color: #c1fec1;
+}
+
+.static-banner{
+	width:95%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	border-radius: 15px;
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+}
+
+.bottom {
+	background-color: #003000;
+	color: white;
+	width: stretch;
+	padding: 25px 50px 20px 50px;
+	border-radius: 30px 30px 0px 0px;
+	position:absolute;
+	left:0px;
+	right:0px;
+}
+
+.footer-title{
+	font-size: 25px;
+	margin-left: -10px;
+	
+}
+
+.footer-link{
+	color:rgba(255, 255, 255, 0.611);
+	margin-top: 20px;
+	
+}
+
+.footer-link:hover{
+	color:rgba(255, 255, 255, 0.914);
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+.footer-link-container{
+	margin: 70px 30px 20px 30px;
+}
+
+.contacts{
+	
+	text-align: center;
+}
+.material-icons{
+	margin-top: 100px;
+}
+
+.contacts{
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.footer-quote{
+	opacity:90%; 
+	padding-top: 30px;
+	word-spacing: 2px;
+	
+	color:#ebfceb;
+}

@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Header</title>
 	<link rel="icon" href="Pics/panda.png">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    
     <link rel="stylesheet" href="Bootstrap/CSS/style1.css">
 </head>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script>
         const icon = document.getElementsByClassName('.icon');
         const search = document.getElementsByClassName('.search');
@@ -18,6 +21,12 @@
         search.onclick = function(){
             search.classList.toggle('active')
         }
+    </script>
+    
+    <script>
+        $(document).ready(function() {
+            $(".dropdown-toggle").dropdown();
+        });
     </script>
     <div class="font">
         
@@ -50,25 +59,24 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link nav-link1 active">Offers</a>
+                        <a href="aboutUs.html" class="nav-link nav-link1 active">About Us</a>
                     </li>
 
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-link1 active">Products</a>
                     </li>
-
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link nav-link1 dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    
+                    <div class="nav-item dropdown">
+                        <div class="nav-link nav-link1 dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Dropdown
-                        </a>
-                        <ul class="dropdown-menu" style="border-radius:30px;">
-                            <li class="nav-item"><a class="dropdown-item nav-link1" href="#">Action</a></li>
-                            <li class="nav-item"><a class="dropdown-item nav-link1" href="#">Another action</a></li>
-                            <li class="nav-item"><hr class="dropdown-divider nav-link1"></li>
-                            <li class="nav-item"><a class="dropdown-item nav-link1" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
+                        </div>
+                        <div class="dropdown-menu" style="border-radius:20px;">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+
 
                 </ul>
              

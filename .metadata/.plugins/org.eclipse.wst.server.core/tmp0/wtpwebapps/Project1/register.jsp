@@ -275,7 +275,7 @@ function change_month(select) {
                         
                         <div class="col-sm" style="padding: 20px 1px;">
                             <div class="form-floating mb-3" >
-                                <button type="submit" class="btn btn-dark form-submit">Sign in</button>
+                                <button type="submit" class="btn btn-dark form-submit">Sign up</button>
                             </div>
                         </div>
                 

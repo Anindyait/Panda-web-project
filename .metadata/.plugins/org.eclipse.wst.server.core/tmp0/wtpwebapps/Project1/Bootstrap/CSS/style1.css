@@ -76,16 +76,18 @@ a:hover{
 
 
 .bottom {
-	background-color: black;
+	background-color: #003000;
 	color: white;
 	width: stretch;
-	text-align: center;
-	font-size: 10px;
 	padding: 25px 50px 75px;
 	border-radius: 30px 30px 0px 0px;
 	position:absolute;
 	left:0px;
 	right:0px;
+}
+
+.footer-title{
+	font-size: 20px;
 }
 
 .cardnew {
@@ -260,6 +262,27 @@ a:hover{
 
 }
 
+.dropdown1 {
+	position: relative;
+	display: inline-block;
+  }
+
+.dropdown-content {
+
+	visibility: hidden;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 100;
+  }
+  
+  .dropdown1:hover .dropdown-content 
+  {
+  visibility: visible;
+  transition: 1s;
+  }
+  
 .header-adjustment{
 	padding-bottom: 7rem;
 }
@@ -543,7 +566,7 @@ a.product-link:hover{
 		border-radius: 30px;
 		width:420px;
 		
-		
+	
 	}
 }
 
@@ -553,6 +576,7 @@ a.product-link:hover{
 	padding: 20px;
 	border-radius: 30px;
 	background-color: #ebfceb;
+	animation: fadeUp 1s;
 }
 
 .about-head:hover{
@@ -665,3 +689,53 @@ a.product-link:hover{
 
 
 /*End of Sick Animations*/
+
+.index-link{
+	padding: 8px 25px 8px 25px;
+	font-size: medium;
+	border-radius: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 7px;
+}
+
+.index-link-container{
+	padding-bottom: 20px;
+	width: 96%;
+	margin: 0 auto;
+	display:flex;
+	overflow-x:scroll;
+}
+
+.index-link-container::-webkit-scrollbar{
+	display: none;
+}
+
+.bamboo{
+	background-color: #e0fbe0;
+	border: 0px solid #1e981e;
+	color:#057e05;
+}
+
+.bamboo:hover{
+	background-color:#affcaf;
+	border: 0px solid #1e981e;
+
+	color:#006300;
+}
+
+.bamboo:not(:disabled):not(.disabled):active, .bamboo:not(:disabled):not(.disabled).active,
+.show > .bamboo.dropdown-toggle {
+  color: rgb(25, 109, 54);
+  background-color: #c1fec1;
+}
+
+.static-banner{
+	width:95%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	border-radius: 15px;
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+}

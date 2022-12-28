@@ -79,7 +79,7 @@ function change_year(select)
 			       var day = $('#day');
 			       var val = $(day).val();
 			       $(day).empty();
-			       var option = '<option value="day">day</option>';
+			       var option = '<option disabled selected value="day">day</option>';
 			       for (var i=1;i <= Days[1];i++){ //add option days
 				         option += '<option value="'+ i + '">' + i + '</option>';
              }
@@ -96,7 +96,7 @@ function change_month(select) {
     var day = $('#day');
     var val = $(day).val();
     $(day).empty();
-    var option = '<option value="day">day</option>';
+    var option = '<option disabled selected value="day">day</option>';
     var month = parseInt( $(select).val() ) - 1;
     for (var i=1;i <= Days[ month ];i++){ //add option days
         option += '<option value="'+ i + '">' + i + '</option>';

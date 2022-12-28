@@ -37,25 +37,29 @@ public class Profile extends HttpServlet {
     String first_name=null;
     String last_name=null;
     
-    void DB_Access(String email)
+    void DB_Access(String user_id)
     {
     	try {
 			Connection con;
 			PreparedStatement pstm;
 			
+			int uid = Integer.parseInt(user_id);
+			System.out.println(uid*10);
+			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); //DriverManager is a class 
 			
 			
-			pstm = con.prepareStatement("select first_name, second_name from user_table where email = ?;");
-			pstm.setString(1, email);
+			pstm = con.prepareStatement("select first_name, last_name from user_table where user_id = ?;");
+	
+			pstm.setString(1, user_id);
 			
 			ResultSet rs = pstm.executeQuery();
 			
 			if(rs.next())
 			{
 				first_name = rs.getString("first_name");
-				last_name = rs.getString("second_name");
+				last_name = rs.getString("last_name");
 			}
 			
     	}catch(Exception e) {}
@@ -73,27 +77,17 @@ public class Profile extends HttpServlet {
 		
 		Cookie ck[] = request.getCookies();
 		int flag = 0;
-		String email=null;
-		if(ck!=null)
-		{
-			for(Cookie cookie: ck)
-			{
-				if(cookie.getName().equals("email"))
-				{
-					email = cookie.getValue();
-					System.out.println(email+" get");
-					flag = 1;
-				}
-			}
-		}
+		String user_id = Utilities.GetUID(request);
 		
-		if(flag == 0)
+		
+		if(user_id == null)
 		{
 			request.getRequestDispatcher("Login").include(request, response);
 		}
 		else
 		{
-			DB_Access(email);
+			System.out.println("From Cookies "+user_id);
+			DB_Access(user_id);
 		   	request.setAttribute("first_name", first_name);
 			request.getRequestDispatcher("profile.jsp").include(request, response);
 

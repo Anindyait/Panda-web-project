@@ -79,24 +79,26 @@ public class Register extends HttpServlet {
 
 			Statement stmt = con.createStatement();
 			
-			ResultSet rs = stmt.executeQuery("select email, phone from user_table;");
+			
+			pstm = con.prepareStatement("select email from user_table where email = ?;");
+			pstm.setString(1, email);
+			ResultSet rs_email = pstm.executeQuery();
+			
+			pstm = con.prepareStatement("select phone from user_table where phone = ?;");
+			pstm.setString(1, phone);
+			ResultSet rs_phone = pstm.executeQuery();
+			
 			int flag = 0;
-			while(rs.next())
+			while(rs_email.next())
 			{
-				System.out.println(rs.getString("phone") +" "+ rs.getString("email"));
-				
-				if(rs.getString("phone").equals(phone))
-				{
-					flag = 1;
-				}
-				
-				if(rs.getString("email").equals(email))
-				{
-					flag = 2;
-				}
-				
-				
+				flag=2;
 			}
+			
+			while(rs_phone.next())
+			{
+				flag=1;
+			}
+			
 			
 			if(flag == 1)
 			{

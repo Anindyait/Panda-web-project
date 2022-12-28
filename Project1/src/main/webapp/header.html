@@ -19,6 +19,12 @@
             search.classList.toggle('active')
         }
     </script>
+
+    <script>
+        $(document).ready(function() {
+            $(".dropdown-toggle").dropdown();
+        });
+    </script>
     <div class="font">
         
         <nav class="navbar navbar-expand-lg header">
@@ -50,10 +56,6 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link nav-link1 active">Offers</a>
-                    </li>
-
-                    <li class="nav-item">
                         <a href="#" class="nav-link nav-link1 active">Products</a>
                     </li>
 
@@ -61,21 +63,23 @@
                         <a href="aboutUs.html" class="nav-link nav-link1 active">About Us</a>
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link nav-link1 dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="nav-item dropdown">
+                        <div class="nav-link nav-link1 dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Dropdown
-                        </a>
-                        <ul class="dropdown-menu" style="border-radius:30px;">
-                            <li class="nav-item"><a class="dropdown-item nav-link1" href="#">Action</a></li>
-                            <li class="nav-item"><a class="dropdown-item nav-link1" href="#">Another action</a></li>
-                            <li class="nav-item"><hr class="dropdown-divider nav-link1"></li>
-                            <li class="nav-item"><a class="dropdown-item nav-link1" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
+                        </div>
+                        <div class="dropdown-menu" style="border-radius:20px;">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+
+                
+
 
                 </ul>
               
-            
+         
 
         </nav>
         <div class="nav-item right-icons">

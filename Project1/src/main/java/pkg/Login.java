@@ -60,7 +60,7 @@ public class Login extends HttpServlet {
 			
 			
 			
-			pstm = con.prepareStatement("select email, password, first_name from user_table where email = ?;");
+			pstm = con.prepareStatement("select user_id, email, password, first_name from user_table where email = ?;");
 			pstm.setString(1, email);
 			
 			ResultSet rs = pstm.executeQuery();
@@ -73,7 +73,7 @@ public class Login extends HttpServlet {
 					request.setAttribute("logged_in", "ticked");
 					
 					//Cookies
-					Cookie ck  =new Cookie("email", email);
+					Cookie ck  =new Cookie("UID", rs.getString("user_id"));
 					ck.setMaxAge(60 * 60 * 24);
 					response.addCookie(ck);
 					
