@@ -71,7 +71,7 @@ public class Startup extends HttpServlet {
 					+ "dob date,"
 					+ "gender varchar(20), "
 					+ "address varchar(255), "
-					+ "password varchar(30) not null, "
+					+ "password varchar(255) not null, "
 					+ "primary key(user_id))";
 			
 			//Create product_table if it does not exist
