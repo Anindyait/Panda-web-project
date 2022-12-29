@@ -326,6 +326,7 @@ public class Startup extends HttpServlet {
 			
 		}catch(Exception e) {}
 		
+		request.getRequestDispatcher("Login").include(request, response);
 	}
 
 }

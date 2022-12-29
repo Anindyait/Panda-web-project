@@ -61,6 +61,9 @@ public class Register extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		String dob = yyyy + "-" + mm + "-" + dd;
+		String time_now = java.time.LocalDate.now().toString();
+		if (dob.compareTo(time_now) > 0)
+			dob = time_now;
 		System.out.println(first_name+ " " + last_name);
 		System.out.println(password);
 		System.out.println(email);

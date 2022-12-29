@@ -328,6 +328,6 @@ Array.from(forms).forEach(form => {
         }
     }
 </script>
-
+<div id="footer"></div>
 </body>
 </html>
