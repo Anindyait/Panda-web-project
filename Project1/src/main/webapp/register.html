@@ -256,14 +256,21 @@ function change_month(select) {
                         <div class="row g-2 input-row" style="padding-top: 30px;">
                             <div class="col-sm" style="padding-right: 20px;">
                                 <div class="form-floating mb-3">
-                                    <input name="password" type = "password" class = "form-control"  id = "password1" placeholder="1234" required>
+                                    <input name="password" type = "password" class = "form-control"  id = "password1" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" placeholder="1234" required>
                                     <label for = "password" style="opacity:70%;">Password</label> 
+                                    
+                                    <div class="invalid-feedback">
+                                    Enter valid password
+	                                </div>
+	                                <div class="valid-feedback">
+	                                Looks good!
+	                                </div>
                                 </div>
                             </div>
 
                             <div class="col-sm">
                                 <div class="form-floating mb-3" >
-                                    <input type = "password" class = "form-control"  id = "password2" placeholder="1234" required>
+                                    <input type = "password" class = "form-control"  id = "password2" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" placeholder="1234" required>
                                     <label for = "confirm-password" style="opacity:70%;">Confirm Password</label> 
                                     <span class="invalid-feedback" id="pwd-match">
                                         
