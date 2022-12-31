@@ -261,3 +261,22 @@ Dec 26, 2022 24:54:49.877 [11408:2400:1226/005449.877:ERROR:device_event_log_imp
 Dec 27, 2022 21:52:37.17 NEW SESSION
 Dec 27, 2022 21:52:37.17 [11040:3876:1227/215237.016:ERROR:device_event_log_impl.cc(215)] [21:52:37.017] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
 Dec 27, 2022 21:56:25.608 [9744:17864:1227/215625.607:ERROR:device_event_log_impl.cc(215)] [21:56:25.607] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+
+Dec 29, 2022 12:20:25.216 NEW SESSION
+Dec 29, 2022 12:20:25.216 [28620:7284:1229/122025.215:ERROR:device_event_log_impl.cc(215)] [12:20:25.215] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 29, 2022 12:41:54.886 [28620:7284:1229/124154.886:ERROR:device_event_log_impl.cc(215)] [12:41:54.885] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Dec 29, 2022 14:30:10.25 [28620:17860:1229/143010.024:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+Dec 29, 2022 14:30:13.939 [28620:17860:1229/143013.939:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+Dec 29, 2022 14:34:27.448 [28620:17860:1229/143427.447:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+Dec 29, 2022 14:34:30.204 [28620:17860:1229/143430.204:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+Dec 29, 2022 15:02:55.227 [28620:17860:1229/150255.226:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+Dec 29, 2022 15:03:15.403 [28620:17860:1229/150315.403:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+Dec 29, 2022 15:04:01.776 [28620:17860:1229/150401.776:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+Dec 29, 2022 15:04:39.295 [28620:17860:1229/150439.295:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -118
+Dec 29, 2022 19:00:56.902 [25008:3640:1229/190056.902:ERROR:device_event_log_impl.cc(215)] [19:00:56.901] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 29, 2022 19:24:09.209 [25008:3640:1229/192409.209:ERROR:device_event_log_impl.cc(215)] [19:24:09.210] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Dec 29, 2022 21:40:19.129 [25008:22920:1229/214019.129:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+Dec 29, 2022 21:40:23.161 [25008:22920:1229/214023.161:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+Dec 29, 2022 22:38:31.408 [25008:22920:1229/223831.408:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+Dec 29, 2022 22:38:31.414 [25008:22920:1229/223831.414:ERROR:checkin_request.cc(240)] Check-in request got net error: -106
+Dec 29, 2022 22:38:32.805 [25008:22920:1229/223832.804:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106

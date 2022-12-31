@@ -45,7 +45,7 @@ $(document).ready(function(){
     var d = new Date();
     var option = '<option selected disabled value="">year</option>';
     selectedYear ="year";
-    for (var i=1930;i <= d.getFullYear();i++){// years start i
+    for (var i=1930;i <= new Date().getFullYear();i++){// years start i
         option += '<option value="'+ i + '">' + i + '</option>';
     }
     $('#year').append(option);
@@ -64,39 +64,58 @@ function isLeapYear(year) {
 	  }
 }
 
+function future_date()
+{
+    var currentDate = new Date();
+    var year =$("#year").val();
+    if(year == currentDate.getFullYear())
+    {
+        console.log("current year");
+        if($("#month").val() >= (currentDate.getMonth()+1) && $("#day").val() > currentDate.getDate())
+        {
+            console.log("future");
+            var d = currentDate.getDate();
+            var m = currentDate.getMonth()+1;
+            $(day).val(d);
+            $(month).val(m);
+        }
+    }
+   
+}
+
 function change_year(select)
 {
     if( isLeapYear( $(select).val() ) )
-	  {
-		    Days[1] = 29;
-		    
+	{
+		Days[1] = 29;	    
     }
     else {
         Days[1] = 28;
     }
     if( $("#month").val() == 2)
-		    {
-			       var day = $('#day');
-			       var val = $(day).val();
-			       $(day).empty();
-			       var option = '<option value="day">day</option>';
-			       for (var i=1;i <= Days[1];i++){ //add option days
-				         option += '<option value="'+ i + '">' + i + '</option>';
-             }
-			       $(day).append(option);
-			       if( val > Days[ month ] )
-			       {
-				          val = 1;
-			       }
-			       $(day).val(val);
-		     }
-  }
+	{
+		var day = $('#day');
+		var val = $(day).val();
+		$(day).empty();
+		var option = '<option disabled selected value="day">day</option>';
+		for (var i=1;i <= Days[1];i++){ //add option days
+		option += '<option value="'+ i + '">' + i + '</option>';
+    }
+	$(day).append(option);
+	if( val > Days[ month ] )
+	{
+		val = 1;
+	}
+   
+		$(day).val(val);
+	}
+}
 
 function change_month(select) {
     var day = $('#day');
     var val = $(day).val();
     $(day).empty();
-    var option = '<option value="day">day</option>';
+    var option = '<option disabled selected value="day">day</option>';
     var month = parseInt( $(select).val() ) - 1;
     for (var i=1;i <= Days[ month ];i++){ //add option days
         option += '<option value="'+ i + '">' + i + '</option>';
