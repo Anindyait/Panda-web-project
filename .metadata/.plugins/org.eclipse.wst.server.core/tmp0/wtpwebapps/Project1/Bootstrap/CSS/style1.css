@@ -75,21 +75,6 @@ a:hover{
 }
 
 
-.bottom {
-	background-color: #003000;
-	color: white;
-	width: stretch;
-	padding: 25px 50px 75px;
-	border-radius: 30px 30px 0px 0px;
-	position:absolute;
-	left:0px;
-	right:0px;
-}
-
-.footer-title{
-	font-size: 20px;
-}
-
 .cardnew {
 	font-family: 'Product Sans';
 	
@@ -202,7 +187,7 @@ a:hover{
 .nav-link1 {
 	padding: 3px 7px 3px 7px;
 	letter-spacing: 1px;
-	border-radius: 15px;
+	border-radius: 10px;
 	text-align: center;
 }
 	.nav-link1:hover {
@@ -267,12 +252,37 @@ a:hover{
 	display: inline-block;
   }
 
+  .dropdown-menu{
+	padding: 10px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+
+  }
+
+  .dropdown-item{
+	border-radius: 20px;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+  }
+
+  .dropdown-item:hover{
+	text-decoration: none;
+	background-color: #ebfceb;
+	transition: 0.5s;
+  }
+
+  .dropdown-item:active{
+	background-color: #519451;
+	transition: 0.5s;
+  }
+
 .dropdown-content {
 
 	visibility: hidden;
 	position: absolute;
+	margin-left: -10px;
+	padding: 20px;
 	background-color: #f1f1f1;
-	min-width: 160px;
+	width: 200px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 100;
   }
@@ -343,11 +353,36 @@ a.product-link:hover{
 }
 
 .right-icons{
-	right: -10px; 
-	top:20px; 
-	position:fixed; 
-	z-index:100;
+
+	opacity: 100%;
+	z-index: 150;
+	position: fixed;
+	right:0px;
+	top: 27px;
+	padding-right: 20px;
+}
+
+.modal-backdrop{
+	z-index: 100;
+	background-color: #ffffff;
+	
+}
+
+.fa-xl{
+	padding: 0px 10px 0px 10px;
+	color: #000000;
 	opacity: 70%;
+}
+
+.fa-xl:hover{
+	opacity: 100%;
+	transition: 0.5s;
+}
+
+.search{
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+	padding: 20px;
+	border-radius: 50px;
 }
 
 .search-textbox{
@@ -374,7 +409,6 @@ a.product-link:hover{
 	position: absolute;
 	top: 5px;
 	right: 150px;
-	
   }
 #box:checked + label {
 	background: #fffc47;
@@ -398,13 +432,20 @@ a.product-link:hover{
 	
 }
 
-
-.right-links:hover{
+.right-links{
 	
-	opacity: 70%;
+	color: black;
 }
 
 
+.modal{
+	z-index: 10000;
+}
+
+.popup{
+	width: 100%;
+	padding: 10px;
+}
   
 .size-selector-container{
 
@@ -433,7 +474,8 @@ a.product-link:hover{
 
 	.right-icons{
 		right: 50px; 
-		top:21px; 
+		top:30px; 
+		
 		
 	}
 	#box:checked + label {
@@ -739,3 +781,76 @@ a.product-link:hover{
 	border-radius: 15px;
 	box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
 }
+
+.bottom {
+	background-color: #003000;
+	color: white;
+	width: stretch;
+	padding: 25px 50px 20px 50px;
+	border-radius: 30px 30px 0px 0px;
+	position:absolute;
+	left:0px;
+	right:0px;
+}
+
+.footer-title{
+	font-size: 25px;
+	margin-left: -10px;
+	
+}
+
+.footer-link{
+	color:rgba(255, 255, 255, 0.611);
+	margin-top: 20px;
+	
+}
+
+.footer-link:hover{
+	color:rgba(255, 255, 255, 0.914);
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+.footer-link-container{
+	padding: 20px 30px 20px 30px;
+}
+
+.contacts{
+	
+	text-align: center;
+}
+.material-icons{
+	margin:0 auto;
+	margin-top: 100px;
+}
+
+.reach{
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-top: 50px;
+	padding-bottom: 30px;
+}
+
+.footer-quote{
+	opacity:90%; 
+	padding-top: 0px;
+	word-spacing: 2px;
+	color:#ebfceb;
+}
+
+.social{
+	padding: 10px;
+	transition: 0.5s;
+}
+
+.social:hover{
+	opacity: 100%;
+	transition: 0.5s;
+}
+
+.vertical-center{
+	margin-top: auto;
+	margin-bottom: auto;
+	margin: 0 auto;
+}
+

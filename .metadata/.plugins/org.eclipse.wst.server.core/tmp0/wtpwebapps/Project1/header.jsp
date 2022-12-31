@@ -9,6 +9,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/13deb536c6.js" crossorigin="anonymous"></script>
 
     
     <link rel="stylesheet" href="Bootstrap/CSS/style1.css">
@@ -66,36 +67,61 @@
                         <a href="#" class="nav-link nav-link1 active">Products</a>
                     </li>
                     
-                    <li class="nav-item dropdown">
-                        <a class="nav-link nav-link1 dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="nav-item dropdown">
+                        <div class="nav-link nav-link1 dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Dropdown
-                        </a>
-                        <ul class="dropdown-menu" style="border-radius:30px;">
-                            <li class="nav-item"><a class="dropdown-item nav-link1" href="#">Action</a></li>
-                            <li class="nav-item"><a class="dropdown-item nav-link1" href="#">Another action</a></li>
-                            <li class="nav-item"><hr class="dropdown-divider nav-link1"></li>
-                            <li class="nav-item"><a class="dropdown-item nav-link1" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
+                        </div>
+                        <div class="dropdown-menu" style="border-radius:20px;">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
 
 
                 </ul>
+            </div>
              
             
 
         </nav>
+
+
         <div class="nav-item right-icons">
-            <a href="#cart" class="right-links"><img src = "Pics/icons8-shopping-cart-50.png" class="cart-icon"></a>
+            <i class="fa-solid fa-magnifying-glass fa-xl" data-bs-toggle="modal" data-bs-target="#searchModal"></i>
+
+            <!--Search Modal-->
+            <div class="modal fade search" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content search">
+                        <form>
+                        <div class="row">
+                            <div class="col">
+                                <input name="search-text" type = "text" class = "form-control"  id = "search-text" placeholder="Search..." required>
+                            </div>
+                            <div class="col-2">
+                                <button type="submit" class="btn bamboo rounded-5"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
+                            </div>
+                            
+                            <div class="col-1">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="margin-top:6px; margin-left:-15px;"></button>
+                            </div>
+                        </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <a href="#cart" class="right-links"><i class="fa fa-cart-shopping fa-xl"></i></a>
 
             <!-- <input type="button"  value="   " data-bs-toggle="collapse" class="btn btn-secondary login-button round"/> -->
+            <a href="Profile" class="right-links"><i class="fa-solid fa-user fa-xl"></i></a>
+            <a href="Profile" class="right-links"><img class ="profile-icon" src="Pics/icons8-male-user-50.png" class="profile-icon" hidden></a>
 
-            <a href="Profile" class="right-links"><img class ="profile-icon" src="Pics/icons8-male-user-50<%= request.getAttribute("logged_in")%>.png" class="profile-icon"></a>
-            <!--<a href="Profile" class="right-links"><img class ="profile-icon" src="Pics/icons8-male-user-50-ticked.png" class="profile-icon"></a>-->
-
-            <input type="checkbox" id="box" style="visibility:hidden"/>
-            <label  id="search" for="box"><input type="text" class="search-textbox"/><img src="Pics/search1.png" width="47px"></label>
             
         </div>
+
     </div>
 </body>
 </html>
