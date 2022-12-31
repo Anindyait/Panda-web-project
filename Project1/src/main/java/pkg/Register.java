@@ -3,7 +3,12 @@ package pkg;
 import java.io.*;
 import java.sql.*;
 import java.io.PrintWriter;
+import java.math.BigInteger;
+import java.security.*; //To implement hashing algorithms
+import java.security.spec.InvalidKeySpecException;
 
+import javax.crypto.*;
+import javax.crypto.spec.PBEKeySpec;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -61,12 +66,16 @@ public class Register extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		String dob = yyyy + "-" + mm + "-" + dd;
+		String time_now = java.time.LocalDate.now().toString();
+		if (dob.compareTo(time_now) > 0)
+		{
+			dob = time_now;
+		}	
 		System.out.println(first_name+ " " + last_name);
 		System.out.println(password);
 		System.out.println(email);
 		System.out.println(dob);
-		
-		
+
 		try 
 		{
 			Connection con;
@@ -87,6 +96,8 @@ public class Register extends HttpServlet {
 			pstm = con.prepareStatement("select phone from user_table where phone = ?;");
 			pstm.setString(1, phone);
 			ResultSet rs_phone = pstm.executeQuery();
+			
+			password = generateStrongPasswordHash(password);
 			
 			int flag = 0;
 			while(rs_email.next())
@@ -140,6 +151,31 @@ public class Register extends HttpServlet {
 			
 		}catch(Exception e) {}
 	}
+	
+	private static String generateStrongPasswordHash(String password) throws NoSuchAlgorithmException, InvalidKeySpecException
+	{
+	    int iterations = 1000;
+	    char[] chars = password.toCharArray();
+	    byte[] salt = "[B@76ed5528".getBytes(); //Fixed salt to verify Register and Login passwords, 16-byte salt
+	    PBEKeySpec spec = new PBEKeySpec(chars, salt, iterations, 64 * 8); //Password based encryption 
+	    																   //Constructor that takes a password, salt, iteration count, 
+	    																   //and to-be-derived key length for generating PBEKey of variable-key-size PBE ciphers.
+
+	    SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1"); //Password based Key Derivation Function 2 
+	    																		   //with Secure Hashing Algorithm 1 (reduces brute force attacks)
+	    byte[] hash = skf.generateSecret(spec).getEncoded();
+	    return iterations + ":" + toHex(salt) + ":" + toHex(hash);
 	}
-
-
+	private static String toHex(byte[] array) throws NoSuchAlgorithmException
+	{
+	    BigInteger bi = new BigInteger(1, array);
+	    String hex = bi.toString(16);
+	    int paddingLength = (array.length * 2) - hex.length();
+	    if(paddingLength > 0)
+	    {
+	        return String.format("%0"  +paddingLength + "d", 0) + hex;
+	    }else{
+	        return hex;
+	    }
+	}
+}
