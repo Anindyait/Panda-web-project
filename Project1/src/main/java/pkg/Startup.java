@@ -244,7 +244,7 @@ public class Startup extends HttpServlet {
 			String sqlProductInsert22 = "insert ignore into product_table "
 					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
 					+ "values ('P0022','Showstopper Vibe Eclectic Blue Rhinestone Platform Heels',"
-					+ "2399.00,'35,37,39,40,41',5,'imgs/22a,imgs22b','Embellished with a row of "
+					+ "2399.00,'35,37,39,40,41',5,'imgs/22a,imgs22/b','Embellished with a row of "
 					+ "light reflecting rhinestones, these platform heels are having talk of the"
 					+ " town moment.Style yours with sharp tonal tailoring.','F,O','Shoes')";
 
