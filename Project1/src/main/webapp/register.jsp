@@ -202,7 +202,7 @@ function change_month(select) {
 
                     <div class="col-sm">
                             <div class="form-floating mb-3" >
-                                <input name="phone" type = "tel" class = "form-control"  id = "phone" pattern="^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$" placeholder="123456789" required>
+                                <input name="phone" type = "tel" class = "form-control"  id = "phone" pattern="^(\+91[\-\s]?)?[0]?(91)?[2-9]\d{9}$" placeholder="123456789" required>
                                 <label for = "phone" style="opacity:70%;">Phone No.</label> 
 
                                 <div class="invalid-feedback">
