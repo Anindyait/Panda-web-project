@@ -7,11 +7,13 @@
     src: local('Product Sans'), url('ProductSans-Regular.woff') format('woff');
     }
 
+
+
 	@font-face {
-		font-family: 'Open Sans Regular';
+		font-family: 'Open Sans Bold';
 		font-style: normal;
 		font-weight: normal;
-		src: local('Open Sans Regular'), url('OpenSans-Regular.woff') format('woff');
+		src: local('Open Sans Regular'), url('OpenSans-SemiBold.woff') format('woff');
 		}
 
 /* width */
@@ -136,17 +138,21 @@ a:hover{
 
 .Title{
 	font-size:30px;
+	font-family: Open Sans Bold;
+	padding-top: 10px;
 }
 
 .Price{
 	font-size:35px;
+	font-family: Open Sans Bold;
 	color:forestgreen;
-	padding:10px;
+	padding:5px 10px 10px 10px;
 }
 
 .Description{
 	padding:15px;
-	font-size:16px;
+	font-size:1rem;
+	opacity: 90%;
 	/*color:rgba(0,0,0,0.5);*/
 }
 .text{
@@ -160,6 +166,7 @@ a:hover{
 	border-radius:30px;
 	letter-spacing:2px;
 	border-color:darkorange;
+	font-family: Open Sans Bold;
 	color:white;
 	font-size:20px;
 }
@@ -167,6 +174,7 @@ a:hover{
 	padding: 15px 30px 15px 30px;
 	border-radius: 30px;
 	letter-spacing: 0px;
+	font-family: Open Sans Bold;
 	font-size: 20px;
 }
 
@@ -336,22 +344,7 @@ a:hover{
 	border-radius: 30px;
 }
 
-.product{
-	width:300px;
-	margin: 0 auto;
-	padding: 20px;
-	background-color: rgb(255, 255, 255);
-	box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-	border-radius: 20px;
-	transition: 0.1s;
-	/*display:inline-flex;*/
 
-}
-.product:hover{
-	
-	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-	background-color: #fdfefd;
-}
 
 .right-icons{
 
@@ -796,8 +789,7 @@ a:hover{
 
 .footer-title{
 	font-size: 25px;
-	margin-left: -10px;
-	
+	margin-left: -10px;	
 }
 
 .footer-link{
@@ -883,4 +875,38 @@ a:hover{
 .rupees{
 	font-size: 1.5rem;
 	padding-right: 3px;
+}
+
+.card-container{
+	width: 95%;
+	background-color: #ffffff;
+	margin:0 auto;
+	padding: 40px 20px 20px 20px;
+	border-radius: 30px;
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+
+}
+
+.product{
+	width:300px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+	border-radius: 20px;
+	transition: 0.1s;
+	/*display:inline-flex;*/
+
+}
+
+.product:hover{
+	
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+	background-color: #fdfefd;
+}
+
+.product-category{
+	padding : 10px 10px 10px 70px;
+	font-size : 2rem;
+	
 }

@@ -26,6 +26,7 @@
             $(".dropdown-toggle").dropdown();
         });
     </script>
+    
     <div class="font">
         
         <nav class="navbar navbar-expand-lg header">
@@ -85,16 +86,16 @@
          
 
         <div class="nav-item right-icons">
-            <i class="fa-solid fa-magnifying-glass fa-xl" data-bs-toggle="modal" data-bs-target="#searchModal"></i>
+            <i class="fa-solid fa-magnifying-glass fa-xl right-cons" data-bs-toggle="modal" data-bs-target="#searchModal" onclick="search_focus()"></i>
 
             <!--Search Modal-->
-            <div class="modal fade search" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+            <div class="modal fade" id="searchModal" aria-labelledby="searchModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content search">
                         <form>
                         <div class="row">
                             <div class="col">
-                                <input name="search-text" type = "text" class = "form-control"  id = "search-text" placeholder="Search..." required>
+                                <input name="search-text" type = "text" class = "form-control" id = "search-text" placeholder="Search..." onload = "this.focus();this.select()" required>
                             </div>
                             <div class="col-2">
                                 <button type="submit" class="btn bamboo rounded-5"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
@@ -110,10 +111,10 @@
                 </div>
             </div>
 
-            <a href="#cart" class="right-links"><i class="fa fa-cart-shopping fa-xl"></i></a>
+            <a href="#cart" class="right-links"><i class="fa fa-cart-shopping fa-xl right-cons"></i></a>
 
             <!-- <input type="button"  value="   " data-bs-toggle="collapse" class="btn btn-secondary login-button round"/> -->
-            <a href="Profile" class="right-links"><i class="fa-solid fa-user fa-xl"></i></a>
+            <a href="Profile" class="right-links"><i class="fa-solid fa-user fa-xl right-cons"></i></a>
             <a href="Profile" class="right-links"><img class ="profile-icon" src="Pics/icons8-male-user-50.png" class="profile-icon" hidden></a>
 
             
@@ -124,5 +125,14 @@
         </div>
 
     </div>
+
+    
 </body>
+<script>
+    function search_focus() {
+        var input = document.getElementById('search-text');
+        input.focus();
+        input.select();
+      }
+</script>
 </html>

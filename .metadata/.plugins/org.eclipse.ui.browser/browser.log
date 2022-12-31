@@ -280,3 +280,10 @@ Dec 29, 2022 21:40:23.161 [25008:22920:1229/214023.161:ERROR:connection_factory_
 Dec 29, 2022 22:38:31.408 [25008:22920:1229/223831.408:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
 Dec 29, 2022 22:38:31.414 [25008:22920:1229/223831.414:ERROR:checkin_request.cc(240)] Check-in request got net error: -106
 Dec 29, 2022 22:38:32.805 [25008:22920:1229/223832.804:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+Jan 01, 2023 01:00:27.132 [19976:29436:0101/010027.132:ERROR:device_event_log_impl.cc(215)] [01:00:27.131] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 01, 2023 01:04:57.252 [17052:11084:0101/010457.252:ERROR:device_event_log_impl.cc(215)] [01:04:57.251] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 01, 2023 01:08:04.821 [29436:27000:0101/010804.821:ERROR:device_event_log_impl.cc(215)] [01:08:04.820] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 01, 2023 01:11:57.527 [20056:27952:0101/011157.527:ERROR:device_event_log_impl.cc(215)] [01:11:57.527] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 01, 2023 01:12:43.488 [20056:27952:0101/011243.487:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+Jan 01, 2023 01:54:40.235 [23452:25948:0101/015440.234:ERROR:device_event_log_impl.cc(215)] [01:54:40.234] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 01, 2023 01:59:32.934 [22808:27988:0101/015932.934:ERROR:device_event_log_impl.cc(215)] [01:59:32.934] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)

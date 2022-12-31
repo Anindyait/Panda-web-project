@@ -45,7 +45,7 @@ $(document).ready(function(){
     var d = new Date();
     var option = '<option selected disabled value="">year</option>';
     selectedYear ="year";
-    for (var i=1930;i <= 2022;i++){// years start i
+    for (var i=1930;i <= new Date().getFullYear();i++){// years start i
         option += '<option value="'+ i + '">' + i + '</option>';
     }
     $('#year').append(option);
@@ -64,33 +64,52 @@ function isLeapYear(year) {
 	  }
 }
 
+function future_date()
+{
+    var currentDate = new Date();
+    var year =$("#year").val();
+    if(year == currentDate.getFullYear())
+    {
+        console.log("current year");
+        if($("#month").val() >= (currentDate.getMonth()+1) && $("#day").val() >= currentDate.getDate())
+        {
+            console.log("future");
+            var d = currentDate.getDate();
+            var m = currentDate.getMonth()+1;
+            $(day).val(d);
+            $(month).val(m);
+        }
+    }
+   
+}
+
 function change_year(select)
 {
     if( isLeapYear( $(select).val() ) )
-	  {
-		    Days[1] = 29;
-		    
+	{
+		Days[1] = 29;	    
     }
     else {
         Days[1] = 28;
     }
     if( $("#month").val() == 2)
-		    {
-			       var day = $('#day');
-			       var val = $(day).val();
-			       $(day).empty();
-			       var option = '<option disabled selected value="day">day</option>';
-			       for (var i=1;i <= Days[1];i++){ //add option days
-				         option += '<option value="'+ i + '">' + i + '</option>';
-             }
-			       $(day).append(option);
-			       if( val > Days[ month ] )
-			       {
-				          val = 1;
-			       }
-			       $(day).val(val);
-		     }
-  }
+	{
+		var day = $('#day');
+		var val = $(day).val();
+		$(day).empty();
+		var option = '<option disabled selected value="day">day</option>';
+		for (var i=1;i <= Days[1];i++){ //add option days
+		option += '<option value="'+ i + '">' + i + '</option>';
+    }
+	$(day).append(option);
+	if( val > Days[ month ] )
+	{
+		val = 1;
+	}
+   
+		$(day).val(val);
+	}
+}
 
 function change_month(select) {
     var day = $('#day');
@@ -114,6 +133,7 @@ function change_month(select) {
 	
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sign up</title>
+    <link rel="icon" href="Pics/panda.png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="Bootstrap/CSS/style1.css">
@@ -183,7 +203,7 @@ function change_month(select) {
 
                     <div class="col-sm">
                             <div class="form-floating mb-3" >
-                                <input name="phone" type = "tel" class = "form-control"  id = "phone" pattern="^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$" placeholder="123456789" required>
+                                <input name="phone" type = "tel" class = "form-control"  id = "phone" pattern="^(\+91[\-\s]?)?[0]?(91)?[2-9]\d{9}$" placeholder="123456789" required>
                                 <label for = "phone" style="opacity:70%;">Phone No.</label> 
 
                                 <div class="invalid-feedback">
@@ -204,18 +224,18 @@ function change_month(select) {
                                 <div class="row">
                                     <label class="form-label" style="opacity:90%;">DOB</label>
                                     <div class="col-sm">
-                                        <select id ="day" class="form-select" name = "dd" required>
+                                        <select id ="day" class="form-select" name = "dd" onchange="future_date()" required>
                                         </select>
                                         
                                     </div>
 
                                     <div class="col-sm">    
-                                        <select  id ="month" class="form-select" name = "mm" onchange="change_month(this)" required>
+                                        <select  id ="month" class="form-select" name = "mm" onchange="change_month(this); future_date()" required>
                                         </select>
                                     </div>
 
                                     <div class="col-sm">
-                                        <select id ="year" class="form-select" name = "yyyy" onchange="change_year(this)" required>
+                                        <select id ="year" class="form-select" name = "yyyy" onchange="change_year(this); future_date()" required>
                                         </select>
                                     </div>
                                 </div>
@@ -256,14 +276,21 @@ function change_month(select) {
                         <div class="row g-2 input-row" style="padding-top: 30px;">
                             <div class="col-sm" style="padding-right: 20px;">
                                 <div class="form-floating mb-3">
-                                    <input name="password" type = "password" class = "form-control"  id = "password1" placeholder="1234" required>
+                                    <input name="password" type = "password" class = "form-control"  id = "password1" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" placeholder="1234" required>
                                     <label for = "password" style="opacity:70%;">Password</label> 
+                                    
+                                    <div class="invalid-feedback">
+                                    Enter valid password
+	                                </div>
+	                                <div class="valid-feedback">
+	                                Looks good!
+	                                </div>
                                 </div>
                             </div>
 
                             <div class="col-sm">
                                 <div class="form-floating mb-3" >
-                                    <input type = "password" class = "form-control"  id = "password2" placeholder="1234" required>
+                                    <input type = "password" class = "form-control"  id = "password2" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" placeholder="1234" required>
                                     <label for = "confirm-password" style="opacity:70%;">Confirm Password</label> 
                                     <span class="invalid-feedback" id="pwd-match">
                                         
@@ -328,6 +355,6 @@ Array.from(forms).forEach(form => {
         }
     }
 </script>
-
+<div id="footer"></div>
 </body>
 </html>
