@@ -43,24 +43,33 @@ public class Startup extends HttpServlet {
 		
 		try {
 			
-			Connection con;
+			Connection con, con1;
 			PreparedStatement pstm; 			       //class to prepare statement
 			
 			Class.forName("com.mysql.cj.jdbc.Driver"); //Class is a class
+			
+			//Creating Database
+			con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "abcd");
+			String sqlDbCreate = "create database if not exists servlet";
+			Statement stmt1 = con1.createStatement();
+			
+			stmt1.executeUpdate(sqlDbCreate);
+			System.out.println("Created database");
+			
+			//Using servlet database
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); //DriverManager is a class 
-														//jdbc:mysql then ip address then port no. then db name
-													
+																	//jdbc:mysql then ip address then port no. then db name
+					
 			DatabaseMetaData databaseMetaData = (DatabaseMetaData) con.getMetaData();
-
+			
 			ResultSet resultSet = databaseMetaData.getTables(null, null, null, new String[] {"TABLE"});
 			
 			//Print names of tables present in given database
 			while (resultSet.next()) {
-			    String name = resultSet.getString("TABLE_NAME");
-			    String schema = resultSet.getString("TABLE_SCHEM");
-			    System.out.println(name + " on schema " + schema);
+			String name = resultSet.getString("TABLE_NAME");
+			String schema = resultSet.getString("TABLE_SCHEM");
+			System.out.println(name + " on schema " + schema);
 			}
-			
 			//Create user_table if it does not exist
 			String sqlUserCreate = "create table if not exists user_table"
 					+ "(user_id int auto_increment not null, "
@@ -296,7 +305,7 @@ public class Startup extends HttpServlet {
 			
 
 		    Statement stmt = con.createStatement();
-			
+		    
 			stmt.addBatch(sqlUserCreate);
             stmt.addBatch(sqlProductCreate);
             
