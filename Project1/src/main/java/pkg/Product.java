@@ -55,7 +55,7 @@ public class Product extends HttpServlet {
 				//Splitting the image addresses.
 				String[] image = rs.getString("imgs").split(",");
 				
-				//Getting price in String with the intend of remove dat ugly ".0".
+				//Getting price in String with the intent of remove dat ugly ".0".
 				String price = rs.getString("price");
 				
 				//Putting data in the jsp page.
