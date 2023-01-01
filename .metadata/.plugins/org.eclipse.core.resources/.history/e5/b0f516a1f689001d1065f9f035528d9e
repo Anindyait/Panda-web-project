@@ -219,21 +219,21 @@ function change_month(select) {
                         <div class="row g-2 input-row">
                             <div class="col-sm" style="padding-right: 20px;">
 
-                               <div class="row">
+                                <div class="row">
                                     <label class="form-label" style="opacity:90%;">DOB</label>
                                     <div class="col-sm">
-                                        <select id ="day" class="form-select" name = "dd" onchange="future_date()" required>
+                                        <select id ="day" class="form-select" name = "dd" required>
                                         </select>
                                         
                                     </div>
 
                                     <div class="col-sm">    
-                                        <select  id ="month" class="form-select" name = "mm" onchange="change_month(this); future_date()" required>
+                                        <select  id ="month" class="form-select" name = "mm" onchange="change_month(this)" required>
                                         </select>
                                     </div>
 
                                     <div class="col-sm">
-                                        <select id ="year" class="form-select" name = "yyyy" onchange="change_year(this); future_date()" required>
+                                        <select id ="year" class="form-select" name = "yyyy" onchange="change_year(this)" required>
                                         </select>
                                     </div>
                                 </div>
