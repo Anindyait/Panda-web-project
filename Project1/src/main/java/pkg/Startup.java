@@ -89,7 +89,7 @@ public class Startup extends HttpServlet {
 					+ "p_name varchar(255) not null,"
 					+ "price float(12,3) not null, "
 					+ "sizes varchar(50) not null, "
-					+ "stock int not null, "
+					+ "stock varchar(50) not null, "
 					+ "imgs varchar(255), "
 					+ "descr varchar(255),"
 					+ "cat1 varchar(255), "
@@ -100,209 +100,419 @@ public class Startup extends HttpServlet {
 			
 			//Inserting products into the product_table
 			String sqlProductInsert1 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0001','Hailey Style Two Piece Hoodie In Brown',899.00,"
-					+ "'XS,S,M,XL',5,'imgs/1a,imgs/2b','Material : Terry Fabric. "
+					+ "'XS,S,M,XL','10,10,10,10','imgs/1a,imgs/2b','Material : Terry Fabric. "
 					+ "Designed with multitasking with mind, this hoodie comes with a "
 					+ "spaghetti separate to make you look chic yet comfortable all day long. "
-					+ "Wear yours with activewear or denims.','F,O','Hoodie')";
+					+ "Wear yours with activewear or denims.','F,O','Hoodies','Winter Collection')";
 			
 			String sqlProductInsert2 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0002','Hailey Style Two Piece Hoodie In Black',899.00,"
-					+ "'XS,S,M,XL',5,'imgs/2a,imgs/2b','Material : Terry Fabric. "
+					+ "'XS,S,M,XL','10,10,10,10','imgs/2a,imgs/2b','Material : Terry Fabric. "
 					+ "Designed with multitasking with mind, this hoodie comes with a "
 					+ "spaghetti separate to make you look chic yet comfortable all day long. "
-					+ "Wear yours with activewear or denims.','F,O','Hoodie')";
+					+ "Wear yours with activewear or denims.','F,O','Hoodies','Winter Collection')";
 			
 			String sqlProductInsert3 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
-					+ "values ('P0003','Black Buckle Belt Top',599.00,'XS,S,M,XL',5,"
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0003','Black Buckle Belt Top',599.00,'XS,S,M,XL','10,10,10,10',"
 					+ "'imgs/3a,imgs/3b','This black buckle belt ribbed top is to notch up "
 					+ "your black wardrobe game. Wear yours with black baggy cargos and boots "
-					+ "for a statement look.','F,O','Top')";
+					+ "for a statement look.','F,O','Tops','Best Sellers')";
 
 			String sqlProductInsert4 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0004','Corset Ribbed Top With Casual Trouser In Black',1299.00,"
-					+ "'XS,S,M,XL',5,'imgs/4a,imgs/4b','Perfect for laidback days,this matching set is "
-					+ "basic addition to the wardrobe. Wear yours with slides or sneakers.','F,O','Top')";
+					+ "'XS,S,M,XL','10,10,10,10','imgs/4a,imgs/4b','Perfect for laidback days,this matching set is "
+					+ "basic addition to the wardrobe. Wear yours with slides or sneakers.','F,O','Tops,Trousers','Best Sellers')";
 
 			String sqlProductInsert5 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0005','Cool Girl Aesthetics Double Pocket Trousers Black',699.00,"
-					+ "'XS,S,M,XL',5,'imgs/5a,imgs/5b','Pair it with tees or sweatshirts','F,O','Pants')";
+					+ "'XS,S,M,XL','10,10,10,10','imgs/5a,imgs/5b','Pair it with tees or sweatshirts','F,O','Trousers','Best Sellers')";
 
 			String sqlProductInsert6 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0006','Green Ribbed Top With Casual Trouser',1099.00,"
-					+ "'XS,S,M,XL',5,'imgs/6a,imgs/6b','Perfect for laidback days,this matching "
-					+ "set is basic addition to the wardrobe. Wear yours with slides or sneakers.','F,O','Pants')";
+					+ "'XS,S,M,XL','10,10,10,10','imgs/6a,imgs/6b','Perfect for laidback days,this matching "
+					+ "set is basic addition to the wardrobe. Wear yours with slides or sneakers.','F,O','Tops,Trousers','Winter Collection')";
 
 			String sqlProductInsert7 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0007','Set Of Three : Corset Style Hoodie With Sleeveless "
-					+ "Crop Top & Bottom In Black',1799.00,'XS,S,M,XL',5,'imgs/7a,imgs/7b',"
+					+ "Crop Top & Bottom In Black',1799.00,'XS,S,M,XL','10,10,10,10','imgs/7a,imgs/7b',"
 					+ "'Get ready for the cozy season with this basic set of three outfit. "
-					+ "This comes with corset style hoodie, crop top & a trouser.','F,O','Hoodie,Top,Pants')";
+					+ "This comes with corset style hoodie, crop top & a trouser.','F,O','Hoodies,Tops,Trousers','Winter Collection')";
 
 			String sqlProductInsert8 = "insert ignore into product_table "
 					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
 					+ "values ('P0008','Tailored Aesthetics Mens Causal Loafer',1699.00,"
-					+ "'35,36,40',5,'imgs/8a,imgs/8b','Material : Synthetic leather','M,O','Shoes')";
+					+ "'35,36,40','10,10,10','imgs/8a,imgs/8b','Material : Synthetic leather','M,O','Shoes-Loafers')";
 
 			String sqlProductInsert9 = "insert ignore into product_table "
 					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
 					+ "values ('P0009','Printed Buckle Tied Chunky Style Loafer',1699.00,"
-					+ "'35,36,37,40',5,'imgs/9a,imgs/9b','Material : Synthetic leather','M,F,O','Shoes')";
+					+ "'35,36,37,40','10,10,10,10','imgs/9a,imgs/9b','Material : Synthetic leather','M,F,O','Shoes-Loafers')";
 
 			String sqlProductInsert10 = "insert ignore into product_table "
 					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
-					+ "values ('P0010','Criss Cross Details Men’s Tan Shoe',1599.00,"
-					+ "'35,37,40,42',5,'imgs/10a,imgs/10b','Material : Synthetic leather','M,O','Shoes')";
+					+ "values ('P0010','Criss Cross Details Men''s Tan Shoe',1599.00,"
+					+ "'35,37,40,42','10,10,10,10','imgs/10a,imgs/10b','Material : Synthetic leather','M,O','Shoes-Loafers')";
 
 			String sqlProductInsert11 = "insert ignore into product_table "
 					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
-					+ "values ('P0011','Brushed Olive Color Men’s Loafer',1699.00,"
-					+ "'35,37,40,42',5,'imgs/11a,imgs/11b','Material : Synthetic leather','M,O','Shoes')";
+					+ "values ('P0011','Brushed Olive Color Men''s Loafer',1699.00,"
+					+ "'35,37,40,42','10,10,10,10','imgs/11a,imgs/11b','Material : Synthetic leather','M,O','Shoes-Loafers')";
 
 			String sqlProductInsert12 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0012','Seoul City Aesthetics Pink Platform Pumps',"
-					+ "1599.00,'35,37,39,40',5,'imgs/12a,imgs/12b','Material : "
+					+ "1599.00,'35,37,39,40','10,10,10,10','imgs/12a,imgs/12b','Material : "
 					+ "Synthetic leather. Heel height : 3 Inches. Rock a geek girl look with "
-					+ "this chic platform shoes . Wear yours with dress and a vest.','F,O','Shoes')";
+					+ "this chic platform shoes . Wear yours with dress and a vest.','F,O','Shoes-Platforms','New Year''s Collection')";
 
 			String sqlProductInsert13 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0013','Nordic Cozy Aesthetics Fall Flats Offwhite',"
-					+ "799.00,'35,37,39,40',5,'imgs/13a,imgs/13b','Mateial : Faux Fur. "
+					+ "799.00,'35,37,39,40','10,10,10,10','imgs/13a,imgs/13b','Mateial : Faux Fur. "
 					+ "Sole : TPR. Wear this faux fur nordic aesthetics flats with cute "
 					+ "socks for your next coffee run. We bet these are the most comfotable "
-					+ "pair of flats you will own.','F,O','Shoes')";
+					+ "pair of flats you will own.','F,O','Shoes-Flats','Winter Collection')";
 
 			String sqlProductInsert14 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0014','Black Rhinestone Platform Heels',2399.00,"
-					+ "'35,37,39,40,41',5,'imgs/14a,imgs/14b','Material : Satin. "
+					+ "'35,37,39,40,41','10,10,10,10,10','imgs/14a,imgs/14b','Material : Satin. "
 					+ "Heel Height : 6 Inches. Embellished with a row of light reflecting "
 					+ "rhinestones, these platform heels are having talk of the town moment. "
-					+ "Style yours with sharp tonal tailoring.','F,O','Shoes')";
+					+ "Style yours with sharp tonal tailoring.','F,O','Shoes-Platforms','Winter Collection,New Year''s Collection,Valentine''s Day Collection,Best Sellers')";
 
 			String sqlProductInsert15 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0015','The Comfy Edit Dual Color Trouser In Cosmic Latte Tone',"
-					+ "999.00,'XS,S,M,XL',5,'imgs/15a,imgs/15b','These pants are designed to "
+					+ "999.00,'XS,S,M,XL','10,10,10,10','imgs/15a,imgs/15b','These pants are designed to "
 					+ "be worn with the matching piped cardigan, but you could team them "
 					+ "with an oversized tee when lounging at home, too. Knitted from a "
-					+ "soft blend of cotton & polyster, they have a high-rise waist and wide legs.','F,O','Pants')";
+					+ "soft blend of cotton & polyster, they have a high-rise waist and wide legs.','F,O','Trousers','Winter Collection')";
 
 			String sqlProductInsert16 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0016','The Comfy Edit Dual Color Trouser In Pink & "
-					+ "Cosmic Latte Tone',899.00,'XS,S,M,XL',5,'imgs/16a,imgs/16b',"
+					+ "Cosmic Latte Tone',899.00,'XS,S,M,XL','10,10,10,10','imgs/16a,imgs/16b',"
 					+ "'These pants are designed to be worn with the matching piped "
 					+ "cardigan, but you could team them with an oversized tee when "
 					+ "lounging at home, too. Knitted from a soft blend of cotton & polyster, "
-					+ "they have a high-rise waist and wide legs.','F,O','Pants')";
+					+ "they have a high-rise waist and wide legs.','F,O','Trousers','Winter Collection')";
 
 			String sqlProductInsert17 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0017','Back To School Aesthetics Chain Detail Boot',1799.00,"
-					+ "'35,37,39,40,41',5,'imgs/17a,imgs/17b','These classic loafers are embellished "
+					+ "'35,37,39,40,41','10,10,10,10,10','imgs/17a,imgs/17b','These classic loafers are embellished "
 					+ "with silver tone interlocking chains that add style & shine to silhouette. "
 					+ "Made from supple leather, they sit on TPR soles that will keep you comfortable "
-					+ "whole day.','M,F,O','Shoes')";
+					+ "whole day.','M,F,O','Shoes-Back To School','Best Sellers')";
 
 			String sqlProductInsert18 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0018','Delicious Yellow Platforms',1199.00,"
-					+ "'35,37,39,40,41',5,'imgs/18a,imgs/18b','These sandals are "
+					+ "'35,37,39,40,41','10,10,10,10,10','imgs/18a,imgs/18b','These sandals are "
 					+ "set on a chunky platform which promises a comfortable but "
-					+ "elevated fit. Material : Synthetic leather. Platform Height : 3 Inches','F,O','Shoes')";
+					+ "elevated fit. Material : Synthetic leather. Platform Height : 3 Inches','F,O','Shoes-Platforms','Saraswati Puja Collection')";
 
 			String sqlProductInsert19 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0019','Back To School Aesthetic Cute Buckle Details Shoe',"
-					+ "1699.00,'35,37,39,40,41',5,'imgs/19a,imgs/19b','Crafted from supple "
+					+ "1699.00,'35,37,39,40,41','10,10,10,10,10','imgs/19a,imgs/19b','Crafted from supple "
 					+ "synthetic leather & set on chunky soles that stand up to long days "
-					+ "on the go . Wear these for your seal of approval for back to school aesthetics.','M,F,O','Shoes')";
+					+ "on the go . Wear these for your seal of approval for back to school aesthetics.','M,F,O','Shoes-Back To School','Best Sellers')";
 
 			String sqlProductInsert20 = "insert ignore into product_table "
 					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
 					+ "values ('P0020','Comfort Wear Slip On Flats Black',699.00,"
-					+ "'35,37,39,40,41',5,'imgs/20a,imgs/20b','Pair it up a cozy loungewear set"
-					+ " for all day comfort.','M,F,O','Shoes')";
+					+ "'35,37,39,40,41','10,10,10,10,10','imgs/20a,imgs/20b','Pair it up a cozy loungewear set"
+					+ " for all day comfort.','M,F,O','Shoes-Flats')";
 
 			String sqlProductInsert21 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0021','Nordic Cozy Aesthetics Fall Double Belt Comfort Flat',"
-					+ "699.00,'35,37,39,40,41',5,'imgs/21a,imgs/21b','Wear this faux fur nordic aesthetics"
+					+ "699.00,'35,37,39,40,41','10,10,10,10,10','imgs/21a,imgs/21b','Wear this faux fur nordic aesthetics"
 					+ " flats with cute socks for your next coffee run. We bet these are the most"
-					+ " comfotable pair of flats you will own.','F,O','Shoes')";
+					+ " comfotable pair of flats you will own.','F,O','Shoes-Flats','Winter Collection')";
 
 			String sqlProductInsert22 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0022','Showstopper Vibe Eclectic Blue Rhinestone Platform Heels',"
-					+ "2399.00,'35,37,39,40,41',5,'imgs/22a,imgs/22b','Embellished with a row of "
+					+ "2399.00,'35,37,39,40,41','10,10,10,10,10','imgs/22a,imgs/22b','Embellished with a row of "
 					+ "light reflecting rhinestones, these platform heels are having talk of the"
-					+ " town moment.Style yours with sharp tonal tailoring.','F,O','Shoes')";
+					+ " town moment.Style yours with sharp tonal tailoring.','F,O','Shoes-Platforms','Winter Collection,New Year''s Collection')";
 
 			String sqlProductInsert23 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0023','Contrast Trim Blue And White Top',599.00,"
-					+ "'XS,S,M,XL',5,'imgs/23a,imgs/23b','This contrast color ribbed top"
+					+ "'XS,S,M,XL','10,10,10,10','imgs/23a,imgs/23b','This contrast color ribbed top"
 					+ " has a stylish cut out patter. Wear yours with denim for a flattering"
-					+ " style. Material : Ribbed fabric','F,O','Top')";
+					+ " style. Material : Ribbed fabric','F,O','Tops','New Year''s Collection')";
 
 			String sqlProductInsert24 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0024','Corset Style Tie Around Full Sleeve Ribbed Apricot Top',"
-					+ "599.00,'XS,S,M,XL',5,'imgs/24a,imgs/24b','Designed with corset style with "
+					+ "599.00,'XS,S,M,XL','10,10,10,10','imgs/24a,imgs/24b','Designed with corset style with "
 					+ "tie around for a body hugging fit, this is a best take on trending corset"
 					+ " style. Wear yours with leather pants and boots for diva vibe. Material : "
-					+ "Ribbed fabric','F,O','Top')";
+					+ "Ribbed fabric','F,O','Tops','New Year''s Collection')";
 
 			String sqlProductInsert25 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0025','Cool Girl Aesthetics Collared Full Sleeve Top Black',"
-					+ "599.00,'XS,S,M,XL',5,'imgs/25a,imgs/25b','Pair yours with denim for casual"
-					+ " look at best. Material : Poly Cotton','F,O','Top')";
+					+ "599.00,'XS,S,M,XL','10,10,10,10','imgs/25a,imgs/25b','Pair yours with denim for casual"
+					+ " look at best. Material : Poly Cotton','F,O','Tops','Best Sellers')";
 
 			String sqlProductInsert26 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0026','Black Full Sleeve Top With White Trim',499.00,"
-					+ "'XS,S,M,XL',5,'imgs/26a,imgs/26b','Material : Cotton- 60% Polyster- 40%. "
-					+ "Wear yours with wide legged trouser and a oxford for the cool girl aesthetics.','F,O','Top')";
+					+ "'XS,S,M,XL','10,10,10,10','imgs/26a,imgs/26b','Material : Cotton- 60% Polyster- 40%. "
+					+ "Wear yours with wide legged trouser and a oxford for the cool girl aesthetics.','F,O','Tops','Best Sellers')";
 
 			String sqlProductInsert27 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
-					+ "values ('P0027','Brown Long Sleeve Collar Top',499.00,'XS,S,M,XL',5,"
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0027','Brown Long Sleeve Collar Top',499.00,'XS,S,M,XL','10,10,10,10',"
 					+ "'imgs/27a,imgs/27b','Material : Cotton- 60% Polyster- 40%. Wear yours "
-					+ "with wide legged trouser and a oxford for the cool girl aesthetics.','M,F,O','Top')";
+					+ "with wide legged trouser and a oxford for the cool girl aesthetics.','M,F,O','Tops','Best Sellers')";
 
 			String sqlProductInsert28 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0028','Blue Trendy Full Sleeve Ribbed Top',549.00,"
-					+ "'XS,S,M,XL',5,'imgs/28a,imgs/28b','This top is made from ribbed "
+					+ "'XS,S,M,XL','10,10,10,10','imgs/28a,imgs/28b','This top is made from ribbed "
 					+ "fabric for a comfortable slim fit that will keep its shape throughout the day. "
-					+ "Wear yours with denim or skirt. Material :- Ribbed fabric','F,O','Top')";
+					+ "Wear yours with denim or skirt. Material :- Ribbed fabric','F,O','Tops','Best Sellers')";
 
 			String sqlProductInsert29 = "insert ignore into product_table "
 					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
 					+ "values ('P0029','Classic City Girl Flats Brown & Hot Pink',699.00,"
-					+ "'35,37,39,40,41',5,'imgs/29a,imgs/29b','Material : Synthetic Leather. "
+					+ "'35,37,39,40,41','10,10,10,10,10','imgs/29a,imgs/29b','Material : Synthetic Leather. "
 					+ "Wear this classic pairs for your daytime affairs. Pairs best with denim"
-					+ " to casual wear.','F,O','Shoes')";
+					+ " to casual wear.','F,O','Shoes-Flats')";
 			
 			String sqlProductInsert30 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0030','Nordic Cozy Aesthetics Fall Flats Mocha',799.00,"
-					+ "'35,37,39,40,41',5,'imgs/30a,imgs/30b',"
+					+ "'35,37,39,40,41','10,10,10,10,10','imgs/30a,imgs/30b',"
 					+ "'Mateial : Faux Fur, Sole - TPR, Wear this faux fur nordic aesthetics flats "
 					+ "with cute socks for your next coffee run. We bet these are the most comfotable pair of "
-					+ "flats you will own.','F,O','Shoes')";
+					+ "flats you will own.','F,O','Shoes-Flats','Winter Collection')";
 			
+			String sqlProductInsert31 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0031','Nordic Cozy Aesthetics Fall Platforms Pink',1099.00,'36,37,38',"
+					+ "'10,10,10','imgs/31a,imgs/31b','Material : Faux Fur. Wear this faux fur nordic aesthetics "
+					+ "platforms with cute socks for your next coffee run. We bet these are the most comfotable pair "
+					+ "of platforms you will own.','F,O','Shoes-Platforms','Winter Collection,Valentine''s Day Collection,Best Sellers')";
+			
+			String sqlProductInsert32 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0032','High Street Wear Corset Style Green Hoodie',799.00,'XS,S,M,L,XL',"
+					+ "'10,10,10,10,10','imgs/32a,imgs/32b','Material : Terry Fabric. Add little drama to your wardrobe "
+					+ "with this corset styled hoodie. Wear yours with trousers or denim to compete the look.','F,O','Hoodies',"
+					+ "'Winter Collection,Best Sellers')";
+			
+			String sqlProductInsert33 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0033','Showstopper Vibe Hot Pink Rhinestone Platform Heels',2399.00,'34,35,36,37,38,39,40',"
+					+ "'10,10,10,10,10,10,10','imgs/33a,imgs/33b','Material :  Satin. Heel Height : 6 Inches. "
+					+ "Embellished with a row of light reflecting rhinestones, these platform heels are having talk of the town moment.Style yours with sharp tonal tailoring.','F,O','Shoes-Platforms',"
+					+ "'Winter Collection,Valentine''s Day Collection,Best Sellers')";
+			
+			String sqlProductInsert34 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "values ('P0034','Black Textured Slingback Men''s Shoes',1499.00,"
+					+ "'35,36,37,40','10,10,10,10','imgs/34a,imgs/34b','Material : Synthetic leather','M,O','Shoes-Loafers')";
+			
+			String sqlProductInsert35 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "values ('P0035','Premium quality braided Moroccan vibe Black flats',799.00,"
+					+ "'35,37,39,40,41','10,10,10,10,10','imgs/35a,imgs/35b',"
+					+ "'Material: Synthetic leather. "
+					+ "These pair of slide are everything a casual summer sandals should be. "
+					+ "The cushioned insole make them idea for all day wear.','F,O','Shoes-Flats')";
+			
+			String sqlProductInsert36 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0036','Candy store aesthetics pop yellow slides',699.00,"
+					+ "'35,37,39,40,41','10,10,10,10,10','imgs/36a,imgs/36b',"
+					+ "'Material: Synthetic leather. "
+					+ "Stylish & functional these pairs are made with soft synthetic leather. "
+					+ "Wear yours with denim to dresses to sarees for an elevated casual look.','F,O','Shoes-Flats','Saraswati Puja Collection')";
+			
+			String sqlProductInsert37 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0037','Color Pop Orange comfort quilted slides',899.00,"
+					+ "'35,36,37,39,40,41','10,10,10,10,10','imgs/37a,imgs/37b',"
+					+ "'Material: Synthetic leather. "
+					+ "These pair of color pop slides are everything a casual summer/saree sandals should be. "
+					+ "The cushioned insole make them idea for all day wear.','F,O','Shoes-Flats','Saraswati Puja Collection')";
+			
+			String sqlProductInsert38 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0038','Diva Of Pinterest Rose Pumps',1999.00,'35,36,37,38,39,40',"
+					+ "'10,10,10,10,10,10','imgs/38a,imgs/38b','Material: Satin. Heel Height : 6 Inches. Most loved pair in "
+					+ "Hollywood right now ,this pumps are chicest addition to your wardrobe. "
+					+ "Wear yours with a black dress and add some pearl.',"
+					+ "'F,O','Shoes-Platforms','Winter Collection,New Year''s Collection,Valentine''s Day Collection,Best Sellers')";
+			
+			String sqlProductInsert39 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0039','Disco era vibe shimmer Y2K platforms green',1299.00,'35,36,37,38,39,40',"
+					+ "'10,10,10,10,10,10','imgs/39a,imgs/39b','Material : Synthetic leather. Platform height : 3 Inches. "
+					+ "Want little shine to your attire ? These gorgeous pair is what you need now. "
+					+ "Pair yours with retro vibe attire & you are ready to rock.',"
+					+ "'F,O','Shoes-Platforms','New Year''s Collection')";
+			
+			String sqlProductInsert40 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0040','Old Hollywood Star Aesthetics Pink Platforms',1299.00,'35,36,37,38,39,40',"
+					+ "'10,10,10,10,10,10','imgs/40a,imgs/40b','Material : Patent Synthetic leather. Platform height : 3 Inches. "
+					+ "Channel your inner Hollywood star vibe with this beautifully handcrafted platforms.',"
+					+ "'F,O','Shoes-Platforms','New Year''s Collection')";
+			
+			String sqlProductInsert41 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0041','Back To School Bow Platform shoe',"
+					+ "1799.00,'37,38,39,40,41','10,10,10,10,10','imgs/41a,imgs/41b','Crafted from supple synthetic "
+					+ "leather & set on chunky soles that stand up to long days on the go . Wear these for your seal "
+					+ "of approval for back to school aesthetics.','M,F,O','Shoes-Back To School','Best Sellers')";
+			
+			String sqlProductInsert42 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "values ('P0042','Back To School Aesthetics White Chain Shoe',"
+					+ "1699.00,'37,38,39,40,41','10,10,10,10,10','imgs/42a,imgs/42b','Crafted from supple synthetic "
+					+ "leather & set on chunky soles that stand up to long days on the go . Wear these for your seal "
+					+ "of approval for back to school aesthetics.','M,F,O','Shoes-Back To School')";
+			
+			String sqlProductInsert43 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "values ('P0043','Back To School Boyfriend Style Brown Oxfords',"
+					+ "1899.00,'37,38,39,40,41','10,10,10,10,10','imgs/43a,imgs/43b','Upper: Synthetic leather/ sole - TPR. "
+					+ "Chunky loafers are having a moment-styling options are endless and they work all year round. "
+					+ "Wear yours with dress or denim.','M,F,O','Shoes-Back To School')";
+			
+			String sqlProductInsert44 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0044','Rib Button Drawstring Midi Dress Green',899.00,"
+					+ "'S,M,L,XL','10,10,10,10','imgs/44a,imgs/44b','Perfect for daily casual wear or a party, "
+					+ "this ribbed dresses are basic addition to your wardrobe. Wear yours with a button up open "
+					+ "sweaters for the chilly evenings.','F,O','Dresses','New Year''s Collection')";
+			
+			String sqlProductInsert45 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0045','Neck Tie Marble Print Dress',799.00,"
+					+ "'S,M,L,XL','10,10,10,10','imgs/45a,imgs/45b','Rock your next party look with this chic "
+					+ "marvel print dress. Wear yours with platforms for 90s chic look.','F,O',"
+					+ "'Dresses','Valentine''s Day Collection')";
+			
+			String sqlProductInsert46 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0046','Marble Print Trending Trouser',799.00,"
+					+ "'XS,S,M,L,XL','10,10,10,10,10','imgs/46a,imgs/46b','Rock your Y2k soul in this brown marble print "
+					+ "trouser. Comfortable & stylish , you will make a statement.','F,O',"
+					+ "'Trousers','New Year''s Collection')";
+			
+			String sqlProductInsert47 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0047','Hello New Year Aesthetics White Top With Trouser',999.00,"
+					+ "'XS,S,M,L,XL','10,10,10,10,10','imgs/47a,imgs/47b','Material : Soft Polyster. This set reinterprets "
+					+ "classic suiting this season with ''70s-style separates that''ll become new wardrobe heroes. "
+					+ "These pants are made from wool enhanced with a hint of stretch and have flared hems. "
+					+ "Underpin yours with boots.','F,O','Tops,Trousers','New Year''s Collection')";
+			
+			String sqlProductInsert48 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0048','Psychedelic print pink casual Dress',799.00,"
+					+ "'S,M,L,XL','10,10,10,10','imgs/48a,imgs/48b','Fabric : Polyster & spandex','F,O',"
+					+ "'Dresses','Valentine''s Day Collection')";
+			
+			String sqlProductInsert49 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0049','Royal Green Knot Cocktail Dress',1145.00,"
+					+ "'S,M,L,XL','10,10,10,10','imgs/49a,imgs/49b','Fabric : Polyster. Moderate Stretchy. Wear this chic cocktail "
+					+ "dress to your New Year''s Eve Party and throw everyone''s eyesight on you !','F,O',"
+					+ "'Dresses','New Year''s Collection')";
+			
+			String sqlProductInsert50 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0050','Niche Blue Frilly Knot Cocktail Dress',1400.00,"
+					+ "'S,M,L,XL','10,10,10,10','imgs/50a,imgs/50b','Fabric : Polyster. Moderate Stretchy. "
+					+ "Wear this chic cocktail dress to your New Year''s Eve Party and throw everyone''s eyesight on you !','F,O',"
+					+ "'Dresses','New Year''s Collection,Best Sellers')";
+			
+			String sqlProductInsert51 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0051','Polka Dotted Knot Cocktail Dress',2299.00,"
+					+ "'S,M,L,XL','10,10,10,10','imgs/51a,imgs/51b','Fabric : Polyster. Moderate Stretchy. "
+					+ "Wear this chic cocktail dress to your New Year''s Eve Party and throw everyone''s eyesight on you !','F,O',"
+					+ "'Dresses','New Year''s Collection')";
+			
+			String sqlProductInsert52 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0052','Princess Peach Simplicity A-line Dress',2400.00,"
+					+ "'S,M,L,XL','10,10,10,10','imgs/52a,imgs/52b','Fabric : Polyster. Moderate Stretchy. "
+					+ "Wear this chic cocktail dress to your New Year''s Eve Party and throw everyone''s eyesight on you !','F,O',"
+					+ "'Dresses','New Year''s Collection')";
+			
+			String sqlProductInsert53 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0053','Pretty Pink Buttoned A-line Dress',2299.00,"
+					+ "'S,M,L,XL','10,10,10,10','imgs/53a,imgs/53b','Fabric : Polyster. Throw this number on your date on "
+					+ "Valentine''s day and have the most wonderful Valentine date.','F,O',"
+					+ "'Dresses','Valentine''s Day Collection')";
+			
+			String sqlProductInsert54 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0054','Velvety Burgundy A-line Dress',2499.00,"
+					+ "'S,M,L,XL','10,10,10,10','imgs/54a,imgs/54b','Fabric : Velvet. Throw this number on your date on "
+					+ "Valentine''s day and have the most wonderful Valentine date.','F,O',"
+					+ "'Dresses','Valentine''s Day Collection')";
+			
+			String sqlProductInsert55 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0055','Sparkly Red and Romantic Sheer Cocktail Dress',999.00,"
+					+ "'S,M,L,XL','10,10,10,10','imgs/55a,imgs/55b','Fabric : Polyester. Throw this number on your date on "
+					+ "Valentine''s day and have the most wonderful Valentine date.','F,O',"
+					+ "'Dresses','Valentine''s Day Collection')";
+			
+			String sqlProductInsert56 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0056','Silk Red and Fur Sleeved Cocktail Dress',2499.00,"
+					+ "'S,M,L,XL','10,10,10,10','imgs/56a,imgs/56b','Fabric : Silk. Throw this number on your date on "
+					+ "Valentine''s day and have the most wonderful Valentine date.','F,O',"
+					+ "'Dresses','Valentine''s Day Collection')";
+			
+			String sqlProductInsert57 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0057','Dark Red Velvet Ruched Cocktail Dress',2199.00,"
+					+ "'S,M,L,XL','10,10,10,10','imgs/57a,imgs/57b','Fabric : Velvet. Throw this number on your date on "
+					+ "Valentine''s day and have the most wonderful Valentine date.','F,O',"
+					+ "'Dresses','Valentine''s Day Collection')";
+			
+			String sqlProductInsert58 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0058','Mustard Yellow Sweater',1299.00,"
+					+ "'XS,S,M,XL','10,10,10,10','imgs/58a,imgs/58b','Material: Wool. Wear this warm, cozy sweater on chilly "
+					+ "winter days. Can double as a modern saree top!','F,O','Tops','Saraswati Puja Collection')";
+			
+			String sqlProductInsert59 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0059','Knot Tied Pretty Yellow Top',699.00,"
+					+ "'XS,S,M,XL','10,10,10,10','imgs/59a,imgs/59b','Material: Ribbed. Wear this pretty, sunshine yellow "
+					+ "top on chilly winter days. Can double as a pretty modern saree blouse!','F,O','Tops','Saraswati Puja Collection')";
+			
+			String sqlProductInsert60 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0060','Sunshine Yellow Crop Top',699.00,"
+					+ "'XS,S,M,XL','10,10,10,10','imgs/60a,imgs/60b','Material: Ribbed. Wear this pretty, sunshine yellow top"
+					+ " on summer/spring days. Can double as a pretty modern saree blouse!','F,O','Tops','Saraswati Puja Collection')";
+
 
 		    Statement stmt = con.createStatement();
 		    
@@ -339,6 +549,37 @@ public class Startup extends HttpServlet {
             stmt.addBatch(sqlProductInsert28);
             stmt.addBatch(sqlProductInsert29);
             stmt.addBatch(sqlProductInsert30);
+            stmt.addBatch(sqlProductInsert31);
+            stmt.addBatch(sqlProductInsert32);
+            stmt.addBatch(sqlProductInsert33);
+            stmt.addBatch(sqlProductInsert34);
+            stmt.addBatch(sqlProductInsert35);
+            stmt.addBatch(sqlProductInsert36);
+            stmt.addBatch(sqlProductInsert37);
+            stmt.addBatch(sqlProductInsert38);
+            stmt.addBatch(sqlProductInsert39);
+            stmt.addBatch(sqlProductInsert40);
+            stmt.addBatch(sqlProductInsert41);
+            stmt.addBatch(sqlProductInsert42);
+            stmt.addBatch(sqlProductInsert43);
+            stmt.addBatch(sqlProductInsert44);
+            stmt.addBatch(sqlProductInsert45);
+            stmt.addBatch(sqlProductInsert46);
+            stmt.addBatch(sqlProductInsert47);
+            stmt.addBatch(sqlProductInsert48);
+            stmt.addBatch(sqlProductInsert49);
+            stmt.addBatch(sqlProductInsert50);
+            stmt.addBatch(sqlProductInsert51);
+            stmt.addBatch(sqlProductInsert52);
+            stmt.addBatch(sqlProductInsert53);
+            stmt.addBatch(sqlProductInsert54);
+            stmt.addBatch(sqlProductInsert55);
+            stmt.addBatch(sqlProductInsert56);
+            stmt.addBatch(sqlProductInsert57);
+            stmt.addBatch(sqlProductInsert58);
+            stmt.addBatch(sqlProductInsert59);
+            stmt.addBatch(sqlProductInsert60);
+
 
 		    stmt.executeBatch();
 			
