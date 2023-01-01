@@ -74,7 +74,7 @@ function future_date()
     if(year == currentDate.getFullYear())
     {
         console.log("current year");
-        if($("#month").val() >= (currentDate.getMonth()+1) && $("#day").val() > currentDate.getDate())
+        if($("#month").val() >= (currentDate.getMonth()+1) && $("#day").val() >= currentDate.getDate())
         {
             console.log("future");
             var d = currentDate.getDate();

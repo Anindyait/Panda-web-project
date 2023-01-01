@@ -6,6 +6,9 @@
 			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
 			crossorigin="anonymous">
 	</script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="Bootstrap/CSS/style1.css">
+    
 	<script>
 		$(function () {
 			$("#header").load("header.html");
@@ -71,7 +74,7 @@ function future_date()
     if(year == currentDate.getFullYear())
     {
         console.log("current year");
-        if($("#month").val() >= (currentDate.getMonth()+1) && $("#day").val() > currentDate.getDate())
+        if($("#month").val() >= (currentDate.getMonth()+1) && $("#day").val() >= currentDate.getDate())
         {
             console.log("future");
             var d = currentDate.getDate();
@@ -128,15 +131,11 @@ function change_month(select) {
     $(day).val(val);
 }
     </script>
-
-
 	
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sign Up</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="Bootstrap/CSS/style1.css">
-    
+    <link rel="icon" href="Pics/panda.png">
+
 </head>
 <body>
 

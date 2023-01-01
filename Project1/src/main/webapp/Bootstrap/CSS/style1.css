@@ -452,7 +452,7 @@ a:hover{
 .size-selector{
 	font-size: 18px;
 	border-radius: 100px;
-	padding: 7px 1px;
+	padding: 7px 0px;
 	margin: 5px;
 	width: 60px;
 }

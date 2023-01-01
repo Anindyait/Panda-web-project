@@ -81,7 +81,7 @@
 
                             <!--size selectors-->
                             <div class="size-selector-container">
-                            											<!-- disable size if not available through servlet -->
+                            		<!--									
                                 <input type="radio" class="btn-check" <%= request.getAttribute("disabled_xs") %> name="btnradio" id="btnradio_xs" autocomplete="off">
                                 <label class="btn btn-outline-dark size-selector" for="btnradio_xs">XS</label>
                             
@@ -96,7 +96,12 @@
 
                                 <input type="radio" class="btn-check" <%= request.getAttribute("disabled_xl") %> name="btnradio" id="btnradio_xl" autocomplete="off">
                                 <label class="btn btn-outline-dark size-selector" for="btnradio_xl">XL</label>
+                            -->
+
+                                <%= request.getAttribute("size_selectors") %>
                             </div>
+
+                            
 
                             <!--Description-->
                             <div class="desc overflow-auto">
