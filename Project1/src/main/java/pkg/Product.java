@@ -30,6 +30,9 @@ public class Product extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     
+    String sizeSelectorTemplate = "<input type=\"radio\" class=\"btn-check\" name=\"btnradio\" id=\"!SIZE!\" autocomplete=\"off\">\r\n"
+    		+ "                                    <label class=\"btn btn-outline-dark size-selector\" for=\"!SIZE!\" >!SIZE!</label>";
+    
     //Method to get product info from pid.
     protected void getProductDetails(String p_id, HttpServletRequest request)
     {
@@ -65,7 +68,18 @@ public class Product extends HttpServlet {
 				request.setAttribute("img1", image[0]);
 				request.setAttribute("img2", image[1]);
 
-
+				String allSizes = rs.getString("sizes");
+				String[] size = allSizes.split(",");
+				String allSizeSelectors = " ";
+				
+				for(int i=0; i < size.length; i++)
+				{
+					String eachSizeSelector = sizeSelectorTemplate.replaceAll("!SIZE!", size[i]);
+					
+					allSizeSelectors = allSizeSelectors.concat(eachSizeSelector);
+				}
+				
+				request.setAttribute("size_selectors", allSizeSelectors);
 				
 			}
 			

@@ -29,9 +29,7 @@ public class ProductList extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     
-    //For checking whether the page is loading for the 1st time
-    //Otherwise reloading will show all products again.
-    boolean firstTimeLoad = true;
+    
     
     
     
@@ -53,12 +51,13 @@ public class ProductList extends HttpServlet {
     
     
     //Will have all the Cards, can't be null.
-    String allProductCards = " ";
+    String allProductCards;
 	
     
     //Method to populate the above string from DBMS.
     protected void GetProductList()
     {
+    	allProductCards = " ";
     	try {
     		Connection con;
     		PreparedStatement pstm;
@@ -113,11 +112,9 @@ public class ProductList extends HttpServlet {
 		PrintWriter pw = response.getWriter();
 		
 		//Check for 1st time load.
-		if(firstTimeLoad)
-		{
-			firstTimeLoad = false;
-			GetProductList();
-		}
+		
+		GetProductList();
+		
 		
 		//putting the Cards in productList.jsp.
 		request.setAttribute("product_cards", allProductCards);
