@@ -98,6 +98,19 @@ public class Startup extends HttpServlet {
 					+ "cat4 varchar(255), "
 					+ "primary key(product_id))";
 			
+			//Create cart_table if it does not exist
+			String sqlCartOrderCreate = "create table if not exists cart_table"
+					+ "(cart_id int not null,"
+					+ "user_id int not null,"
+					+ "product_id varchar(15) not null, "
+					+ "quantity int not null, "
+					+ "size varchar(30) not null, "
+					+ "order_id varchar(255), "
+					+ "d_date date,"
+					+ "foreign key(user_id) references user_table(user_id), "
+					+ "foreign key(product_id) references product_table(product_id), "
+					+ "primary key(cart_id,user_id,product_id))";
+		
 			//Inserting products into the product_table
 			String sqlProductInsert1 = "insert ignore into product_table "
 					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
@@ -518,6 +531,7 @@ public class Startup extends HttpServlet {
 		    
 			stmt.addBatch(sqlUserCreate);
             stmt.addBatch(sqlProductCreate);
+            stmt.addBatch(sqlCartOrderCreate);
             
             stmt.addBatch(sqlProductInsert1);
             stmt.addBatch(sqlProductInsert2);
