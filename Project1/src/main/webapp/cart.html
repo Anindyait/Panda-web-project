@@ -32,6 +32,7 @@
 			$("#footer").load("footer.html");
 		});
 	</script>
+    
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="Pics/panda.png">
     
@@ -61,21 +62,15 @@
                                         <h1 style = "font-size:21px">Hoodie</h1>
                                         <h3 class="subtitle-cart">Size</h3>                        
                                     </div>
-                                   <body>
-									<input id=demoInput1 type=number min=1 max=6>
-									<button onclick="increment()">+</button>
-									<button onclick="decrement()">-</button>
-									<script>
-									   function increment() {
-									      document.getElementById('demoInput1').stepUp();
-									   }
-									   function decrement() {
-									      document.getElementById('demoInput1').stepDown();
-									   }
-									</script>
-									</body>
+                                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">                                    
+                                        <input id="form1" min="1" max = "6" name="quantity" value="1" type="number"
+                                        class="form-control form-control-sm"/>									
+									</div>       
+                                    <div class = prices>
+                                        <div id="price">20</div>
+                                    </div>                             
                                     <div class="prices">
-                                        <div class="amount">$2.99</div>
+                                        <div class="amount">0</div>
                                         <div class="save"><u>Save for later</u></div>
                                         <div class="remove"><u>Remove</u></div>
                                     </div>
@@ -88,25 +83,26 @@
                                         <h1 style = "font-size:21px">Hoodie</h1>
                                         <h3 class="subtitle-cart">Size</h3>                        
                                     </div>
-                                    <body>
-									<input id=demoInput2 type=number min=1 max=6>
-									<button onclick="increment()">+</button>
-									<button onclick="decrement()">-</button>
-									<script>
-									   function increment() {
-									      document.getElementById('demoInput2').stepUp();
-									   }
-									   function decrement() {
-									      document.getElementById('demoInput2').stepDown();
-									   }
-									</script>
-									</body>
-                                    <div class="prices">
-                                        <div class="amount">$2.99</div>
+                                    <div id = qtycol class="col-md-3 col-lg-3 col-xl-2 d-flex">                                    
+                                        <input id="form1" min="1" max = "6" name="quantity" value="1" type="number"
+                                        class="form-control form-control-sm"/>		
+                                        
+                                        
+									</div>                             
+                                    <div class = prices>
+                                        <div id="price">20</div>
+                                    </div>
+									
+                                    <div class="prices">                                 
+                                                                
+                                                                       
+                                        <div id="amount">0</div>
                                         <div class="save"><u>Save for later</u></div>
                                         <div class="remove"><u>Remove</u></div>
                                     </div>
+                                 
                                 </div>
+                                
                                 <div class="Cart-Items">
                                     <div class="image-box">
                                         <img src="Pics/imgs/2b.jpg" style= "height: 120px">
@@ -114,29 +110,27 @@
                                     <div class="about-cart">
                                         <h1 style = "font-size:21px">Hoodie</h1>
                                         <h3 class="subtitle-cart">Size</h3>                        
+                                    </div>                                   
+                                    								
+									<div class="col-md-3 col-lg-3 col-xl-2 d-flex" >                                   
+                                        <input id="form1" min="1" max = "6" name="quantity" value="1" type="number"
+                                        class="form-control form-control-sm"/>
+                                    									
+									</div>
+                                    <div class = prices>
+                                        <div id="price">20</div>
                                     </div>
-                                    
-                                    <body>
-									<input id=demoInput3 type=number min=1 max=6>
-									<button onclick="increment()">+</button>
-									<button onclick="decrement()">-</button>
-									<script>
-									   function increment() {
-									      document.getElementById('demoInput3').stepUp();
-									   }
-									   function decrement() {
-									      document.getElementById('demoInput3').stepDown();
-									   }
-									</script>
-									</body>
                                     <div class="prices">
-                                        <div class="amount">$2.99</div>
+                                        <div class="amount">0</div>
                                         <div class="save"><u>Save for later</u></div>
                                         <div class="remove"><u>Remove</u></div>
                                     </div>
-                                </div>
+                                </div>                                
 
                             </div>
+                                                  
+                                                                                                                  
+                            </script>
                             
                         </div>
                     </div>
