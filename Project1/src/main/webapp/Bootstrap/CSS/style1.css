@@ -984,21 +984,20 @@ a:hover{
 	color: #202020;
 	cursor: pointer;
    }
-
-.Header-cart{
+<<<<<<< Updated upstream
+=======
+   .Header-cart{
 	margin: auto;
 	width: 90%;
 	height: 15%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-}
-
-.Heading-cart{
+   }
+   .Heading-cart{
 	font-size: 20px;
-	font-family: 'Open Sans';
+	font-family: ‘Open Sans’;
 	font-weight: 700;
 	color: #2F3841;
-}
- 
-
+   }
+>>>>>>> Stashed changes
