@@ -34,7 +34,7 @@ public class Product extends HttpServlet {
     		+ "                                    <label class=\"btn btn-outline-dark size-selector\" for=\"!SIZE!\" >!SIZE!</label>";
     
     //Method to get product info from pid.
-    protected void getProductDetails(String p_id, HttpServletRequest request)
+    protected boolean getProductDetails(String p_id, HttpServletRequest request)
     {
     	try {
     		
@@ -61,8 +61,15 @@ public class Product extends HttpServlet {
 				//Getting price in String with the intent of remove dat ugly ".0".
 				String price = rs.getString("price");
 				
+				String title = rs.getString("p_name");
+				
+				System.out.println(title);
+				title = title.replace("\'", "1");
+				System.out.println(title);
+
+				
 				//Putting data in the jsp page.
-				request.setAttribute("title", rs.getString("p_name"));
+				request.setAttribute("title", title);
 				request.setAttribute("price", price.substring(0, price.length() - 2));
 				request.setAttribute("desc", rs.getString("descr"));
 				request.setAttribute("img1", image[0]);
@@ -81,9 +88,13 @@ public class Product extends HttpServlet {
 				
 				request.setAttribute("size_selectors", allSizeSelectors);
 				
+				return true;
+				
 			}
 			
+			
     	}catch(Exception e) {System.out.println(e);}
+		return false;
     }
 
 	
@@ -100,11 +111,17 @@ public class Product extends HttpServlet {
 		String p_id = request.getParameter("pid");
 		
 		
-		getProductDetails(p_id, request);
-		
-		//Loading product.jsp will all the data.
-		request.getRequestDispatcher("product.jsp").include(request, response);
+		if(getProductDetails(p_id, request))
+		{
+			//Loading product.jsp will all the data.
+			request.getRequestDispatcher("product.jsp").include(request, response);
+		}
+		else
+		{
+			request.getRequestDispatcher("error.html").include(request, response);
 
+		}
+			
 		
         pw.close();
 		

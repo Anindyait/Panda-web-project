@@ -38,6 +38,35 @@
   ::-webkit-scrollbar-thumb:hover {
 	background: #555; 
   }
+
+  /*Sick CSS Animations*/
+
+@keyframes fadeIn {
+	0% { opacity: 0;}
+	100% { opacity: 1;}
+  }
+
+  @keyframes fadeUp {
+	0% { opacity: 0; 
+		transform: translate(0, 10vh);}
+	100% { opacity: 1;
+		transform: translate(0, 0); }
+  }
+
+  .tag {
+	opacity: 0;
+	transform: translate(0, 15vh);
+	transition: all 1s;
+  }
+
+  .tag.visible {
+	opacity: 1;
+	transform: translate(0, 0);
+  }
+
+
+/*End of Sick Animations*/
+
   
 td,th{
 	/*border: 1px solid black;*/
@@ -87,6 +116,7 @@ a:hover{
 	box-shadow: 0px 0px 30px rgba(0,0,0,0.15);
 	border-radius: 20px;
 	transition: 0.1s;
+	animation: fadeUp 1s;
 	/*display:inline-flex;*/
 }
 
@@ -94,8 +124,9 @@ a:hover{
 
 
 .fit{
-	width:fit-content;
+	width:100%;
 	padding: 37px 0px 27px 0px;
+	
 }
 
 	.cardnew:hover {
@@ -139,6 +170,7 @@ a:hover{
 .Title{
 	font-size:30px;
 	font-family: Open Sans Bold;
+	padding-top: 10px;
 }
 
 .Price{
@@ -333,6 +365,7 @@ a:hover{
 
 .list-padding{
 	padding: 0px 10px 30px 10px;
+	animation: fadeUp 1s;;
 }
 
 .card-holder{
@@ -451,7 +484,7 @@ a:hover{
 .size-selector{
 	font-size: 18px;
 	border-radius: 100px;
-	padding: 7px 1px;
+	padding: 7px 0px;
 	margin: 5px;
 	width: 60px;
 }
@@ -697,33 +730,7 @@ a:hover{
 	text-align: center;
 }
 
-/*Sick CSS Animations*/
 
-@keyframes fadeIn {
-	0% { opacity: 0;}
-	100% { opacity: 1;}
-  }
-
-  @keyframes fadeUp {
-	0% { opacity: 0; 
-		transform: translate(0, 10vh);}
-	100% { opacity: 1;
-		transform: translate(0, 0); }
-  }
-
-  .tag {
-	opacity: 0;
-	transform: translate(0, 15vh);
-	transition: all 1s;
-  }
-
-  .tag.visible {
-	opacity: 1;
-	transform: translate(0, 0);
-  }
-
-
-/*End of Sick Animations*/
 
 .index-link{
 	padding: 8px 25px 8px 25px;
@@ -908,4 +915,13 @@ a:hover{
 	padding : 10px 10px 10px 70px;
 	font-size : 2rem;
 	
+}
+
+.sad-panda{
+	width: 400px;
+	border-radius: 50%;
+
+	background-color: #acfcac;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+
 }
