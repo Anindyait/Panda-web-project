@@ -110,6 +110,25 @@ public class Startup extends HttpServlet {
 					+ "foreign key(user_id) references user_table(user_id), "
 					+ "foreign key(product_id) references product_table(product_id), "
 					+ "primary key(cart_id,user_id,product_id))";
+			
+			//Create admin_table if it does not exist
+			String sqlAdminCreate = "create table if not exists admin_table"
+					+ "(admin_id int auto_increment not null, "
+					+ "first_name varchar(255) not null, "
+					+ "last_name varchar(255) not null, "
+					+ "email varchar(255) unique not null, "
+					+ "phone varchar(30) unique not null, "
+					+ "password varchar(255) not null, "
+					+ "primary key(admin_id))";
+			
+			//Declaring existing admins
+			String sqlAdminInsert1 = "insert ignore into admin_table (first_name, last_name, email, phone, password)"
+					+ "values('Mike', 'Hunt', 'mikehunt@gmail.com', '6666766890', "
+					+ "'1000:5b42403736656435353238:1964f70cb9fc48c6ca92697072d776f7f85cc0089817485d9a3e72b833186724bd6231da03c6d7b4e67e2df60acf3cc6242cdd7823fb7b17e5c90d9747986c0f')";
+					//Hashed password ThePanda23*
+			String sqlAdminInsert2 = "insert ignore into admin_table (first_name, last_name, email, phone, password)"
+					+ "values('Ford', 'Prefect', 'fordprefect@gmail.com', '9666766890', "
+					+ "'1000:5b42403736656435353238:1964f70cb9fc48c6ca92697072d776f7f85cc0089817485d9a3e72b833186724bd6231da03c6d7b4e67e2df60acf3cc6242cdd7823fb7b17e5c90d9747986c0f')";		
 		
 			//Inserting products into the product_table
 			String sqlProductInsert1 = "insert ignore into product_table "
@@ -532,6 +551,10 @@ public class Startup extends HttpServlet {
 			stmt.addBatch(sqlUserCreate);
             stmt.addBatch(sqlProductCreate);
             stmt.addBatch(sqlCartOrderCreate);
+            stmt.addBatch(sqlAdminCreate);
+            
+            stmt.addBatch(sqlAdminInsert1);
+            stmt.addBatch(sqlAdminInsert2);
             
             stmt.addBatch(sqlProductInsert1);
             stmt.addBatch(sqlProductInsert2);
