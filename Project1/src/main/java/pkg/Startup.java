@@ -179,24 +179,24 @@ public class Startup extends HttpServlet {
 					+ "This comes with corset style hoodie, crop top & a trouser.','Female,Others','Hoodies,Tops,Trousers','Winter Collection')";
 
 			String sqlProductInsert8 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0008','Tailored Aesthetics Mens Causal Loafer',1699.00,"
-					+ "'35,36,40','10,10,10','imgs/8a,imgs/8b','Material : Synthetic leather','Male,Others','Shoes-Loafers')";
+					+ "'35,36,40','10,10,10','imgs/8a,imgs/8b','Material : Synthetic leather','Male,Others','Shoes-Loafers','Formal Clothing Range')";
 
 			String sqlProductInsert9 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0009','Printed Buckle Tied Chunky Style Loafer',1699.00,"
-					+ "'35,36,37,40','10,10,10,10','imgs/9a,imgs/9b','Material : Synthetic leather','Male,Female,Others','Shoes-Loafers')";
+					+ "'35,36,37,40','10,10,10,10','imgs/9a,imgs/9b','Material : Synthetic leather','Male,Female,Others','Shoes-Loafers','Formal Clothing Range')";
 
 			String sqlProductInsert10 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0010','Criss Cross Details Men''s Tan Shoe',1599.00,"
-					+ "'35,37,40,42','10,10,10,10','imgs/10a,imgs/10b','Material : Synthetic leather','Male,Others','Shoes-Loafers')";
+					+ "'35,37,40,42','10,10,10,10','imgs/10a,imgs/10b','Material : Synthetic leather','Male,Others','Shoes-Loafers','Formal Clothing Range')";
 
 			String sqlProductInsert11 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0011','Brushed Olive Color Men''s Loafer',1699.00,"
-					+ "'35,37,40,42','10,10,10,10','imgs/11a,imgs/11b','Material : Synthetic leather','Male,Others','Shoes-Loafers')";
+					+ "'35,37,40,42','10,10,10,10','imgs/11a,imgs/11b','Material : Synthetic leather','Male,Others','Shoes-Loafers','Formal Clothing Range')";
 
 			String sqlProductInsert12 = "insert ignore into product_table "
 					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
@@ -357,9 +357,9 @@ public class Startup extends HttpServlet {
 					+ "'Winter Collection,Valentine''s Day Collection,Best Sellers')";
 			
 			String sqlProductInsert34 = "insert ignore into product_table "
-					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
 					+ "values ('P0034','Black Textured Slingback Men''s Shoes',1499.00,"
-					+ "'35,36,37,40','10,10,10,10','imgs/34a,imgs/34b','Material : Synthetic leather','Male,Others','Shoes-Loafers')";
+					+ "'35,36,37,40','10,10,10,10','imgs/34a,imgs/34b','Material : Synthetic leather','Male,Others','Shoes-Loafers','Formal Clothing Range')";
 			
 			String sqlProductInsert35 = "insert ignore into product_table "
 					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2) "
@@ -545,6 +545,127 @@ public class Startup extends HttpServlet {
 					+ "'XS,S,M,XL','10,10,10,10','imgs/60a,imgs/60b','Material: Ribbed. Wear this pretty, sunshine yellow top"
 					+ " on summer/spring days. Can double as a pretty modern saree blouse!','Female,Others','Tops','Saraswati Puja Collection')";
 
+			String sqlProductInsert61 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0061','Plaid Black & White Tailored Suit',3999.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/61a,imgs/61b','Material : Polyester Printed Plaid. "
+					+ "Perfect for a casual formal look to impress your peers!','Male,Others','Suits','Formal Clothing Range')";
+			
+			String sqlProductInsert62 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0062','Mellow Blue Formal Blazer',4299.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/62a,imgs/62b','Material : Linen. "
+					+ "Perfect for an occasional formal look to impress your peers with soft tones!','Male,Others','Suits','Formal Clothing Range')";
+			
+			String sqlProductInsert63 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0063','Textured Men''s Wear Suit with Tailored Trousers',6999.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/63a,imgs/63b','Material : Polyester Viscose. "
+					+ "Official suitwear in the workplace to impress people by your presence!','Male,Others','Suits,Trousers','Formal Clothing Range')";
+			
+			String sqlProductInsert64 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0064','Tuxedo Vibe Suit with Tailored Trousers',7999.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/64a,imgs/64b','Material : Cotton Blend. "
+					+ "Official suitwear in the workplace to impress people by your presence! "
+					+ "Doubles as a tux for wearing to weddings.','Male,Others','Suits,Trousers','Formal Clothing Range')";
+			
+			String sqlProductInsert65 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0065','Buttoned Up Black Suit with Tailor Fit Trousers',7299.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/65a,imgs/65b','Material : Cotton Blend. "
+					+ "Official suitwear in the workplace to impress people by your presence! "
+					+ "Doubles as a tux for wearing to weddings.','Male,Others','Suits,Trousers','Formal Clothing Range')";
+			
+			String sqlProductInsert66 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0066','Mellow Yellow Pure Linen Suit',1999.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/66a,imgs/66b','Material : Linen. "
+					+ "Perfect for an occasional formal look to impress your peers with soft tones!','Male,Others','Suits','Formal Clothing Range')";
+			
+			String sqlProductInsert67 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0067','Velvet Black Top Suit',2999.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/67a,imgs/67b','Material : Velvet. "
+					+ "Perfect for a wedding formal look to standout in a crowd of wedding hassle!','Male,Others','Suits','Formal Clothing Range')";
+			
+			String sqlProductInsert68 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0068','Classic White Shirt',899.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/68a,imgs/68b','Material : Cotton. "
+					+ "Classic Formal Shirt that''s a staple in everyone''s wardrobe','Male,Others','Shirts','Formal Clothing Range')";
+
+			String sqlProductInsert69 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0069','Classic Black Shirt',899.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/69a,imgs/69b','Material : Cotton. "
+					+ "Classic Formal Shirt that''s a staple in everyone''s wardrobe','Male,Others','Shirts','Formal Clothing Range')";
+
+			String sqlProductInsert70 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0070','Formal Checked Grey Trousers',2799.00,"
+					+ "'32,34,36,38,40','10,10,10,10,10','imgs/70a,imgs/70b','Material : Viscose. "
+					+ "Comfortable yet incredibly formal looking work trousers that''s a staple in everyone''s wardrobe','Male,Others','Trousers','Formal Clothing Range')";
+
+			String sqlProductInsert71 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0071','Formal Slim Fit Black Trousers',1999.00,"
+					+ "'32,34,36,38,40','10,10,10,10,10','imgs/71a,imgs/71b','Material : Polyester Viscose. "
+					+ "Comfortable yet incredibly formal looking work trousers that''s a staple in everyone''s wardrobe','Male,Others','Trousers','Formal Clothing Range')";
+
+			String sqlProductInsert72 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0072','Formal Slim Fit Light Grey Trousers',1799.00,"
+					+ "'32,34,36,38,40','10,10,10,10,10','imgs/72a,imgs/72b','Material : Linen. "
+					+ "Comfortable yet incredibly formal looking work trousers that''s a staple in everyone''s wardrobe','Male,Others','Trousers','Formal Clothing Range')";
+
+			String sqlProductInsert73 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0073','Formal Dark Grey Trousers',999.00,"
+					+ "'32,34,36,38,40','10,10,10,10,10','imgs/73a,imgs/73b','Material : Linen. "
+					+ "Comfortable yet incredibly formal looking work trousers that''s a staple in everyone''s wardrobe','Male,Others','Trousers','Formal Clothing Range')";
+
+			String sqlProductInsert74 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0074','Slim Fit Navy Blue Trousers',1199.00,"
+					+ "'32,34,36,38,40','10,10,10,10,10','imgs/74a,imgs/74b','Material : Cotton Stretch. "
+					+ "Comfortable yet incredibly formal looking work trousers that''s a staple in everyone''s wardrobe','Male,Others','Trousers','Formal Clothing Range')";
+
+			String sqlProductInsert75 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0075','Coffee Cream Formal Blazer',3799.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/75a,imgs/75b','Material : Cotton. "
+					+ "Perfect for an occasional formal look to impress your peers with soft tones!','Female,Others','Suits','Formal Clothing Range')";
+			
+			String sqlProductInsert76 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0076','Textured and Collared Grey Formal Blazer',4299.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/76a,imgs/76b','Material : Cotton. "
+					+ "Official suitwear in the workplace to impress people by your presence!','Female,Others','Suits','Formal Clothing Range')";
+			
+			String sqlProductInsert77 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0077','Stylish Olive Green Blazer',2499.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/77a,imgs/77b','Material : Polyester. "
+					+ "Perfect for an occasional formal look to impress your peers with dark tones!','Female,Others','Suits','Formal Clothing Range')";
+			
+			String sqlProductInsert78 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0078','Stylish Bark Shaded Brown Blazer',2199.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/78a,imgs/78b','Material : Polyester. "
+					+ "Perfect for an occasional formal look to impress your peers with dark tones!','Female,Others','Suits','Formal Clothing Range')";
+			
+			String sqlProductInsert79 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0079','Stylish Black Blazer',2499.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/79a,imgs/79b','Material : Polyester. "
+					+ "Perfect for an occasional formal look to impress your peers with dark tones!','Female,Others','Suits','Formal Clothing Range')";
+			
+			String sqlProductInsert80 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0080','Stylish Checked and Collared Grey Suit',2499.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/80a,imgs/80b','Material : Linen. "
+					+ "Perfect for an occasional formal look to impress your peers!','Female,Others','Suits','Formal Clothing Range')";
 
 		    Statement stmt = con.createStatement();
 		    
@@ -616,7 +737,26 @@ public class Startup extends HttpServlet {
             stmt.addBatch(sqlProductInsert58);
             stmt.addBatch(sqlProductInsert59);
             stmt.addBatch(sqlProductInsert60);
-
+            stmt.addBatch(sqlProductInsert61);
+            stmt.addBatch(sqlProductInsert62);
+            stmt.addBatch(sqlProductInsert63);
+            stmt.addBatch(sqlProductInsert64);
+            stmt.addBatch(sqlProductInsert65);
+            stmt.addBatch(sqlProductInsert66);
+            stmt.addBatch(sqlProductInsert67);
+            stmt.addBatch(sqlProductInsert68);
+            stmt.addBatch(sqlProductInsert69);
+            stmt.addBatch(sqlProductInsert70);
+            stmt.addBatch(sqlProductInsert71);
+            stmt.addBatch(sqlProductInsert72);
+            stmt.addBatch(sqlProductInsert73);
+            stmt.addBatch(sqlProductInsert74);
+            stmt.addBatch(sqlProductInsert75);
+            stmt.addBatch(sqlProductInsert76);
+            stmt.addBatch(sqlProductInsert77);
+            stmt.addBatch(sqlProductInsert78);
+            stmt.addBatch(sqlProductInsert79);
+            stmt.addBatch(sqlProductInsert80);
 
 		    stmt.executeBatch();
 			
