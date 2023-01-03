@@ -61,7 +61,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="ProductList" class="nav-link nav-link1 active">Products</a>
+                        <a href="ProductList?category=All Panda Shop Products" class="nav-link nav-link1 active">Products</a>
                     </li>
                     
                     <div class="nav-item dropdown">

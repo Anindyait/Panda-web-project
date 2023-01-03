@@ -72,7 +72,7 @@ public class ProductList extends HttpServlet {
 			
 			
 			//The query has no where now, will change in near future.
-			if(cat.equals("All"))
+			if(cat.equals("All Panda Shop Products"))
 				pstm = con.prepareStatement("select product_id, p_name, price, imgs from product_table order by product_id DESC;");
 			
 			else if(cat.equals("New Arrivals"))
