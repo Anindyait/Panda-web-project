@@ -61,7 +61,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link nav-link1 active">Products</a>
+                        <a href="ProductList" class="nav-link nav-link1 active">Products</a>
                     </li>
                     
                     <div class="nav-item dropdown">

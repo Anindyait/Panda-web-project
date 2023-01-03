@@ -51,7 +51,7 @@
     <div class="container-fluid">
         <div id="header"></div>
    	    <div class="header-adjustment"></div>
-           <div class="product-category">Products</div>
+           <div class="product-category"><%= request.getAttribute("category_name")%></div>
            <br>
            <br>
         <div class="card-container">

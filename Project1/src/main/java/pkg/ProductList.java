@@ -55,8 +55,12 @@ public class ProductList extends HttpServlet {
 	
     
     //Method to populate the above string from DBMS.
-    protected void GetProductList()
+    protected void GetProductList(String cat)
     {
+    	String catLike = Utilities.LikeString(cat);
+    	
+		System.out.println(cat);
+
     	allProductCards = " ";
     	try {
     		Connection con;
@@ -64,11 +68,32 @@ public class ProductList extends HttpServlet {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); //DriverManager is a class 
+			pstm = null;
+			
 			
 			//The query has no where now, will change in near future.
-			pstm = con.prepareStatement("select product_id, p_name, price, imgs from product_table;");
+			if(cat.equals("All"))
+				pstm = con.prepareStatement("select product_id, p_name, price, imgs from product_table order by product_id DESC;");
+			
+			else if(cat.equals("New Arrivals"))
+				pstm = con.prepareStatement("select product_id, p_name, price, imgs from product_table order by product_id DESC limit 10;");
+
+			
+			else {
+
+				
+				System.out.println(catLike);
+
+				
+				pstm = con.prepareStatement("select product_id, p_name, price, imgs from product_table where cat3 like(?) or cat2 like(?)");
+				pstm.setString(1, catLike);
+				pstm.setString(2, catLike);
+			}
+			
 			
 			ResultSet rs = pstm.executeQuery();
+			
+			
 			
 			while(rs.next())
 			{
@@ -111,13 +136,19 @@ public class ProductList extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
 		
+		String cat = "All";
+		
+		cat = request.getParameter("category");
+		
 		//Check for 1st time load.
 		
-		GetProductList();
+		GetProductList(cat);
 		
 		
 		//putting the Cards in productList.jsp.
 		request.setAttribute("product_cards", allProductCards);
+		request.setAttribute("category_name", cat);
+
 		request.getRequestDispatcher("productList.jsp").include(request, response);
 		
 		

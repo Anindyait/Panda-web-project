@@ -42,5 +42,14 @@ public class Utilities{
 		return user_id;
     }
     
+    protected static String LikeString(String s)
+    {
+    	String temp = "%";
+    	temp = temp.concat(s);
+    	temp = temp.concat("%");
+    	
+    	return temp;
+    }
+    
 
 }
