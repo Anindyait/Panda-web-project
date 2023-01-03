@@ -100,7 +100,7 @@ public class Startup extends HttpServlet {
 			
 			//Create cart_table if it does not exist
 			String sqlCartOrderCreate = "create table if not exists cart_table"
-					+ "(cart_id int not null,"
+					+ "(cart_id int auto_increment not null,"
 					+ "user_id int not null,"
 					+ "product_id varchar(15) not null, "
 					+ "quantity int not null, "
