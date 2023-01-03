@@ -320,6 +320,7 @@ Jan 01, 2023 21:38:09.934 [26204:984:0101/213809.934:ERROR:device_event_log_impl
 Jan 01, 2023 21:43:29.412 [28752:30396:0101/214329.411:ERROR:device_event_log_impl.cc(215)] [21:43:29.411] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Jan 01, 2023 22:01:16.615 [31812:32760:0101/220116.615:ERROR:device_event_log_impl.cc(215)] [22:01:16.615] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
 Jan 01, 2023 22:35:26.544 [16160:27968:0101/223526.544:ERROR:device_event_log_impl.cc(215)] [22:35:26.544] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
 Jan 01, 2023 22:35:51.272 [600:21448:0101/223551.272:ERROR:device_event_log_impl.cc(215)] [22:35:51.273] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
@@ -350,3 +351,5 @@ Jan 03, 2023 20:00:52.481 [9940:15860:0103/200052.480:ERROR:device_event_log_imp
 =======
 >>>>>>> Stashed changes
 Jan 03, 2023 20:57:13.120 [4632:8188:0103/205713.120:ERROR:device_event_log_impl.cc(215)] [20:57:13.120] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+=======
+>>>>>>> Stashed changes
