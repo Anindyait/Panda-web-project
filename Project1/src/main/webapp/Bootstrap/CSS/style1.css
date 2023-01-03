@@ -957,7 +957,7 @@ a:hover{
 .title-cart{
 	padding-top: 5px;
 	line-height: 10px;
-	font-size: 32px;
+	font-size: 21px;
 	font-weight: 800;
 	color: #202020;
    }
@@ -1074,3 +1074,33 @@ a:hover{
 
    
 
+   .Header-cart{
+	margin: auto;
+	width: 90%;
+	height: 15%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+   }
+   .Heading-cart{
+	font-size: 20px;
+	font-family: "Open Sans";
+	font-weight: 700;
+	color: #2F3841;
+   }
+
+   .qty-cart{
+	width: 50px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #ebfceb;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #202020;
+	cursor: pointer;
+   }
+   .prices{
+	height: 100%;
+	text-align: right;
+   }
