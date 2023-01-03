@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -32,6 +33,9 @@
 			$("#footer").load("footer.html");
 		});
 	</script>
+    <script src = "cart.js">
+
+    </script>
     
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="Pics/panda.png">
@@ -43,9 +47,9 @@
             <div id = "header"></div>
             <div class = "header-adjustment"></div>
             <br>
-            <div class = "row">
-                <div class = "col-sm-3"></div>
-                <div class = "col-sm-6">
+            <div class = "row justify-content-center">
+                
+                <div class = "col-md-6">
                 <div class = "container-fluid">
                     <div class = "about">
                         <div class = "about-head">
@@ -55,20 +59,25 @@
                                     <h5 class = "Action"> Remove All</h5>
                                 </div>
                                 <div class = "Cart-Items">
-                                    <div class="image-box">
-                                        <img src="Pics/imgs/1a.jpg" style= "height: 120px">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="image-box">
+                                                <img src="Pics/imgs/1a.jpg" style= "height: 120px">
+                                            </div>
+                                        </div>                                        
                                     </div>
+                                    
                                     <div class="about-cart">
                                         <h1 style = "font-size:21px">Hoodie</h1>
                                         <h3 class="subtitle-cart">Size</h3>                        
                                     </div>
                                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">                                    
-                                        <input id="form1" min="1" max = "6" name="quantity" value="1" type="number"
+                                        <input id="form1" min="1" max = "6" name="quantity" value="1" onchange = "calcTotal()" type="number"
                                         class="form-control form-control-sm"/>									
 									</div>       
-                                    <div class = prices>
-                                        <div id="price">20</div>
-                                    </div>                             
+                                    
+                                        <div class ="price">20</div>
+                                                               
                                     <div class="prices">
                                         <div class="amount">0</div>
                                         <div class="save"><u>Save for later</u></div>
@@ -76,36 +85,43 @@
                                     </div>
                                 </div>
                                 <div class="Cart-Items">
-                                    <div class="image-box">
-                                        <img src="Pics/imgs/1b.jpg" style= "height: 120px">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="image-box">
+                                                <img src="Pics/imgs/1b.jpg" style= "height: 120px">
+                                            </div>
+                                        </div>                                        
                                     </div>
                                     <div class="about-cart">
                                         <h1 style = "font-size:21px">Hoodie</h1>
                                         <h3 class="subtitle-cart">Size</h3>                        
                                     </div>
                                     <div id = qtycol class="col-md-3 col-lg-3 col-xl-2 d-flex">                                    
-                                        <input id="form1" min="1" max = "6" name="quantity" value="1" type="number"
-                                        class="form-control form-control-sm"/>		
+                                        <input id="form1" min="1" max = "6" name="quantity" value="1" type="number" onchange = "calcTotal()"                                    class="form-control form-control-sm"/>		
                                         
                                         
 									</div>                             
-                                    <div class = prices>
-                                        <div id="price">20</div>
-                                    </div>
+                                    
+                                        <div class = "price">20</div>
+                                   
 									
-                                    <div class="prices">                                 
-                                                                
-                                                                       
-                                        <div id="amount">0</div>
+                                    <div class="prices">                    
+                                        <div class="amount">0</div>
                                         <div class="save"><u>Save for later</u></div>
-                                        <div class="remove"><u>Remove</u></div>
+                                        <div class="remove"><u>Remove</u></div>            
+                                                                       
+                                        
                                     </div>
                                  
                                 </div>
                                 
                                 <div class="Cart-Items">
-                                    <div class="image-box">
-                                        <img src="Pics/imgs/2b.jpg" style= "height: 120px">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="image-box">
+                                                <img src="Pics/imgs/2a.jpg" style= "height: 120px">
+                                            </div>
+                                        </div>                                        
                                     </div>
                                     <div class="about-cart">
                                         <h1 style = "font-size:21px">Hoodie</h1>
@@ -113,24 +129,24 @@
                                     </div>                                   
                                     								
 									<div class="col-md-3 col-lg-3 col-xl-2 d-flex" >                                   
-                                        <input id="form1" min="1" max = "6" name="quantity" value="1" type="number"
+                                        <input id="form1" min="1" max = "6" name="quantity" value="1" type="number" onchange ="calcTotal()"
                                         class="form-control form-control-sm"/>
                                     									
 									</div>
-                                    <div class = prices>
-                                        <div id="price">20</div>
-                                    </div>
+                                    
+                                        <div class ="price">20</div>
+                                    
                                     <div class="prices">
                                         <div class="amount">0</div>
                                         <div class="save"><u>Save for later</u></div>
                                         <div class="remove"><u>Remove</u></div>
                                     </div>
-                                </div>                                
+                                </div>                              
 
                             </div>
                                                   
                                                                                                                   
-                            </script>
+                            
                             
                         </div>
                     </div>
@@ -140,4 +156,5 @@
 <div id="footer"></div>
 
 </body>
+
 </html>  
