@@ -1043,6 +1043,8 @@
 0:0:0:0:0:0:0:1 - - [01/Jan/2023:21:45:41 +0530] "GET /Project1/Pics/imgs/3b.jpg HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [01/Jan/2023:21:45:41 +0530] "GET /Project1/header.jsp HTTP/1.1" 200 5518
 0:0:0:0:0:0:0:1 - - [01/Jan/2023:21:45:41 +0530] "GET /Project1/Pics/icons8-male-user-50.png HTTP/1.1" 404 796
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 127.0.0.1 - - [01/Jan/2023:22:01:12 +0530] "GET / HTTP/1.1" 404 751
 0:0:0:0:0:0:0:1 - - [01/Jan/2023:22:01:15 +0530] "GET /Project1/ProductList HTTP/1.1" 200 23565
 0:0:0:0:0:0:0:1 - - [01/Jan/2023:22:01:15 +0530] "GET /Project1/header.jsp HTTP/1.1" 200 5518
@@ -1081,3 +1083,7 @@
 127.0.0.1 - - [01/Jan/2023:22:41:10 +0530] "GET / HTTP/1.1" 404 751
 0:0:0:0:0:0:0:1 - - [01/Jan/2023:22:41:12 +0530] "GET /Project1/Register HTTP/1.1" 200 14219
 0:0:0:0:0:0:0:1 - - [01/Jan/2023:22:41:12 +0530] "GET /Project1/Pics/icons8-male-user-50.png HTTP/1.1" 404 796
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
