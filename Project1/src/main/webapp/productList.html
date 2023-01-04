@@ -27,18 +27,24 @@
 	</script>
 
     <script>
-        function price_filter(){
-            var prices = document.getElementsByClassName("list-price");
-            var products = document.getElementsByClassName("list-padding");
+
+        var prices = document.getElementsByClassName("list-price");
+        var products = document.getElementsByClassName("list-padding");
+
+        function filter(){
+            var selected_size = document.getElementById("size_filter");
             var lp = document.getElementById("lower_price");
             var up = document.getElementById("upper_price");
-            for (var i = 0; i < prices.length; i++) {
+            for (var i = 0; i < prices.length; i++) 
+            {
 
                 if(Number(up.value) < Number(lp.value)){
-                    up.value = lp.value;
+                    up.value = lp.value+"00";
                 }
+                
+                
 
-                if (Number(prices[i].innerHTML.slice(1,-14)) > Number(up.value) || Number(prices[i].innerHTML.slice(1,-14)) < Number(lp.value))
+                if (((up.value!="" || lp.value!="") && Number(prices[i].innerHTML.slice(1,-14)) > Number(up.value)) || Number(prices[i].innerHTML.slice(1,-14)) < Number(lp.value) ||!products[i].dataset.sizes.includes(selected_size.value))
                 {
                     
                     products[i].style.display="none";
@@ -46,9 +52,20 @@
                 else {
                     products[i].style.display="block";
                 }
-                console.log(prices[i].innerHTML.slice(1,-14));
-            }
+                
         }
+    }
+
+    function sort()
+    {
+        var sort = document.getElementById("sort");
+        var http = new XMLHttpRequest();
+        console.log("Sorting...");
+        http.open("POST", "ProductList", true);
+        http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        var params = "sort=" + sort.value; // probably use document.getElementById(...).value
+        http.send(params);
+    }
 
 
     </script>
@@ -78,20 +95,56 @@
            <div class="product-category">Products</div>
            <br>
            <br>
+            <div class="row justify-content-center">
+                <div class="col" style="margin-bottom: 20px;">
+                    <div class="filters">
+                        <h6>Price Range</h6>
+                        
+                        <div class="row">
+                            <div class="col-6">
+                                <input name="lower_price" type = "number" class = "form-control"  id = "lower_price" min="100" placeholder="Min. Price" onchange = "filter()" required/>
+                            </div>
+                            <div class="col-6">
+                                <input name="upper_price" type = "number" class = "form-control"  id = "upper_price" min="100" placeholder="Max. Price" onchange = "filter()" required/>
+                            </div>
+                        </div>
+                        <br>
+                        
+                        <h6>Size</h6>
+                        <select id ="size_filter" class="form-select" name = "size_filter" onchange = "filter()" required>
+                            <option selected value="">All</option>
+                            <option value=",XS,">XS</option>
+                            <option value=",S,">S</option>
+                            <option value=",M,">M</option>
+                            <option value=",L,">L</option>
+                            <option value=",XL,">XL</option>
+                            <option value=",34,">34</option>
+                            <option value=",35,">35</option>
+                            <option value=",36,">36</option>
+                            <option value=",37,">37</option>
+                            <option value=",38,">38</option>
+                            <option value=",39,">39</option>
+                            <option value=",40,">40</option>
+                            <option value=",41,">41</option>
+                            <option value=",42,">42</option>
+                        </select>
+                        
+                        <br>
+                        
+                        <h6>Order by Price</h6>
+                        <select id ="sort" class="form-select" name = "sort" onchange = "sort()" required>
+                            <option selected value="" >All</option>
+                            <option value="asc"><a href="#">Low to High</a></option>
+                            <option value="desc">High to Low</option>
+                        </select>
+
+                    </div>
+                </div>
+           
+           
+        <div class="col-10">
         <div class="card-container">
-            <!--<input type="range" class="form-range" min="0" max="5" step="0.5" id="multi3">-->
-            
-                <input name="lower_price" type = "number" class = "form-control form-control-sm"  id = "lower_price" min="100" value="100" onchange = "price_filter()" required/>
-                <input name="upper_price" type = "number" class = "form-control form-control-sm"  id = "upper_price" min="100" value="2000" onchange = "price_filter()" required/>
-                <select id ="size_filter" class="form-select" name = "size_filter" onchange = "size_filter(this)" required>
-                    <option selected value="" disabled>Choose...</option>
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                </select>
-                <br>
-            
-            
+        
         <div class="row justify-content-center">
             
             <div class="col list-padding" data-sizes=",XS,S,">
@@ -134,7 +187,7 @@
                 </a>
             </div>
 
-            <div class="col list-padding">
+            <div class="col list-padding" data-sizes=",L,">
                 <a href="#4" class="product-link" data-toggle="tooltip" title="item 4!">
 
                 <div class="product">
@@ -147,10 +200,7 @@
                 </a>
             </div>
 
-
-
-
-            <div class="col list-padding">
+            <div class="col list-padding" data-sizes=",M,">
                 <a href="#1" class="product-link" data-toggle="tooltip" title="Item 1!">
                 <div class="product">
                     <img src="Pics/imgs/5a.jpg" class="card-img-top round" alt="...">
@@ -162,7 +212,7 @@
                 </a>
             </div>
             
-            <div class="col list-padding">
+            <div class="col list-padding" data-sizes=",M,">
                 <a href="#2" class="product-link" data-toggle="tooltip" title="Item 2!">
                     <div class="product">
                         <img src="Pics/imgs/6a.jpg" class="card-img-top round" alt="...">
@@ -174,7 +224,7 @@
                 </a>
             </div>
 
-            <div class="col list-padding">
+            <div class="col list-padding" data-sizes=",M,">
                 <a href="#3" class="product-link" data-toggle="tooltip" title="item 3!">
 
                 <div class="product">
@@ -187,7 +237,7 @@
                 </a>
             </div>
 
-            <div class="col list-padding">
+            <div class="col list-padding" data-sizes=",M,">
                 <a href="#4" class="product-link" data-toggle="tooltip" title="item 4!">
 
                 <div class="product">
@@ -203,9 +253,11 @@
 
         </div>
         </div>
+        </div>
     </div>
 
 
+    </div>
     </div>
     
     <div id="footer"></div>

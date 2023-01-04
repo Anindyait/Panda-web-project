@@ -8,6 +8,27 @@
 	</script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="Bootstrap/CSS/style1.css">
+   
+    <script>
+        function Add_to_Cart()
+        {
+            console.log("Add_to_Cart");
+            var http = new XMLHttpRequest();
+            http.open("POST", "Cart", true);
+            http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            var params = "param=" + "Hello"; // probably use document.getElementById(...).value
+            http.send(params);
+            
+            http.onreadystatechange = function() {
+                if (http.readyState == XMLHttpRequest.DONE) {
+                	console.log(http.response);
+                	var added = document.getElementById("cart-add");
+                    added.innerHTML = http.response;
+                }
+            }
+            
+        }
+    </script>
     
 	<script>
 		$(function () {
@@ -114,8 +135,9 @@
                                     <input type="button" value="Buy" class="btn btn-warning Buy" />
                                 </div>
                                 <div class="col-4">
-                                    <input type="button" value="Add to Cart" class="btn btn-outline-primary AddtoCart" />
+                                    <input type="button" value="Add to Cart" class="btn btn-outline-primary AddtoCart" onclick="Add_to_Cart()"/>
                                 </div>
+                                <p id="cart-add"></p>
                             </div>
                         </div>
 

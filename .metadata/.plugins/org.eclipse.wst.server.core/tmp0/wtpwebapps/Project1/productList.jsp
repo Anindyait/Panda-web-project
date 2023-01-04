@@ -35,6 +35,49 @@
     <link rel="stylesheet" href="Bootstrap/CSS/style1.css">
     
     <script>
+
+        var prices = document.getElementsByClassName("list-price");
+        var products = document.getElementsByClassName("list-padding");
+
+        function filter(){
+            var selected_size = document.getElementById("size_filter");
+            var lp = document.getElementById("lower_price");
+            var up = document.getElementById("upper_price");
+            for (var i = 0; i < prices.length; i++) 
+            {
+
+                if(Number(up.value) < Number(lp.value)){
+                    up.value = lp.value+"00";
+                }
+                
+                
+
+                if (((up.value!="" || lp.value!="") && Number(prices[i].innerHTML.slice(1,-14)) > Number(up.value)) || Number(prices[i].innerHTML.slice(1,-14)) < Number(lp.value) ||!products[i].dataset.sizes.includes(selected_size.value))
+                {
+                    
+                    products[i].style.display="none";
+                }
+                else {
+                    products[i].style.display="block";
+                }
+                
+        }
+    }
+
+    function sort()
+    {
+        var sort = document.getElementById("sort");
+        var http = new XMLHttpRequest();
+        http.open("GET", "ProductList", true);
+        http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        var params = "sort=" + sort.value; // probably use document.getElementById(...).value
+        http.send(params);
+    }
+
+
+    </script>
+
+    <script>
 		$(function () {
 			$("#header").load("header.jsp");
 			$("#footer").load("footer.html");
@@ -54,41 +97,71 @@
            <div class="product-category"><%= request.getAttribute("category_name")%></div>
            <br>
            <br>
-        <div class="card-container">
+        
             
         <div class="row justify-content-center">
-            
-            <!--
-            <div class="col list-padding">
-
-
-            	 to pass to servlet
-                <a href="ProductExperiment?title=Name of Product1&desc=Small desc of the product" class="product-link" data-toggle="tooltip" title="Item 1">
-
-                    <div class="product">
-
-                        <img src="Pics/1.webp" class="card-img-top round" alt="...">
-                        <div class="card-body" >
-                            <h5 class="list-title" style="text-overflow:clip;">Hailey Style Two Piece Hoodie In Brown</h5>
-                            <p class="card-text list-price"><span class="rupees">&#8377;</span>200<sup>.00</sup></p>
+            <div class="col" style="margin-bottom: 20px;">
+                <div class="filters">
+                    <h6>Price Range</h6>
+                    
+                    <div class="row">
+                        <div class="col-6">
+                            <input name="lower_price" type = "number" class = "form-control"  id = "lower_price" min="100" placeholder="Min." onchange = "filter()" required/>
+                        </div>
+                        <div class="col-6">
+                            <input name="upper_price" type = "number" class = "form-control"  id = "upper_price" min="100" placeholder="Max. onchange = "filter()" required/>
                         </div>
                     </div>
-                </a>
-               
+                    <br>
+                    
+                    <h6>Size</h6>
+                    <select id ="size_filter" class="form-select" name = "size_filter" onchange = "filter()" required>
+                        <option selected value="">All</option>
+                        <option value=",XS,">XS</option>
+                        <option value=",S,">S</option>
+                        <option value=",M,">M</option>
+                        <option value=",L,">L</option>
+                        <option value=",XL,">XL</option>
+                        <option value=",34,">34</option>
+                        <option value=",35,">35</option>
+                        <option value=",36,">36</option>
+                        <option value=",37,">37</option>
+                        <option value=",38,">38</option>
+                        <option value=",39,">39</option>
+                        <option value=",40,">40</option>
+                        <option value=",41,">41</option>
+                        <option value=",42,">42</option>
+                    </select>
+
+                    <br>
+                        
+                        <h6>Order by Price</h6>
+                        <select id ="sort" class="form-select" name = "sort" onchange = "sort()" required>
+                            <option selected value="" disabled>All</option>
+                            <option value="asc">Low to High</option>
+                            <option value="desc">High to Low</option>
+                        </select>
+
+                </div>
             </div>
-        -->
-            
       
 
-            <%= request.getAttribute("product_cards")%>
+            <div class="col-10">
+                <div class="card-container">
+                
+                    <div class="row justify-content-center">
+
+                        <%= request.getAttribute("product_cards")%>
     
 
+                
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        </div>
-        </div>
+
     </div>
-
-
     </div>
     
 <div id="footer"></div>

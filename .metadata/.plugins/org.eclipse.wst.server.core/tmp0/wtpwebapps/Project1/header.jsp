@@ -12,6 +12,28 @@
     <link rel="stylesheet" href="Bootstrap/CSS/style1.css">
 </head>
 <body>
+
+    <script>
+        function search_suggestions()
+        {
+            var text = document.getElementById("search-text");
+ 
+            var http = new XMLHttpRequest();
+             http.open("POST", "Search", true);
+             http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+             var params = "search=" + text.value; // probably use document.getElementById(...).value
+             http.send(params);
+ 
+             http.onreadystatechange = function() {
+                 if (http.readyState == XMLHttpRequest.DONE) {
+                     console.log(http.response);
+                     var added = document.getElementById("suggestions");
+                     added.innerHTML = http.response;
+                 }
+             }
+        }
+     </script>
+     
     <script>
         const icon = document.getElementsByClassName('.icon');
         const search = document.getElementsByClassName('.search');
@@ -88,13 +110,14 @@
             <i class="fa-solid fa-magnifying-glass fa-xl" data-bs-toggle="modal" data-bs-target="#searchModal"></i>
 
             <!--Search Modal-->
-            <div class="modal fade search" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+            <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
-                    <div class="modal-content search">
+                    <div class="modal-content search" style="border:none; background:rgb(255, 255, 255)">
+                        
                         <form>
                         <div class="row">
                             <div class="col">
-                                <input name="search-text" type = "text" class = "form-control"  id = "search-text" placeholder="Search..." required>
+                                <input name="search-text" type = "search" class = "form-control" id = "search-text" placeholder="Search..." onkeyup="search_suggestions()" required>
                             </div>
                             <div class="col-2">
                                 <button type="submit" class="btn bamboo rounded-5"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
@@ -105,8 +128,19 @@
                             </div>
                         </div>
                         </form>
+                       
+
+                        <div class="search-suggestion" id="suggestions">
+                            <!--<a href="#">Set Of Three : Corset Style Hoodie With Sleeveless Crop Top & Bottom In Black</a>
+                            <a href="#">Suggestion2</a>-->
+                            <h4 style="text-align:center; opacity:60%">Search products</h4>
+                        </div>
+                        
+                        
                         
                     </div>
+                    
+
                 </div>
             </div>
 
