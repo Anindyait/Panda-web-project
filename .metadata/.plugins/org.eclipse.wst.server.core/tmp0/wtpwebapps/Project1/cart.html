@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -32,18 +33,8 @@
 			$("#footer").load("footer.html");
 		});
 	</script>
+    <script src = "cart.js">
 
-    <script>
-       
-        function update(){
-
-            var amount = document.getElementsByClassName("amount");
-            var input = document.getElementsByClassName("form-control");
-            for (var i = 0; i < amount.length; i++){
-                amount[i].innerHTML = input[i].value;
-            }
-        
-        }
     </script>
     
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,7 +49,7 @@
             <br>
             <div class = "row justify-content-center">
                 
-                <div class = "col-sm-6">
+                <div class = "col-md-6">
                 <div class = "container-fluid">
                     <div class = "about">
                         <div class = "about-head">
@@ -67,70 +58,70 @@
                                     <h3 class = "Heading-cart"> Shopping cart</h3>
                                     <h5 class = "Action"> Remove All</h5>
                                 </div>
-                                <div class = "Cart-Items justify-content-center">
-                                    <div class="row" style="border:1px solid black;">
+                                <div class = "Cart-Items">
+                                    <div class="row">
                                         <div class="col">
                                             <div class="image-box">
                                                 <img src="Pics/imgs/1a.jpg" style= "height: 120px">
                                             </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="about-cart">
-                                                <h1 style = "font-size:21px">Hoodie</h1>
-                                                                     
-                                            </div>
-                                        </div>
-
-                                    <div class="col-3 text-center">  
-                                        <h3 class="subtitle-cart">Size</h3>                                     
-                                        <input id="form1" min="1" max = "6" name="quantity" value="1" type="number" onchange="update()"
+                                        </div>                                        
+                                    </div>
+                                    
+                                    <div class="about-cart">
+                                        <h1 style = "font-size:21px">Hoodie</h1>
+                                        <h3 class="subtitle-cart">Size</h3>                        
+                                    </div>
+                                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">                                    
+                                        <input id="form1" min="1" max = "6" name="quantity" value="1" onchange = "calcTotal()" type="number"
                                         class="form-control form-control-sm"/>									
-									</div>  
-                                    <div class="col">     
-                                        <div class = prices>
-                                            <div class="price">20</div>
-                                        </div>     
-                                    </div>       
-                                    <div class="col">                 
-                                        <div class="prices">
-                                            <div class="amount">1</div>
-                                            <div class="save"><u>Save for later</u></div>
-                                            <div class="remove"><u>Remove</u></div>
-                                        </div>
+									</div>       
+                                    
+                                        <div class ="price">20</div>
+                                                               
+                                    <div class="prices">
+                                        <div class="amount">0</div>
+                                        <div class="save"><u>Save for later</u></div>
+                                        <div class="remove"><u>Remove</u></div>
                                     </div>
                                 </div>
-                                <!--
                                 <div class="Cart-Items">
-                                    <div class="image-box">
-                                        <img src="Pics/imgs/1b.jpg" style= "height: 120px">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="image-box">
+                                                <img src="Pics/imgs/1b.jpg" style= "height: 120px">
+                                            </div>
+                                        </div>                                        
                                     </div>
                                     <div class="about-cart">
                                         <h1 style = "font-size:21px">Hoodie</h1>
                                         <h3 class="subtitle-cart">Size</h3>                        
                                     </div>
                                     <div id = qtycol class="col-md-3 col-lg-3 col-xl-2 d-flex">                                    
-                                        <input id="form1" min="1" max = "6" name="quantity" value="1" type="number" onchange="update()"
-                                        class="form-control form-control-sm"/>		
+                                        <input id="form1" min="1" max = "6" name="quantity" value="1" type="number" onchange = "calcTotal()"                                    class="form-control form-control-sm"/>		
                                         
                                         
 									</div>                             
-                                    <div class = prices>
-                                        <div id="price">20</div>
-                                    </div>
+                                    
+                                        <div class = "price">20</div>
+                                   
 									
-                                    <div class="prices">                                 
-                                                                
-                                                                       
-                                        <div class="amount">1</div>
+                                    <div class="prices">                    
+                                        <div class="amount">0</div>
                                         <div class="save"><u>Save for later</u></div>
-                                        <div class="remove"><u>Remove</u></div>
+                                        <div class="remove"><u>Remove</u></div>            
+                                                                       
+                                        
                                     </div>
                                  
                                 </div>
                                 
                                 <div class="Cart-Items">
-                                    <div class="image-box">
-                                        <img src="Pics/imgs/2b.jpg" style= "height: 120px">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="image-box">
+                                                <img src="Pics/imgs/2a.jpg" style= "height: 120px">
+                                            </div>
+                                        </div>                                        
                                     </div>
                                     <div class="about-cart">
                                         <h1 style = "font-size:21px">Hoodie</h1>
@@ -138,21 +129,19 @@
                                     </div>                                   
                                     								
 									<div class="col-md-3 col-lg-3 col-xl-2 d-flex" >                                   
-                                        <input id="form1" min="1" max = "6" name="quantity" value="1" type="number" onchange="update()"
+                                        <input id="form1" min="1" max = "6" name="quantity" value="1" type="number" onchange ="calcTotal()"
                                         class="form-control form-control-sm"/>
                                     									
 									</div>
-                                    <div class = prices>
-                                        <div id="price">20</div>
-                                    </div>
+                                    
+                                        <div class ="price">20</div>
+                                    
                                     <div class="prices">
-                                        <div class="amount">1</div>
+                                        <div class="amount">0</div>
                                         <div class="save"><u>Save for later</u></div>
                                         <div class="remove"><u>Remove</u></div>
                                     </div>
-                                </div>
-                            -->   
-                                                 
+                                </div>                              
 
                             </div>
                                                   
@@ -167,4 +156,5 @@
 <div id="footer"></div>
 
 </body>
+
 </html>  
