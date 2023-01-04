@@ -15,4 +15,13 @@ function calcTotal()
 
     }   
         
-}     
+}  
+
+function RemovefromCart()
+{     
+    var x = document.getElementsByClassName("btn btn-info");
+    for (var i = 0 ; i < x.length; ++i)
+    {
+        x[i].addEventListener('click',function(){this.parentElement.parentElement.parentElement.remove()},false);
+    }    
+}

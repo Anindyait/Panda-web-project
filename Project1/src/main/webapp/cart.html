@@ -68,20 +68,22 @@
                                     </div>
                                     
                                     <div class="about-cart">
-                                        <h1 style = "font-size:21px">Hoodie</h1>
+                                        <h1 style = "font-size:21px">Hoodie 1</h1>
                                         <h3 class="subtitle-cart">Size</h3>                        
                                     </div>
                                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">                                    
                                         <input id="form1" min="1" max = "6" name="quantity" value="1" onchange = "calcTotal()" type="number"
                                         class="form-control form-control-sm"/>									
-									</div>       
+									</div> 
                                     
-                                        <div class ="price">20</div>
-                                                               
-                                    <div class="prices">
+                                    <div class = "price">20</div>                                                               
+                                    <div class = "prices">
                                         <div class="amount">0</div>
-                                        <div class="save"><u>Save for later</u></div>
-                                        <div class="remove"><u>Remove</u></div>
+                                        <div class="remove">
+                                            <input type = "button" class ="btn btn-info" id ="Remove-Button" 
+                                            onclick = "RemovefromCart()" style = "width: 80px;" value = "Remove"/>                                              
+                                            
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="Cart-Items">
@@ -93,12 +95,12 @@
                                         </div>                                        
                                     </div>
                                     <div class="about-cart">
-                                        <h1 style = "font-size:21px">Hoodie</h1>
+                                        <h1 style = "font-size:21px">Hoodie 2 </h1>
                                         <h3 class="subtitle-cart">Size</h3>                        
                                     </div>
                                     <div id = qtycol class="col-md-3 col-lg-3 col-xl-2 d-flex">                                    
-                                        <input id="form1" min="1" max = "6" name="quantity" value="1" type="number" onchange = "calcTotal()"                                    class="form-control form-control-sm"/>		
-                                        
+                                        <input id="form1" min="1" max = "6" name="quantity" value="1" type="number" onchange = "calcTotal()" 
+                                        class="form-control form-control-sm"/>                                     
                                         
 									</div>                             
                                     
@@ -107,8 +109,11 @@
 									
                                     <div class="prices">                    
                                         <div class="amount">0</div>
-                                        <div class="save"><u>Save for later</u></div>
-                                        <div class="remove"><u>Remove</u></div>            
+                                        <div class="remove">
+                                            <input type = "button" class ="btn btn-info" id ="Remove-Button" 
+                                            onclick = "RemovefromCart()" style = "width: 80px;" value = "Remove">
+                                        </input>
+                                        </div>            
                                                                        
                                         
                                     </div>
@@ -123,8 +128,9 @@
                                             </div>
                                         </div>                                        
                                     </div>
+                                    
                                     <div class="about-cart">
-                                        <h1 style = "font-size:21px">Hoodie</h1>
+                                        <h1 style = "font-size:21px">Hoodie 3</h1>
                                         <h3 class="subtitle-cart">Size</h3>                        
                                     </div>                                   
                                     								
@@ -138,10 +144,14 @@
                                     
                                     <div class="prices">
                                         <div class="amount">0</div>
-                                        <div class="save"><u>Save for later</u></div>
-                                        <div class="remove"><u>Remove</u></div>
+                                        <div class="remove">
+                                            <input type = "button" class ="btn btn-info" id ="Remove-Button" 
+                                            onclick = "RemovefromCart()" style = "width: 80px;" value = "Remove"/>
+                                        </div>
                                     </div>
-                                </div>                              
+                                </div>
+                                
+                                
 
                             </div>
                                                   
