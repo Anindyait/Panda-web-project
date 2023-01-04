@@ -65,7 +65,7 @@ public class AdminLogin extends HttpServlet {
 			
 			
 			
-			pstm = con.prepareStatement("select admin_id, email, password, first_name from admin_table where email = ?;");
+			pstm = con.prepareStatement("select admin_id, email, password, first_name, last_name, phone from admin_table where email = ?;");
 			pstm.setString(1, email);
 			
 			ResultSet rs = pstm.executeQuery();
@@ -88,6 +88,9 @@ public class AdminLogin extends HttpServlet {
 					
 					//Post log in page
 				   	request.setAttribute("first_name", rs.getString("first_name"));
+				   	request.setAttribute("last_name", rs.getString("last_name"));
+				   	request.setAttribute("email", rs.getString("email"));
+				   	request.setAttribute("phone", rs.getString("phone"));
 
 			    	request.getRequestDispatcher("adminProfile.jsp").include(request, response);
 

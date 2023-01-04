@@ -1104,3 +1104,54 @@ a:hover{
 	height: 100%;
 	text-align: right;
    }
+   
+   .admin-head{
+	margin: 0 auto;
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+	padding: 20px;
+	background-color: #ebfceb;
+	animation: fadeUp 1s;
+}
+
+.admin-head:hover{
+	box-shadow: 0px 0px 12px rgba(0,0,0,0.2);
+
+}
+
+.admin-head2{
+	margin: 0 auto;
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+	padding: 20px;
+	background-color: #f0faf0;
+}
+
+.admin-text{
+	
+	padding: 30px;
+}
+
+.admin-col{
+	font-size: 30px;
+	color: rgb(22, 160, 133);
+}
+
+.admin h2{
+	font-size: 40px;
+	text-align:left;
+	margin-bottom: 20px;
+	margin-top: 50px;
+}
+
+.admin button{
+	margin-top: 20px;
+	padding: 5px 50px 5px 50px;
+	background: #daf5da;
+	color: rgb(60, 70, 35);
+	border: 1px solid rgba(0, 0, 0, 0.415);
+	border-radius: 20px;
+}
+
+.admin-title{
+	font-size: 30px;
+	text-transform: capitalize;
+}
