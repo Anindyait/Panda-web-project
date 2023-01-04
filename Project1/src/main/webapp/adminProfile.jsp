@@ -21,20 +21,71 @@
     
 </head>
 <body>
-
-
-
     <div class="font">
 		<div class="container-fluid">
 			<div id="header"></div>
 			   <div class="header-adjustment"></div>
                 <br>
                <h1 class="profile-heading">Hello Admin <%= request.getAttribute("first_name")%>!</h1>
-
+				
+				<div class="admin">
+			   	   <div class="admin-head">
+				   	   <div class="row">
+					   	   <h2>Here are your Profile details:</h2>
+						   <div class="col">
+							   <div class="admin-text">
+							   		<div class="row justify-content-center">
+					    				<div class="col-2 admin-col">Name</div>
+					    				<div class="col-2 admin-col"><%= request.getAttribute("first_name")%> <%= request.getAttribute("last_name")%></div>
+				 					</div>
+				 					<div class="row justify-content-center">
+										<div class="col-2 admin-col">Email</div>					
+					 					<div class="col-2 admin-col"><%= request.getAttribute("email")%></div>
+				 					</div>
+				 					<div class="row justify-content-center">
+					    				<div class="col-2 admin-col">Phone</div>
+					 					<div class="col-2 admin-col"><%= request.getAttribute("phone")%></div>
+				 					</div>
+							   </div>
+						  </div>
+					  </div>
+				 </div>
+			   </div>
+			   <br>
+			   <div class="admin">
+			   	   <div class="admin-head">
+			   	   	<div class="row">
+				   	   <h2>What would you like to work on today?</h2>
+					   <div class="col">
+						   <div class="admin-text">
+							   	<div class="row justify-content-center">
+							   		<div class="col">
+								   		<a href="AdminLogout">
+											<div type="sub" class="btn btn-success form-submit">Add Products</div>
+					   					</a>
+								   	</div>
+								   	<div class="col">
+								   		<a href="AdminLogout">
+											<div type="sub" class="btn btn-primary form-submit">Edit Products</div>
+					   					</a>
+								   	</div>
+								   	<div class="col">
+								   		<a href="AdminLogout">
+											<div type="sub" class="btn btn-danger form-submit">Delete Products</div>
+					   					</a>
+								   	</div>
+				   				</div>
+						   </div>
+					  </div>
+				  </div>
+			   	   </div>
+			   </div>
+			   <br>
 			   <a href="AdminLogout">
 				<div type="sub" class="btn btn-outline-dark form-submit">Logout</div>
 			</a>
 		</div>
 	</div>
+	<div id="footer"></div>
 </body>
 </html>

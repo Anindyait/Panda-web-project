@@ -34,8 +34,10 @@ public class AdminProfile extends HttpServlet {
 	 * 
 	 */
     
-    String first_name=null;
-    String last_name=null;
+    String first_name = null;
+    String last_name = null;
+    String email = null;
+    String phone = null;
     
     void DB_Access(String admin_id)
     {
@@ -50,7 +52,7 @@ public class AdminProfile extends HttpServlet {
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); //DriverManager is a class 
 			
 			
-			pstm = con.prepareStatement("select first_name, last_name from admin_table where admin_id = ?;");
+			pstm = con.prepareStatement("select first_name, last_name, email, phone from admin_table where admin_id = ?;");
 	
 			pstm.setString(1, admin_id);
 			
@@ -60,6 +62,8 @@ public class AdminProfile extends HttpServlet {
 			{
 				first_name = rs.getString("first_name");
 				last_name = rs.getString("last_name");
+				email = rs.getString("email");
+				phone = rs.getString("phone");
 			}
 			
     	}catch(Exception e) {}
@@ -101,6 +105,9 @@ public class AdminProfile extends HttpServlet {
 			System.out.println("From Cookies " + admin_id);
 			DB_Access(admin_id);
 		   	request.setAttribute("first_name", first_name);
+		   	request.setAttribute("last_name", last_name);
+		   	request.setAttribute("email", email);
+		   	request.setAttribute("phone", phone);
 			request.getRequestDispatcher("adminProfile.jsp").include(request, response);
 
 			
