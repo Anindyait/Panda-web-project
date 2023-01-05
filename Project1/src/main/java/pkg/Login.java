@@ -2,6 +2,7 @@ package pkg;
 
 import java.io.*;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.security.NoSuchAlgorithmException;
@@ -65,7 +66,7 @@ public class Login extends HttpServlet {
 			
 			
 			
-			pstm = con.prepareStatement("select user_id, email, password, first_name from user_table where email = ?;");
+			pstm = con.prepareStatement("select user_id, email, password, first_name, last_name, phone, dob, gender, address from user_table where email = ?;");
 			pstm.setString(1, email);
 			
 			ResultSet rs = pstm.executeQuery();
@@ -86,8 +87,18 @@ public class Login extends HttpServlet {
 					ck.setMaxAge(60 * 60 * 24);
 					response.addCookie(ck);
 					
+					//Converting dob to a suitable date format
+					Date dob = rs.getDate("dob");
+					String dob1 = new SimpleDateFormat("dd-MM-yyyy").format(dob);  
+					
 					//Post log in page
 				   	request.setAttribute("first_name", rs.getString("first_name"));
+				   	request.setAttribute("last_name", rs.getString("last_name"));
+				   	request.setAttribute("phone", rs.getString("phone"));
+				   	request.setAttribute("dob", dob1);
+				   	request.setAttribute("gender", rs.getString("gender"));
+				   	request.setAttribute("address", rs.getString("address"));
+				   	request.setAttribute("email", rs.getString("email"));
 
 			    	request.getRequestDispatcher("profile.jsp").forward(request, response);
 

@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,6 +38,11 @@ public class Profile extends HttpServlet {
     
     String first_name=null;
     String last_name=null;
+    String email = null;
+    String phone = null;
+    String dob = null;
+    String gender = null;
+    String address = null;
     
     void DB_Access(String user_id)
     {
@@ -50,7 +57,7 @@ public class Profile extends HttpServlet {
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); //DriverManager is a class 
 			
 			
-			pstm = con.prepareStatement("select first_name, last_name from user_table where user_id = ?;");
+			pstm = con.prepareStatement("select first_name, last_name, email, phone, dob, gender, address from user_table where user_id = ?;");
 	
 			pstm.setString(1, user_id);
 			
@@ -60,6 +67,11 @@ public class Profile extends HttpServlet {
 			{
 				first_name = rs.getString("first_name");
 				last_name = rs.getString("last_name");
+				email = rs.getString("email");
+				phone = rs.getString("phone");
+				dob = new SimpleDateFormat("dd-MM-yyyy").format(rs.getDate("dob"));
+				gender = rs.getString("gender");
+				address = rs.getString("address");
 			}
 			
     	}catch(Exception e) {}
@@ -89,6 +101,12 @@ public class Profile extends HttpServlet {
 			System.out.println("From Cookies "+user_id);
 			DB_Access(user_id);
 		   	request.setAttribute("first_name", first_name);
+		   	request.setAttribute("last_name", last_name);
+		   	request.setAttribute("email", email);
+		   	request.setAttribute("phone", phone);
+		   	request.setAttribute("dob", dob);
+		   	request.setAttribute("gender", gender);
+		   	request.setAttribute("address", address);
 			request.getRequestDispatcher("profile.jsp").include(request, response);
 
 			

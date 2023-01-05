@@ -1,8 +1,8 @@
 function calcTotal()
 {
-    var inputs = document.getElementsByClassName("form-control-sm");
+    var inputs = document.getElementsByClassName("quant");
     var prices = document.getElementsByClassName("price");
-    let amt = document.getElementsByClassName("amount");
+    var amt = document.getElementsByClassName("amount");
     var amount = [];
 
     for (var i = 0; i < inputs.length; i++)
@@ -10,7 +10,7 @@ function calcTotal()
         var inp = parseInt(inputs[i].value);
         var pri = parseInt(prices[i].innerHTML);
         amount[i] = inp * pri;
-        console.log(amount[i]);
+        console.log(i, inp, pri, amount[i]);
         amt[i].innerHTML = amount[i];
 
     }   
