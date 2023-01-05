@@ -29,8 +29,44 @@
 			<div id="header"></div>
 			   <div class="header-adjustment"></div>
                 <br>
-               <h1 class="profile-heading">Welcome <%= request.getAttribute("first_name")%>!</h1>
-
+                <h1 class="profile-heading">Welcome <%= request.getAttribute("first_name")%>!</h1>
+			    <div class="admin">
+			   	   <div class="admin-head">
+				   	   <div class="row">
+					   	   <h2>Here are your Profile details:</h2>
+						   <div class="col">
+							   <div class="admin-text">
+							   		<div class="row justify-content-center">
+					    				<div class="col-2 admin-col">Name</div>
+					    				<div class="col-4 admin-col"><%= request.getAttribute("first_name")%> <%= request.getAttribute("last_name")%></div>
+				 					</div>
+				 					<div class="row justify-content-center">
+										<div class="col-2 admin-col">Email</div>					
+					 					<div class="col-4 admin-col"><%= request.getAttribute("email")%></div>
+				 					</div>
+				 					<div class="row justify-content-center">
+					    				<div class="col-2 admin-col">Phone</div>
+					 					<div class="col-4 admin-col"><%= request.getAttribute("phone")%></div>
+				 					</div>
+				 					<div class="row justify-content-center">
+					    				<div class="col-2 admin-col">Date of Birth</div>
+					 					<div class="col-4 admin-col"><%= request.getAttribute("dob")%></div>
+				 					</div>
+				 					<div class="row justify-content-center">
+					    				<div class="col-2 admin-col">Gender</div>
+					 					<div class="col-4 admin-col"><%= request.getAttribute("gender")%></div>
+				 					</div>
+				 					<div class="row justify-content-center">
+					    				<div class="col-2 admin-col">Address</div>
+					 					<div class="col-4 admin-col"><%= request.getAttribute("address")%></div>
+				 					</div>
+							   </div>
+						  </div>
+					  </div>
+				 </div>
+			   </div>
+			   <br>
+			   
 			   <a href="Logout">
 				<div type="sub" class="btn btn-outline-dark form-submit">Logout</div>
 			</a>
