@@ -1,6 +1,6 @@
 function calcTotal()
 {
-    var inputs = document.getElementsByClassName("form-control");
+    var inputs = document.getElementsByClassName("form-control-sm");
     var prices = document.getElementsByClassName("price");
     let amt = document.getElementsByClassName("amount");
     var amount = [];
@@ -17,11 +17,7 @@ function calcTotal()
         
 }  
 
-function RemovefromCart()
+function RemovefromCart(y)
 {     
-    var x = document.getElementsByClassName("btn btn-info");
-    for (var i = 0 ; i < x.length; ++i)
-    {
-        x[i].addEventListener('click',function(){this.parentElement.parentElement.parentElement.remove()},false);
-    }    
+    y.parentElement.parentElement.parentElement.remove();
 }

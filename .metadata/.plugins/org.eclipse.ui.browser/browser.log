@@ -372,3 +372,25 @@ Jan 04, 2023 19:09:16.157 [4844:2456:0104/190916.157:ERROR:connection_factory_im
 Jan 04, 2023 19:09:20.154 [4844:2456:0104/190920.154:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
 Jan 04, 2023 19:13:47.396 [4844:2456:0104/191347.396:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
 Jan 04, 2023 19:13:48.785 [4844:2456:0104/191348.785:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -105
+
+Jan 04, 2023 22:55:46.824 NEW SESSION
+Jan 04, 2023 22:55:46.825 [16880:4224:0104/225546.823:ERROR:device_event_log_impl.cc(215)] [22:55:46.823] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 05, 2023 01:02:10.105 [16880:17576:0105/010210.104:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+Jan 05, 2023 01:02:13.216 [16880:17576:0105/010213.216:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+Jan 05, 2023 04:02:14.992 [16880:4224:0105/040214.992:ERROR:device_event_log_impl.cc(215)] [04:02:14.992] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Jan 05, 2023 10:42:31.527 [16880:6004:0105/104231.526:ERROR:get_updates_processor.cc(260)] PostClientToServerMessage() failed during GetUpdates with error 2
+Jan 05, 2023 10:42:31.534 [16880:17576:0105/104231.528:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+Jan 05, 2023 10:42:34.300 [16880:17576:0105/104234.299:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+Jan 05, 2023 14:40:10.640 [16880:17576:0105/144010.639:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+Jan 05, 2023 14:40:14.457 [16880:17576:0105/144014.457:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+Jan 05, 2023 14:46:58.509 [16880:4240:0105/144658.509:ERROR:get_updates_processor.cc(260)] PostClientToServerMessage() failed during GetUpdates with error 2
+Jan 05, 2023 14:46:58.519 [16880:17576:0105/144658.519:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -105
+
+Jan 05, 2023 19:29:05.189 NEW SESSION
+Jan 05, 2023 19:29:05.189 [16048:20188:0105/192905.187:ERROR:device_event_log_impl.cc(215)] [19:29:05.187] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 05, 2023 21:52:26.340 [23944:10060:0105/215226.340:ERROR:device_event_log_impl.cc(215)] [21:52:26.340] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 05, 2023 21:53:30.630 [8444:24500:0105/215330.630:ERROR:device_event_log_impl.cc(215)] [21:53:30.631] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 05, 2023 22:11:37.782 [3660:24512:0105/221137.782:ERROR:device_event_log_impl.cc(215)] [22:11:37.782] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 05, 2023 22:13:34.838 [1548:15720:0105/221334.837:ERROR:device_event_log_impl.cc(215)] [22:13:34.837] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 05, 2023 22:18:19.757 [24276:22208:0105/221819.756:ERROR:device_event_log_impl.cc(215)] [22:18:19.756] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 05, 2023 22:24:52.215 [22644:5876:0105/222452.215:ERROR:device_event_log_impl.cc(215)] [22:24:52.215] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)

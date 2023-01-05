@@ -64,7 +64,7 @@ public class Search extends HttpServlet {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); //DriverManager is a class 
 			
-			pstm = con.prepareStatement("select product_id, p_name from product_table where p_name like (?) limit 8;");
+			pstm = con.prepareStatement("select product_id, p_name from product_table where p_name like (?) order by product_id desc limit 10;");
     		
 			pstm.setString(1, searchString);
 			

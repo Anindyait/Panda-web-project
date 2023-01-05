@@ -210,6 +210,7 @@ a:hover{
 	padding:20px 0px 0px 0px;
 }
 
+
 .desc{
 	height:270px;
 }
@@ -937,8 +938,43 @@ input:focus{
 .filters h6{
 	font-size: 1.1rem;
     padding-left: 12px;
-	padding-bottom: 5px;
+	padding-bottom: 1px;
+	padding-top: 5px;
+	opacity: 90%;
 }
+
+.filters select{
+	opacity: 80%;
+}
+
+#size_filter, #gender_filter, #sort{
+	height: 40px;
+}
+
+#lower_price, #upper_price{
+	display: inline-block;
+	margin-bottom: 10px;
+	width: 83px;
+}
+
+#product-holder h4{
+	text-align: center;
+	font-size: 1.2rem;
+    margin-bottom: 10px;
+	opacity: 40%;
+}
+
+.fa-arrow-right{
+	opacity: 50%;
+}
+
+#product-holder hr{
+    color: #0000005f;
+	
+	width: 50%;
+	margin-top: 20px;
+}
+	
 
 .product{
 	width:280px;
@@ -1099,7 +1135,7 @@ input:focus{
 	border-radius: 20px;
 	text-shadow:0px 0px 5px rgba(0, 0, 0, 0.663);
 	color:rgb(255, 255, 255);
-	z-index: 1000;
+	z-index: 1;
 	display: flex; 
 	align-items: center;
 	justify-content: center; 
@@ -1113,13 +1149,24 @@ input:focus{
 	overflow: hidden;
    }
 
-   
+   video{
+	border-radius: 30px;
+	width: 95%;
+	margin-top: 35px;
+	transform: scale(1.2);
+   }
 
- 
+   .video-container{
+	margin-top: 85px;
+	padding-bottom: 30px;
+	width: 95%;
+	overflow: hidden;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+	border-radius: 30px;
+   }
 
-   
 
-   
+
 
    .Header-cart{
 	margin: auto;
@@ -1153,3 +1200,54 @@ input:focus{
    }
 
 
+   
+   .admin-head{
+	margin: 0 auto;
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+	padding: 20px;
+	background-color: #ebfceb;
+	animation: fadeUp 1s;
+}
+
+.admin-head:hover{
+	box-shadow: 0px 0px 12px rgba(0,0,0,0.2);
+
+}
+
+.admin-head2{
+	margin: 0 auto;
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+	padding: 20px;
+	background-color: #f0faf0;
+}
+
+.admin-text{
+	
+	padding: 30px;
+}
+
+.admin-col{
+	font-size: 30px;
+	color: rgb(22, 160, 133);
+}
+
+.admin h2{
+	font-size: 40px;
+	text-align:left;
+	margin-bottom: 20px;
+	margin-top: 50px;
+}
+
+.admin button{
+	margin-top: 20px;
+	padding: 5px 50px 5px 50px;
+	background: #daf5da;
+	color: rgb(60, 70, 35);
+	border: 1px solid rgba(0, 0, 0, 0.415);
+	border-radius: 20px;
+}
+
+.admin-title{
+	font-size: 30px;
+	text-transform: capitalize;
+}

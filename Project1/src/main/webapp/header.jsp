@@ -53,7 +53,7 @@
         <nav class="navbar navbar-expand-lg header">
             <!--Store name and Logo-->
 
-            <a class="navbar-brand" style="text-decoration:none" href="#">
+            <a class="navbar-brand" style="text-decoration:none" href="Index.html">
                 <div class="row">
                     <div class="col">
                         <img class="brand-img" src="Pics/panda.png" height="65">
@@ -75,7 +75,7 @@
 
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="#" class="nav-link nav-link1 active">Home</a>
+                        <a href="Index.html" class="nav-link nav-link1 active">Home</a>
                     </li>
 
                     <li class="nav-item">

@@ -89,13 +89,13 @@ public class Login extends HttpServlet {
 					//Post log in page
 				   	request.setAttribute("first_name", rs.getString("first_name"));
 
-			    	request.getRequestDispatcher("profile.jsp").include(request, response);
+			    	request.getRequestDispatcher("profile.jsp").forward(request, response);
 
 				}
 				else
 				{
 					request.setAttribute("wrong_email", "hidden");
-					request.getRequestDispatcher("login.jsp").include(request, response);
+					request.getRequestDispatcher("login.jsp").forward(request, response);
 					System.out.println("Wrong Password!");
 
 				}

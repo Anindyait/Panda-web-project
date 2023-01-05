@@ -1,6 +1,6 @@
 function calcTotal()
 {
-    var inputs = document.getElementsByClassName("form-control");
+    var inputs = document.getElementsByClassName("form-control-sm");
     var prices = document.getElementsByClassName("price");
     let amt = document.getElementsByClassName("amount");
     var amount = [];
@@ -15,4 +15,9 @@ function calcTotal()
 
     }   
         
-}     
+}  
+
+function RemovefromCart(y)
+{     
+    y.parentElement.parentElement.parentElement.remove();
+}

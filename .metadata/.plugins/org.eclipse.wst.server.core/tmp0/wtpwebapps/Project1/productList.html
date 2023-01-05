@@ -25,6 +25,8 @@
 			}
 		  });
 	</script>
+    <script src="https://kit.fontawesome.com/13deb536c6.js" crossorigin="anonymous"></script>
+
 
     <script>
 
@@ -32,19 +34,23 @@
         var products = document.getElementsByClassName("list-padding");
 
         function filter(){
+            var selected_gender = document.getElementById("gender_filter");
             var selected_size = document.getElementById("size_filter");
             var lp = document.getElementById("lower_price");
             var up = document.getElementById("upper_price");
+
+            console.log(selected_gender.value);
+
             for (var i = 0; i < prices.length; i++) 
             {
 
                 if(Number(up.value) < Number(lp.value)){
-                    up.value = lp.value+"00";
+                    up.value = lp.value+"0";
                 }
                 
                 
 
-                if (((up.value!="" || lp.value!="") && Number(prices[i].innerHTML.slice(1,-14)) > Number(up.value)) || Number(prices[i].innerHTML.slice(1,-14)) < Number(lp.value) ||!products[i].dataset.sizes.includes(selected_size.value))
+                if (((up.value!="" || lp.value!="") && Number(prices[i].innerHTML.slice(1,-14)) > Number(up.value)) || Number(prices[i].innerHTML.slice(1,-14)) < Number(lp.value) ||!products[i].dataset.sizes.includes(selected_size.value)||!products[i].dataset.genders.includes(selected_gender.value))
                 {
                     
                     products[i].style.display="none";
@@ -70,6 +76,39 @@
 
     </script>
 
+    <script>
+
+       
+
+        function sort_js()
+        {
+            var divList = $(".list-padding");
+            var option = document.getElementById("sort");
+            
+            if(option.value == "PriceLowToHigh")
+            {
+                divList.sort(function(a, b){ return $(a).data("price")-$(b).data("price")});    
+                $("#product-holder").html(divList);
+            }
+            else if(option.value == "PriceHighToLow")
+            {
+                divList.sort(function(a, b){ return $(b).data("price")-$(a).data("price")});
+                $("#product-holder").html(divList);
+            }
+            else if(option.value == "NewestFirst")
+            {
+                divList.sort(function(a, b){ return $(b).data("pid").slice(1)-$(a).data("pid").slice(1)});
+                $("#product-holder").html(divList);
+            }
+            else if(option.value == "OldestFirst")
+            {
+                divList.sort(function(a, b){ return $(a).data("pid").slice(1)-$(b).data("pid").slice(1)});
+                $("#product-holder").html(divList);
+            }
+        }
+        
+    </script>
+
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Product-list</title>
@@ -92,24 +131,24 @@
     <div class="container-fluid">
         <div id="header"></div>
    	    <div class="header-adjustment"></div>
-           <div class="product-category">Products</div>
+           <div class="product-category"><i class="fa-solid fa-arrow-right fa-sm"></i>&nbspProducts</div>
            <br>
            <br>
             <div class="row justify-content-center">
                 <div class="col" style="margin-bottom: 20px;">
                     <div class="filters">
+                        
                         <h6>Price Range</h6>
                         
-                        <div class="row">
-                            <div class="col-6">
-                                <input name="lower_price" type = "number" class = "form-control"  id = "lower_price" min="100" placeholder="Min. Price" onchange = "filter()" required/>
-                            </div>
-                            <div class="col-6">
-                                <input name="upper_price" type = "number" class = "form-control"  id = "upper_price" min="100" placeholder="Max. Price" onchange = "filter()" required/>
-                            </div>
-                        </div>
-                        <br>
                         
+                                <input name="lower_price" type = "number" class = "form-control"  id = "lower_price" min="100" placeholder="Min." onchange = "filter()" required/>
+                            
+                                <input name="upper_price" type = "number" class = "form-control"  id = "upper_price" min="100" placeholder="Max." onchange = "filter()" required/>
+                            
+                        
+                        <br>
+                        <div class="row">
+                            <div class="col">
                         <h6>Size</h6>
                         <select id ="size_filter" class="form-select" name = "size_filter" onchange = "filter()" required>
                             <option selected value="">All</option>
@@ -128,15 +167,27 @@
                             <option value=",41,">41</option>
                             <option value=",42,">42</option>
                         </select>
+                            </div>
+                            <div class="col">
+                        
+                        <h6>Gender</h6>
+                        <select id ="gender_filter" class="form-select" name = "gender" onchange = "filter()" required>
+                            <option selected value="">All</option>
+                            <option value=",Male,">Male</option>
+                            <option value=",Female,">Female</option>
+                        </select>
+                        </div>
+                    </div>
                         
                         <br>
-                        
-                        <h6>Order by Price</h6>
-                        <select id ="sort" class="form-select" name = "sort" onchange = "sort()" required>
-                            <option selected value="" >All</option>
-                            <option value="asc">Low to High</option>
-                            <option value="desc">High to Low</option>
+                        <h6>Sort</h6>
+                        <select id ="sort" class="form-select" name = "sort" onchange = "sort_js()" required>
+                            <option value="PriceLowToHigh">Low to High</option>
+                            <option value="PriceHighToLow">High to Low</option>
+                            <option value="NewestFirst" selected>Newest first</option>
+                            <option value="OldestFirst">Oldest first</option>
                         </select>
+                        
 
                     </div>
                 </div>
@@ -145,9 +196,9 @@
         <div class="col-10">
         <div class="card-container">
         
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" id = "product-holder">
             
-            <div class="col list-padding" data-sizes=",XS,S,">
+            <div class="col list-padding" data-sizes=",XS,S," data-genders=",Female,Others," data-price="100" data-pid="P0001">
             	<!-- to pass to servlet -->
                 <a href="ProductExperiment?title=Name of Product1&desc=Small desc of the product" class="product-link" data-toggle="tooltip" title="Item 1">
 
@@ -162,7 +213,7 @@
                 
             </div>
             
-            <div class="col list-padding" data-sizes=",M,">
+            <div class="col list-padding" data-sizes=",M,"  data-genders=",Male,Others," data-price="2000" data-pid="P0003">
                 <a href="#2" class="product-link" data-toggle="tooltip" title="Item 2!">
                     <div class="product">
                         <img src="Pics/imgs/2a.jpg" class="card-img-top round" alt="...">
@@ -174,7 +225,7 @@
                 </a>
             </div>
 
-            <div class="col list-padding" data-sizes=",S,">
+            <div class="col list-padding" data-sizes=",S," data-genders=",Male,Others," data-price="300" data-pid="P0002">
                 <a href="#3" class="product-link" data-toggle="tooltip" title="item 3!">
 
                 <div class="product">
@@ -187,7 +238,7 @@
                 </a>
             </div>
 
-            <div class="col list-padding" data-sizes=",L,">
+            <div class="col list-padding" data-sizes=",L," data-genders=",Male,Others," data-price="400" data-pid="P0007">
                 <a href="#4" class="product-link" data-toggle="tooltip" title="item 4!">
 
                 <div class="product">
@@ -200,7 +251,7 @@
                 </a>
             </div>
 
-            <div class="col list-padding" data-sizes=",M,">
+            <div class="col list-padding" data-sizes=",M," data-genders=",Female,Others," data-price="500" data-pid="P0008">
                 <a href="#1" class="product-link" data-toggle="tooltip" title="Item 1!">
                 <div class="product">
                     <img src="Pics/imgs/5a.jpg" class="card-img-top round" alt="...">
@@ -212,7 +263,7 @@
                 </a>
             </div>
             
-            <div class="col list-padding" data-sizes=",M,">
+            <div class="col list-padding" data-sizes=",M," data-genders=",Female,Others," data-price="600" data-pid="P0009">
                 <a href="#2" class="product-link" data-toggle="tooltip" title="Item 2!">
                     <div class="product">
                         <img src="Pics/imgs/6a.jpg" class="card-img-top round" alt="...">
@@ -224,7 +275,7 @@
                 </a>
             </div>
 
-            <div class="col list-padding" data-sizes=",M,">
+            <div class="col list-padding" data-sizes=",M," data-genders=",Male,Others," data-price="700" data-pid="P0004">
                 <a href="#3" class="product-link" data-toggle="tooltip" title="item 3!">
 
                 <div class="product">
@@ -237,7 +288,7 @@
                 </a>
             </div>
 
-            <div class="col list-padding" data-sizes=",M,">
+            <div class="col list-padding" data-sizes=",M," data-genders=",Female,Others," data-price="800" data-pid="P0010">
                 <a href="#4" class="product-link" data-toggle="tooltip" title="item 4!">
 
                 <div class="product">
@@ -250,10 +301,17 @@
                 </a>
             </div>
 
+            <hr>
+           
+            <h4> <i class="fa-solid fa-circle-check fa-lg"></i>&nbsp&nbspThat's all!</h4>
+
 
         </div>
         </div>
+        <br>
+        <br>
         </div>
+        
     </div>
 
 

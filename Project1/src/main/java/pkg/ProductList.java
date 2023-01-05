@@ -34,11 +34,13 @@ public class ProductList extends HttpServlet {
     
 	String cat = "All";
 	String sort = null;
+	String param = "";
+
 
     //HTML template for each Product Card
     //Note everything that is put from the DBMS is in the form !<NAME_IN_CAPS>! form,
     //this is just a protocol I followed, pls follow this gaiss. 
-    String productCardTemplate = "<div class=\"col list-padding\" data-sizes=\",!SIZES!,\">\r\n"
+    String productCardTemplate = "<div class=\"col list-padding\" data-sizes=\",!SIZES!,\" data-genders=\",!GENDERS!,\" data-price=\"!PRICE!\" data-pid=\"!P_ID!\">\r\n"
 			+ "                <a href=\"Product?pid=!P_ID!\" class=\"product-link\" data-toggle=\"tooltip\" title=\"!PRODUCT_NAME!\">\r\n"
 			+ "                    <div class=\"product\">\r\n"
 			+ "                        <img src=\"Pics/!IMAGE!.jpg\" class=\"card-img-top round\" alt=\"...\">\r\n"
@@ -55,13 +57,16 @@ public class ProductList extends HttpServlet {
     //Will have all the Cards, can't be null.
     String allProductCards;
     
-    String query = "select product_id, p_name, price, imgs, sizes from product_table where cat3 like(?) or cat2 like(?)";
+    String query = "select product_id, p_name, price, imgs, sizes, cat1 from product_table where cat3 like(?) or cat2 like(?) or cat1 like(?) order by product_id desc";
 	
     
     //Method to populate the above string from DBMS.
     protected void GetProductList(String cat, HttpServletRequest request, HttpServletResponse response)
     {
+    	
     	String catLike = Utilities.LikeString(cat);
+    	
+    	System.out.println(catLike);
     	
 
     	allProductCards = " ";
@@ -76,31 +81,20 @@ public class ProductList extends HttpServlet {
 			
 			
 			if(cat.equals("All"))
-				pstm = con.prepareStatement("select product_id, p_name, price, imgs, sizes from product_table order by product_id DESC");
+				pstm = con.prepareStatement("select product_id, p_name, price, imgs, sizes, cat1 from product_table order by product_id DESC");
 			//The query has no where now, will change in near future.
 			if(cat.equals("All Panda Shop Products"))
-				pstm = con.prepareStatement("select product_id, p_name, price, imgs from product_table order by product_id DESC;");
+				pstm = con.prepareStatement("select product_id, p_name, price, imgs, sizes, cat1 from product_table order by product_id DESC;");
 			
 			else if(cat.equals("New Arrivals"))
-				pstm = con.prepareStatement("select product_id, p_name, price, imgs, sizes from product_table order by product_id DESC limit 10");
+				pstm = con.prepareStatement("select product_id, p_name, price, imgs, sizes, cat1 from product_table order by product_id DESC limit 16");
 
 			
 			else {
-				
-				if(sort==null)
-				{
 					pstm = con.prepareStatement(query);
 					pstm.setString(1, catLike);
 					pstm.setString(2, catLike);
-				}
-				else
-				{
-					
-					pstm = con.prepareStatement(query+"order by price "+sort);
-					pstm.setString(1, catLike);
-					pstm.setString(2, catLike);
-				}
-			
+					pstm.setString(3, catLike);
 			}
 			
 			
@@ -130,6 +124,9 @@ public class ProductList extends HttpServlet {
 				eachProductCard = eachProductCard.replaceAll("!P_ID!", rs.getString("product_id"));
 				
 				eachProductCard = eachProductCard.replaceAll("!SIZES!", rs.getString("sizes"));
+				
+				eachProductCard = eachProductCard.replaceAll("!GENDERS!", rs.getString("cat1"));
+
 
 				//concat each card.
 				allProductCards = allProductCards.concat(eachProductCard);
@@ -137,10 +134,18 @@ public class ProductList extends HttpServlet {
 			}
 			
 			//putting the Cards in productList.jsp.
+			
+
 			request.setAttribute("product_cards", allProductCards);
 			request.setAttribute("category_name", cat);
+			request.setAttribute("param", param);
+			
+			System.out.println("Param before sending = "+param);
 
-			request.getRequestDispatcher("productList.jsp").include(request, response);
+			
+			request.getRequestDispatcher("productList.jsp").forward(request, response);
+			
+			
 			
     	}catch(Exception e) {System.out.println(e);}
     	
@@ -156,17 +161,18 @@ public class ProductList extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
 		
-		sort = request.getParameter("sort");
 		
-		if(request.getParameter("category")!=null)
-			cat = request.getParameter("category");
+		cat = request.getParameter("category");
+		
+		
+		if(request.getParameter("param")!=null)
+			param = request.getParameter("param");
+		else
+			param = "";
 		
 
-		System.out.println("Cat from get = "+cat);
-		System.out.println("Sort from get = "+ sort);
+		System.out.println("Cat = "+cat+" Param = "+param);
 		
-		
-		//Check for 1st time load.
 		
 		GetProductList(cat, request, response);
 		

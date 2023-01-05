@@ -23,6 +23,8 @@
 			}
 		  });
 	</script>
+    <script src="https://kit.fontawesome.com/13deb536c6.js" crossorigin="anonymous"></script>
+
 
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,10 +38,14 @@
     
     <script>
 
+        var parameter = "<%= request.getAttribute("param")%>"
+
         var prices = document.getElementsByClassName("list-price");
         var products = document.getElementsByClassName("list-padding");
 
+
         function filter(){
+            var selected_gender = document.getElementById("gender_filter");
             var selected_size = document.getElementById("size_filter");
             var lp = document.getElementById("lower_price");
             var up = document.getElementById("upper_price");
@@ -52,7 +58,7 @@
                 
                 
 
-                if (((up.value!="" || lp.value!="") && Number(prices[i].innerHTML.slice(1,-14)) > Number(up.value)) || Number(prices[i].innerHTML.slice(1,-14)) < Number(lp.value) ||!products[i].dataset.sizes.includes(selected_size.value))
+                if (((up.value!="" || lp.value!="") && Number(prices[i].innerHTML.slice(1,-14)) > Number(up.value)) || Number(prices[i].innerHTML.slice(1,-14)) < Number(lp.value) ||!products[i].dataset.sizes.includes(selected_size.value) || !products[i].dataset.genders.includes(selected_gender.value))
                 {
                     
                     products[i].style.display="none";
@@ -64,16 +70,56 @@
         }
     }
 
-    function sort()
+    function param()
     {
-        var sort = document.getElementById("sort");
-        var http = new XMLHttpRequest();
-        http.open("GET", "ProductList", true);
-        http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        var params = "sort=" + sort.value; // probably use document.getElementById(...).value
-        http.send(params);
+        var selected_gender = document.getElementById("gender_filter");
+        console.log(parameter);
+
+        if(parameter == "Male")
+        {
+            console.log("It is Male");
+            selected_gender.value = ",Male,";
+            selected_gender.dispatchEvent(new Event("change"));
+        }
+        else
+        {
+            console.log("Not Male");
+
+        }
+        
     }
 
+
+    </script>
+
+    <script>
+  
+        function sort_js()
+        {
+            var divList = $(".list-padding");
+            var option = document.getElementById("sort");
+            
+            if(option.value == "PriceLowToHigh")
+            {
+                divList.sort(function(a, b){ return $(a).data("price")-$(b).data("price")});    
+                $("#product-holder").html(divList);
+            }
+            else if(option.value == "PriceHighToLow")
+            {
+                divList.sort(function(a, b){ return $(b).data("price")-$(a).data("price")});
+                $("#product-holder").html(divList);
+            }
+            else if(option.value == "NewestFirst")
+            {
+                divList.sort(function(a, b){ return $(b).data("pid").slice(1)-$(a).data("pid").slice(1)});
+                $("#product-holder").html(divList);
+            }
+            else if(option.value == "OldestFirst")
+            {
+                divList.sort(function(a, b){ return $(a).data("pid").slice(1)-$(b).data("pid").slice(1)});
+                $("#product-holder").html(divList);
+            }
+        }
 
     </script>
 
@@ -86,7 +132,7 @@
 
 
 </head>
-<body>
+<body onload="param()">
 
 
 
@@ -94,7 +140,7 @@
     <div class="container-fluid">
         <div id="header"></div>
    	    <div class="header-adjustment"></div>
-           <div class="product-category"><%= request.getAttribute("category_name")%></div>
+           <div class="product-category"><i class="fa-solid fa-arrow-right fa-sm"></i>&nbsp&nbsp<%= request.getAttribute("category_name")%></div>
            <br>
            <br>
         
@@ -104,14 +150,11 @@
                 <div class="filters">
                     <h6>Price Range</h6>
                     
-                    <div class="row">
-                        <div class="col-6">
+                   
                             <input name="lower_price" type = "number" class = "form-control"  id = "lower_price" min="100" placeholder="Min." onchange = "filter()" required/>
-                        </div>
-                        <div class="col-6">
-                            <input name="upper_price" type = "number" class = "form-control"  id = "upper_price" min="100" placeholder="Max. onchange = "filter()" required/>
-                        </div>
-                    </div>
+                        
+                            <input name="upper_price" type = "number" class = "form-control"  id = "upper_price" min="100" placeholder="Max." onchange = "filter()" required/>
+                        
                     <br>
                     
                     <h6>Size</h6>
@@ -131,16 +174,33 @@
                         <option value=",40,">40</option>
                         <option value=",41,">41</option>
                         <option value=",42,">42</option>
+                        <option value=",43,">43</option>
+                        <option value=",44,">44</option>
+                        <option value=",45,">45</option>
                     </select>
 
+                    
+
                     <br>
-                        
-                        <h6>Order by Price</h6>
-                        <select id ="sort" class="form-select" name = "sort" onchange = "sort()" required>
-                            <option selected value="" disabled>All</option>
-                            <option value="asc">Low to High</option>
-                            <option value="desc">High to Low</option>
+
+                    <h6>Gender</h6>
+                        <select id ="gender_filter" class="form-select" name = "gender" onchange = "filter()"  onload = "param()" required>
+                            <option selected value="">All</option>
+                            <option value=",Male,">Male</option>
+                            <option value=",Female,">Female</option>
                         </select>
+
+
+                        
+                        <br>
+                        <h6>Sort</h6>
+                        <select id ="sort" class="form-select" name = "sort" onchange = "sort_js()" required>
+                            <option value="PriceLowToHigh">Price: Low to High</option>
+                            <option value="PriceHighToLow">Price: High to Low</option>
+                            <option value="NewestFirst" selected>Newest first</option>
+                            <option value="OldestFirst">Oldest first</option>
+                        </select>
+                   
 
                 </div>
             </div>
@@ -149,11 +209,12 @@
             <div class="col-10">
                 <div class="card-container">
                 
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center" id="product-holder">
 
                         <%= request.getAttribute("product_cards")%>
     
-
+                        <hr>
+                        <h4> <i class="fa-solid fa-circle-check fa-lg"></i>&nbsp&nbspThat's all!</h4>
                 
                     </div>
                 </div>

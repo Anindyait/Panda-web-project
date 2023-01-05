@@ -26,6 +26,21 @@
 		  });
 	</script>
 
+	<script>
+		function control(video)
+		{
+			if(video.paused)
+			{
+				video.play();
+			}
+			else
+			{
+                video.pause();
+            }
+
+		}
+	</script>
+
 	<script src="https://kit.fontawesome.com/13deb536c6.js" crossorigin="anonymous"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -78,7 +93,7 @@
 				<a href="ProductList?category=Shoes">
 					<div type="sub" class="btn btn index-link bamboo">Shoes</div>
 				</a>
-
+				
 				<a href="ProductList?category=Tops">
 					<div type="sub" class="btn btn index-link bamboo">Tops</div>
 				</a>
@@ -95,20 +110,17 @@
 					<div type="sub" class="btn btn index-link bamboo">Dresses</div>
 				</a>
 
-				<a href="#certifiedChildLabour">
-					<div type="sub" class="btn btn index-link bamboo">Certified&nbspChild&nbspLabour</div>
-				</a>
-				
-
-				<a href="#spoiltTeenagerSpecials">
-					<div type="sub" class="btn btn index-link bamboo">Spoilt&nbspTeenager's&nbspSpecials</div>
+				<a href="ProductList?category=Formal Clothing Range">
+					<div type="sub" class="btn btn index-link bamboo">Formal&nbspClothing&nbspRange</div>
 				</a>
 
-
-				<a href="#absoluteScam">
-					<div type="sub" class="btn btn index-link bamboo">Absolute&nbspScam&nbspCollection</div>
+				<a href="ProductList?category=Male">
+					<div type="sub" class="btn btn index-link bamboo">Men</div>
 				</a>
 
+				<a href="ProductList?category=Female">
+					<div type="sub" class="btn btn index-link bamboo">Women</div>
+				</a>
 				
 
 			   </div>
@@ -116,18 +128,23 @@
 			
 			   <div class="carousel-inner round" >
 				<div class="carousel-item active" >
-					<a href="#1">
-					<img src="Pics/banners/New Year New Panda.png" class="d-block w-100 img-size" alt="...">
+					<a href="ProductList?category=New Year's Collection">
+					<img src="Pics/banners/New Year banner.png" class="d-block w-100 img-size" alt="...">
 					</a>
 				</div>
 				<div class="carousel-item">
-					<a href="#2">
+					<a href="ProductList?category=Winter Collection">
 					<img src="Pics/banners/Winter_Sale.png" class="d-block w-100 img-size" alt="...">
 					</a>
 				</div>
 				<div class="carousel-item">
-					<a href="#3">
+					<a href="#Royalty">
 					<img src="Pics/banners/Panda_Royalty.png" class="d-block w-100 img-size" alt="...">
+					</a>
+				</div>
+				<div class="carousel-item">
+					<a href="ProductList?category=Formal Clothing Range&param=Male">
+					<img src="Pics/banners/Formals2.png" class="d-block w-100 img-size" alt="...">
 					</a>
 				</div>
 			</div>
@@ -143,63 +160,17 @@
 			   </div>
 
 			  
-			<a href="#" >
-				<img class="static-banner" src="Pics/banners/Valentines_Day_1.png">
+			<a href="ProductList?category=Valentine's Day" >
 				<img class="static-banner" src="Pics/banners/Valentine_Day_2.png">
-				<img class="static-banner" src="Pics/banners/BE A MAN..png">
+			</a>
 
-
+			<a href="ProductList?category=Formal Clothing Range&param=Male" >
+				<img class="static-banner" src="Pics/banners/Formals.png">
 			</a>
 
 			<div class="row">
 				<div class="col-lg" align="center">
-					<div class="category" style="background-color: #ccfbce;">
-						<h2 class="shop-by">Shop by Collections</h2>
-						
 
-								<a href="ProductList?category=Best Sellers" class="category-links">
-									<div class="category-card">
-										<h5>Best Sellers</h5>
-										<img src="Pics/banners/best sellers.png">
-
-									</div>
-								</a>
-								<a href="ProductList?category=New Year's Collection" class="category-links">
-									<div class="category-card">
-										<h5>New Year's</h5>
-										<img src="Pics/banners/new year.png">
-
-									</div>
-								</a>
-						
-								<a href="ProductList?category=Valentine's Day" class="category-links">
-									<div class="category-card">
-										<h5>Valentine's Day</h5>
-										<img src="Pics/banners/valentines day.png">
-
-									</div>
-								</a>
-
-								<a href="ProductList?category=Winter Collection" class="category-links">
-									<div class="category-card">
-										<h5>Winter</h5>
-										<img src="Pics/banners/winters.png">
-
-									</div>
-								</a>
-								<a href="ProductList?category=Saraswati Puja Collection" class="category-links">
-									<div class="category-card">
-										<h5>Saraswati Puja</h5>
-										<img src="Pics/banners/saraswati puja.png">
-
-									</div>
-								</a>
-
-								
-					</div>
-				</div>
-			
-				<div class="col-lg" align="center">
 					<div class="category" style="background-color: #d4ccfb;">
 						<h2 class="shop-by">Shop by Types</h2>
 						
@@ -244,6 +215,81 @@
 									</div>
 								</a>
 					</div>
+
+
+					
+				</div>
+
+
+				<div class="col-lg">
+					<div class="video-container">
+						<video autoplay muted loop onclick="control(this)">
+							<source src="Pics/banners/panda drip.mp4">
+						</video>
+						
+					</div>
+                </div>
+
+				</div>
+
+				<div class="row">
+				<div class="col-lg" align="center">
+					<div class="category" style="background-color: #ccfbce;">
+						<h2 class="shop-by">Shop by Collections</h2>
+						
+
+								<a href="ProductList?category=Best Sellers" class="category-links">
+									<div class="category-card">
+										<h5>Best Sellers</h5>
+										<img src="Pics/banners/best sellers.png">
+
+									</div>
+								</a>
+								<a href="ProductList?category=New Year's Collection" class="category-links">
+									<div class="category-card">
+										<h5>New Year's</h5>
+										<img src="Pics/banners/new year.png">
+
+									</div>
+								</a>
+						
+								<a href="ProductList?category=Valentine's Day" class="category-links">
+									<div class="category-card">
+										<h5>Valentine's Day</h5>
+										<img src="Pics/banners/valentines day.png">
+
+									</div>
+								</a>
+
+								<a href="ProductList?category=Winter Collection" class="category-links">
+									<div class="category-card">
+										<h5>Winter</h5>
+										<img src="Pics/banners/winters.png">
+
+									</div>
+								</a>
+
+								<a href="ProductList?category=Saraswati Puja Collection" class="category-links">
+									<div class="category-card">
+										<h5>Saraswati Puja</h5>
+										<img src="Pics/banners/saraswati puja.png">
+
+									</div>
+								</a>
+
+								<a href="ProductList?category=Formal Clothing Range" class="category-links">
+									<div class="category-card">
+										<h5>Formals</h5>
+										<img src="Pics/banners/formal sq.png">
+
+									</div>
+								</a>
+
+								
+								
+					</div>
+					
+				</div>
 				</div>
 
 
