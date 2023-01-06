@@ -2,7 +2,6 @@ package pkg;
 
 import java.io.*;
 import java.io.PrintWriter;
-import java.sql.Array;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -44,6 +43,7 @@ public class AdminProfile extends HttpServlet {
     String job = null;
     String pid_list = " ";
     
+    int post_status;
 
     //HTML template for each delete option
     //Note everything that is put from the DBMS is in the form !<NAME_IN_CAPS>! form,
@@ -104,6 +104,7 @@ public class AdminProfile extends HttpServlet {
 					pstm.setString(1, pid);
 					int rs = pstm.executeUpdate();
 					System.out.println(pid + " was deleted");
+					post_status = 200;
 					
 					String eachProductOption = productOptionTemplate;
 			    	eachProductOption = eachProductOption.replaceAll("!PID!", pid);
@@ -118,7 +119,9 @@ public class AdminProfile extends HttpServlet {
 			}
 			
 			
-    	}catch(Exception e) {}
+    	}catch(Exception e) {
+    		post_status = 300;
+    	}
     }
     
     
@@ -175,8 +178,6 @@ public class AdminProfile extends HttpServlet {
 			{
 				 System.out.println("Product Deletion page");
 				 DB_Access(admin_id, job, " ");
-				 request.setAttribute("admin_id", admin_id);
-				 request.setAttribute("job", job);
 				 request.setAttribute("pid_list", pid_list);
 				 request.getRequestDispatcher("delProduct.jsp").include(request, response);
 			}
@@ -223,7 +224,8 @@ public class AdminProfile extends HttpServlet {
 		else 
 		{
 			String job = request.getParameter("job");
-
+			
+			// Js requests for new pid_list
 			if (job.equals("delete product"))
 			{
 				String pid = request.getParameter("pid");
@@ -233,7 +235,7 @@ public class AdminProfile extends HttpServlet {
 
 				DB_Access(admin_id, job, pid);
 				
-				response.setStatus(200);
+				response.setStatus(post_status);
 				response.setHeader("Content-Type", "text/html");
 				response.getWriter().println(pid_list);
 				

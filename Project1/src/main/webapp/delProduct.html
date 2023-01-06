@@ -60,8 +60,7 @@
 		            </select>
 		        </div>
 		        <br>
-		        <p hidden="true" id="deleted" style="color:rgba(60,179,113);">Successfully deleted</p>
-		        <p hidden="true" id="not deleted" style="color:rgba(255,0,0);">Product cannot be deleted</p>
+		        <p id="deleted" ></p>
 		        <div class="col-sm" style="padding: 20px 1px;">
 		            <div class="form-floating mb-3" >
 		            	<!--a href="AdminProfile?job=delete product&pid=output"-->
@@ -82,13 +81,31 @@
             http.onreadystatechange = function() {
                 if (http.readyState === XMLHttpRequest.DONE) 
                 {
-                    //console.log(http.response);
                     var added = document.getElementById("product");
                     added.innerHTML = http.response;
-                    document.getElementById("deleted").hidden=false;
-                    setTimeout(function() {
-                        document.getElementById("deleted").hidden = true;
+                    
+                    var message = document.getElementById("deleted");
+                    message.hidden = false;
+                   	res = Number(http.status);
+
+					if (res == 200) 
+					{
+						message.style.color = "green";
+						message.innerHTML = "Successfully deleted !";
+						console.log(res);
+
+					}
+					else
+					{
+						message.style.color = "red";
+						message.innerHTML = "Sorry, product cannot be deleted";
+						console.log(res);
+					}
+					
+					setTimeout(function() {
+                        message.hidden = true;
                     }, 2000);
+                    
                 }
             }
 		}

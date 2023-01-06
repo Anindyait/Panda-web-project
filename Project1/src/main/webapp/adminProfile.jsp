@@ -27,24 +27,29 @@
 			   <div class="header-adjustment"></div>
                 <br>
                <h1 class="profile-heading">Hello Admin <%= request.getAttribute("first_name")%>!</h1>
-				
-				<div class="admin">
+				<div class="profile-buttons">
+					<button type="sub" class="btn bamboo form-submit" onclick="show_details()">Details</button>
+					<a href="AdminLogout">
+						<button type="sub" class="btn btn-outline-dark form-submit">Logout</button>
+					</a>
+				</div>
+				<div class="admin" style="display:none;">
 			   	   <div class="admin-head">
 				   	   <div class="row">
 					   	   <h2>Here are your Profile details:</h2>
 						   <div class="col">
 							   <div class="admin-text">
-							   		<div class="row justify-content-center">
-					    				<div class="col-2 admin-col">Name</div>
-					    				<div class="col-2 admin-col"><%= request.getAttribute("first_name")%> <%= request.getAttribute("last_name")%></div>
+							   		<div class="row">
+					    				<div class="col-3 admin-col">Name:</div>
+					    				<div class="col-4 admin-col"><%= request.getAttribute("first_name")%> <%= request.getAttribute("last_name")%></div>
 				 					</div>
-				 					<div class="row justify-content-center">
-										<div class="col-2 admin-col">Email</div>					
-					 					<div class="col-2 admin-col"><%= request.getAttribute("email")%></div>
+				 					<div class="row">
+										<div class="col-3 admin-col">Email:</div>					
+					 					<div class="col-4 admin-col"><%= request.getAttribute("email")%></div>
 				 					</div>
-				 					<div class="row justify-content-center">
-					    				<div class="col-2 admin-col">Phone</div>
-					 					<div class="col-2 admin-col"><%= request.getAttribute("phone")%></div>
+				 					<div class="row">
+					    				<div class="col-3 admin-col">Phone:</div>
+					 					<div class="col-4 admin-col"><%= request.getAttribute("phone")%></div>
 				 					</div>
 							   </div>
 						  </div>
@@ -66,7 +71,12 @@
 								   	</div>
 								   	<div class="col">
 								   		<a href="AdminLogout">
-											<div type="sub" class="btn btn-primary form-submit">Edit Products</div>
+											<div type="sub" class="btn btn-primary form-submit">See Products</div>
+					   					</a>
+								   	</div>
+								   	<div class="col">
+								   		<a href="AdminLogout">
+											<div type="sub" class="btn btn-warning form-submit">Edit Products</div>
 					   					</a>
 								   	</div>
 								   	<div class="col">
@@ -80,12 +90,20 @@
 				  </div>
 			   	   </div>
 			   </div>
-			   <br>
-			   <a href="AdminLogout">
-				<div type="sub" class="btn btn-outline-dark form-submit">Logout</div>
-			</a>
 		</div>
 	</div>
 	<div id="footer"></div>
+	<script>
+	var details = document.getElementsByClassName("admin");
+
+	function show_details()
+	{
+		console.log("details");
+		if(details[0].style.display == "none")
+			details[0].style.display="block";
+		else
+               details[0].style.display = "none";
+	}
+	</script>
 </body>
 </html>
