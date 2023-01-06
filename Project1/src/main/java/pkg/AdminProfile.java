@@ -42,12 +42,21 @@ public class AdminProfile extends HttpServlet {
     
     String job = null;
     String pid_list = " ";
+    String prod_list = " ";
     
     int post_status;
 
     //HTML template for each delete option
     //Note everything that is put from the DBMS is in the form !<NAME_IN_CAPS>! form,
     String productOptionTemplate = "<option value=\"!PID!\">!PID!</option>";
+    String productRowTemplate = "<tr>\r\n"
+    		+ "							      <th scope=\"row\">!PID!</th>\r\n"
+    		+ "							      <td>!TITLE!</td>\r\n"
+    		+ "							      <td>!PRICE!</td>\r\n"
+    		+ "							      <td>!SIZES!</td>\r\n"
+    		+ "							      <td>!STOCK!</td>\r\n"
+    		+ "							      <td>!DESC!</td>\r\n"
+    		+ "							    </tr>";
         
     void DB_Access(String admin_id, String job, String pid)
     {
@@ -113,7 +122,26 @@ public class AdminProfile extends HttpServlet {
 				}
 				
 			}
-			else
+			else if (job.equals("see product"))
+			{
+				pstm = con.prepareStatement("select product_id, p_name, price, sizes, stock, descr from product_table;");
+				
+				ResultSet rs = pstm.executeQuery();
+
+			    while (rs.next ())
+			    {
+			        String eachProduct = productRowTemplate;
+			    	eachProduct = eachProduct.replaceAll("!PID!", rs.getString ("product_id"));
+			    	eachProduct = eachProduct.replaceAll("!TITLE!", rs.getString ("p_name"));
+			    	eachProduct = eachProduct.replaceAll("!PRICE!", rs.getString ("price"));
+			    	eachProduct = eachProduct.replaceAll("!SIZES!", rs.getString ("sizes"));
+			    	eachProduct = eachProduct.replaceAll("!STOCK!", rs.getString ("stock"));
+			    	eachProduct = eachProduct.replaceAll("!DESC!", rs.getString ("descr"));
+
+			    	prod_list = prod_list.concat(eachProduct);
+			    }
+			}
+			else 
 			{
 				
 			}
@@ -181,11 +209,18 @@ public class AdminProfile extends HttpServlet {
 				 request.setAttribute("pid_list", pid_list);
 				 request.getRequestDispatcher("delProduct.jsp").include(request, response);
 			}
+			else if (job.equals("see product"))
+			{
+				 System.out.println("See Product page");
+				 DB_Access(admin_id, job, " ");
+				 request.setAttribute("prod_list", prod_list);
+				 request.getRequestDispatcher("seeProduct.jsp").include(request, response);
+				
+			}
 			else
 			{
 				
 			}
-			
 		}
 		
 	}

@@ -30,7 +30,7 @@
 				<div class="profile-buttons">
 					<button type="sub" class="btn bamboo form-submit" onclick="show_details()">Details</button>
 					<a href="AdminLogout">
-						<button type="sub" class="btn btn-outline-dark form-submit">Logout</button>
+						<button type="sub" class="btn btn-outline-danger form-submit">Logout</button>
 					</a>
 				</div>
 				<div class="admin" style="display:none;">
@@ -70,7 +70,7 @@
 					   					</a>
 								   	</div>
 								   	<div class="col">
-								   		<a href="AdminLogout">
+								   		<a href="AdminProfile?job=see product">
 											<div type="sub" class="btn btn-primary form-submit">See Products</div>
 					   					</a>
 								   	</div>

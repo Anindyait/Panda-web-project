@@ -63,6 +63,9 @@
 		            <div class="form-floating mb-3" >
 		            	<!--a href="AdminProfile?job=delete product&pid=output"-->
 		                <button onclick="sendPID()" class="btn btn-danger form-submit">Delete</button>
+		                <a href="AdminProfile">
+		                	<button class="btn bamboo form-submit">Back</button>
+		                </a>
 		            </div>
 	            </div>
 		    </div>
