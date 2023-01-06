@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -119,7 +120,38 @@ public class Profile extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	
+		response.setContentType("text/html");
 
+		PrintWriter pw = response.getWriter();
+		
+		String new_address = request.getParameter("new_address");
+		System.out.println(new_address);
+		
+		String user_id = Utilities.GetUID(request);
+		
+		try 
+		{
+			Connection con;
+			PreparedStatement pstm; 			       //class to prepare statement
+			
+			Class.forName("com.mysql.cj.jdbc.Driver"); //Class is a class
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); //DriverManager is a class 
+														//jdbc:mysql then ip address then port no. then db name
+			Statement stmt = con.createStatement();
+			
+			pstm = con.prepareStatement("update user_table set address = (?) where user_id = (?)");
+			pstm.setString(1, new_address);
+			pstm.setString(2, user_id);
+			
+			pstm.executeUpdate();
+			
+			pw.println("1");
+		
+		
+		}catch(Exception e) {
+			pw.println("0");
+			System.out.println(e);
+		}
+		
 	}
 }

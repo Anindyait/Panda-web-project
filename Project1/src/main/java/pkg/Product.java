@@ -64,7 +64,7 @@ public class Product extends HttpServlet {
 				String title = rs.getString("p_name");
 				
 				System.out.println(title);
-				title = title.replace("\'", "1");
+				
 				System.out.println(title);
 
 				

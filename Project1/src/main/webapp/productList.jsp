@@ -134,8 +134,6 @@
 </head>
 <body onload="param()">
 
-
-
     <div class="font">
     <div class="container-fluid">
         <div id="header"></div>
@@ -213,7 +211,8 @@
 
                         <%= request.getAttribute("product_cards")%>
     
-                        <hr>
+                        <br>
+                        <br>
                         <h4> <i class="fa-solid fa-circle-check fa-lg"></i>&nbsp&nbspThat's all!</h4>
                 
                     </div>
