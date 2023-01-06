@@ -107,8 +107,8 @@ public class Startup extends HttpServlet {
 					+ "size varchar(30) not null, "
 					+ "order_id varchar(255), "
 					+ "d_date date,"
-					+ "foreign key(user_id) references user_table(user_id), "
-					+ "foreign key(product_id) references product_table(product_id), "
+					+ "foreign key(user_id) references user_table(user_id) on delete cascade, "
+					+ "foreign key(product_id) references product_table(product_id) on delete cascade, "
 					+ "primary key(cart_id,user_id,product_id))";
 			
 			//Create admin_table if it does not exist
