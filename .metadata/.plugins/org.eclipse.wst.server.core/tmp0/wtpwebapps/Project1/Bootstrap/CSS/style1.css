@@ -1300,3 +1300,9 @@ input:focus{
 	opacity: 100%;
 
 }
+
+#select-size{
+
+	padding-left: 10px;
+	font-size: medium;
+}

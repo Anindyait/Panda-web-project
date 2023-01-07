@@ -400,3 +400,12 @@ Jan 06, 2023 20:57:29.824 [24132:1540:0106/205729.824:ERROR:device_event_log_imp
 Jan 06, 2023 21:08:16.356 [17460:10244:0106/210816.356:ERROR:device_event_log_impl.cc(215)] [21:08:16.356] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
 Jan 06, 2023 21:13:33.492 [22808:27324:0106/211333.492:ERROR:device_event_log_impl.cc(215)] [21:13:33.492] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
 Jan 06, 2023 21:21:33.495 [1432:19892:0106/212133.495:ERROR:device_event_log_impl.cc(215)] [21:21:33.496] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 07, 2023 12:00:59.855 [14800:10344:0107/120059.855:ERROR:device_event_log_impl.cc(215)] [12:00:59.857] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 07, 2023 16:18:50.228 [14800:28392:0107/161850.226:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+Jan 07, 2023 16:18:54.150 [14800:28392:0107/161854.150:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+Jan 07, 2023 18:21:35.313 [14800:28392:0107/182135.313:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+Jan 07, 2023 18:21:35.949 [14800:23920:0107/182135.948:ERROR:get_updates_processor.cc(260)] PostClientToServerMessage() failed during GetUpdates with error 2
+Jan 07, 2023 18:21:36.856 [14800:28392:0107/182136.856:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+Jan 07, 2023 18:21:43.937 [14800:10344:0107/182143.937:ERROR:device_event_log_impl.cc(215)] [18:21:43.937] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Jan 07, 2023 19:32:32.443 [15696:18488:0107/193232.443:ERROR:device_event_log_impl.cc(215)] [19:32:32.444] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 07, 2023 20:08:27.187 [29904:8516:0107/200827.187:ERROR:device_event_log_impl.cc(215)] [20:08:27.187] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)

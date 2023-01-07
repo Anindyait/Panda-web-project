@@ -34,7 +34,10 @@ public class Cart extends HttpServlet {
 		PrintWriter pw=response.getWriter();
 		ServletContext context=getServletContext();
 		
+		String pid = request.getParameter("pid");
+		String size = request.getParameter("size");
 		
+		System.out.println("Get "+ pid+" "+size);
 	}
 
 	/**
@@ -47,10 +50,11 @@ public class Cart extends HttpServlet {
 		
 		ServletContext context=getServletContext();
 		
-		String pid = request.getParameter("pid");
-		String size = request.getParameter("size");
+		String para = request.getParameter("param");
 		
-		System.out.println("Post "+ pid+" "+size);
+		System.out.println("Post "+ para);
+		pw.println("From Servlet<hr>Servlet Again");
+		
 		
 	}
 

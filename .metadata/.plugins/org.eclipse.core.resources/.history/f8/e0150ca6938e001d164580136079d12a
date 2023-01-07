@@ -70,7 +70,6 @@ public class Product extends HttpServlet {
 				
 				
 				//Putting data in the jsp page.
-				request.setAttribute("pid", pid);
 				request.setAttribute("title", title);
 				request.setAttribute("price", price.substring(0, price.length() - 2));
 				request.setAttribute("desc", rs.getString("descr"));

@@ -12,20 +12,39 @@
     <script>
         function Add_to_Cart()
         {
-            console.log("Add_to_Cart");
-            var http = new XMLHttpRequest();
-            http.open("POST", "Cart", true);
-            http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-            var params = "param=" + "Hello"; // probably use document.getElementById(...).value
-            http.send(params);
-            
-            http.onreadystatechange = function() {
-                if (http.readyState == XMLHttpRequest.DONE) {
-                	console.log(http.response);
-                	var added = document.getElementById("cart-add");
-                    added.innerHTML = http.response;
+            var selected_size = document.getElementsByClassName("btn-check");
+            var selected = false;
+            var pid = document.getElementsByClassName("Title")[0].dataset.pid;
+            var select_size = document.getElementById("select-size");
+            for (var i = 0; i < selected_size.length; i++)
+            {
+                if (selected_size[i].checked)
+                {  
+                    selected = selected_size[i].id;
+                    break;
                 }
             }
+
+            if(!selected)
+            {
+                console.log(selected);
+                select_size.style.color = "red";
+                select_size.innerHTML = "Please select a size";
+            }
+            else
+            {
+                console.log(pid+" "+selected);
+                select_size.style.color = "green";
+                select_size.innerHTML = "Added to cart";
+                console.log("Add_to_Cart");
+
+
+                var http = new XMLHttpRequest();
+                http.open("POST", "Cart", true);
+                http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                var params = "pid=" + pid + "&" +"size="+ selected; 
+                http.send(params);
+            }    
             
         }
     </script>
@@ -46,7 +65,6 @@
 <body>
 
 
-    <!-- <?php $IPATH = $_SERVER["DOCUMENT_ROOT"]."/php/"; include($IPATH, "headernav.html"); ?> -->
 
 
     
@@ -93,30 +111,32 @@
 
                         <div class="text">
                             <!--Title-->
-                            <div class="Title" style="margin: 0px auto">L'Oreal Paris Glycolic Bright Skin Brightening Thing*</div>
+                            <div class="Title" style="margin: 0px auto" data-pid="P0001">L'Oreal Paris Glycolic Bright Skin Brightening Thing*</div>
                             
                             <!--Price-->
                             <div class="Price">&#8377;200<sup>.00</sup></div>
 
                             <!--size selectors-->
                                 <div class="size-selector-container">
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio_xs" autocomplete="off" disabled>
-                                    <label class="btn btn-outline-dark size-selector" for="btnradio_xs" >XS</label>
+                                    <input type="radio" class="btn-check" name="btnradio" id="XS" autocomplete="off" disabled>
+                                    <label class="btn btn-outline-dark size-selector" for="XS" >XS</label>
                                 
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio_s" autocomplete="off">
-                                    <label class="btn btn-outline-dark size-selector" for="btnradio_s">S</label>
+                                    <input type="radio" class="btn-check" name="btnradio" id="S" autocomplete="off">
+                                    <label class="btn btn-outline-dark size-selector" for="S">S</label>
                                 
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio_m" autocomplete="off">
-                                    <label class="btn btn-outline-dark size-selector" for="btnradio_m">M</label>
+                                    <input type="radio" class="btn-check" name="btnradio" id="M" autocomplete="off">
+                                    <label class="btn btn-outline-dark size-selector" for="M">M</label>
 
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio_l" autocomplete="off">
-                                    <label class="btn btn-outline-dark size-selector" for="btnradio_l">L</label>
+                                    <input type="radio" class="btn-check" name="btnradio" id="L" autocomplete="off">
+                                    <label class="btn btn-outline-dark size-selector" for="L">L</label>
 
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio_xl" autocomplete="off">
-                                    <label class="btn btn-outline-dark size-selector" for="btnradio_xl">XL</label>
+                                    <input type="radio" class="btn-check" name="btnradio" id="XL" autocomplete="off">
+                                    <label class="btn btn-outline-dark size-selector" for="XL">XL</label>
 
                                     
                                 </div>
+                                <p id="select-size"></p>
+
                                 
                                
 
@@ -137,7 +157,6 @@
                                 <div class="col-4">
                                     <input type="button" value="Add to Cart" class="btn btn-outline-primary AddtoCart" onclick="Add_to_Cart()"/>
                                 </div>
-                                <p id="cart-add"></p>
                             </div>
                         </div>
 

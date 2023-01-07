@@ -63,14 +63,12 @@ public class Product extends HttpServlet {
 				
 				String title = rs.getString("p_name");
 				
-				String pid = rs.getString("product_id");
-				
 				System.out.println(title);
 				
-				
+				System.out.println(title);
+
 				
 				//Putting data in the jsp page.
-				request.setAttribute("pid", pid);
 				request.setAttribute("title", title);
 				request.setAttribute("price", price.substring(0, price.length() - 2));
 				request.setAttribute("desc", rs.getString("descr"));
