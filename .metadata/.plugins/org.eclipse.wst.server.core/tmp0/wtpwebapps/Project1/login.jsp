@@ -17,10 +17,33 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
     <link rel="icon" href="Pics/panda.png">
-
+    	
+    <script>
+       
+        var allQuotes = ["\"They don't have racism in America anymore. When they voted for Obama they sorted all of that out.\" - Philomena Cunk",
+                        "\"Why do we cry when it's the onions that are getting hurt?\" - Philomena Cunk",
+                        "\" I have all the characteristics of a human being: blood, flesh, skin, hair; but not a single, clear, identifiable emotion, except for greed and disgust.\" - Patrick Bateman",
+                        "\"Your compassion is a weakness your enemies will not share.\"<br>\"That's why it's so important. It seperates us from them.\" - Batman Begins",
+                        "\"Why do we fall, Sir? So we can learn to pick ourselves up.\" - Alfred",
+                        "\"It's not who I am underneath, but what I do that defines me.\" - Batman",
+                        "\"Would you like to hear today's specials?\"<br>\"Not if you want to keep your spleen.\" - Patrick Bateman",
+                        "\"..some men aren't looking for anything logical, like money. They can't be bought, bullied, reasoned, or negotiated with. Some men just want to watch the world burn.\" - Alfred",
+                        "\"You Always Fear What You Don't Understand.\" - Falcone",
+                        "\"Madness, as you know, is a lot like gravity. All it takes is a little push.\" - The Joker"]
+    function getQuote()
+    {
+        var quote = document.getElementById("quote");
+        var quoter = document.getElementById("quoter");
+        var currentQuote = allQuotes[Math.floor(Math.random()*allQuotes.length)];
+        currentQuote = currentQuote.split("-");
+        console.log(currentQuote[0]);
+        quote.innerHTML = currentQuote[0];
+        quoter.innerHTML = "- " + currentQuote[1];
+    }
+</script>
 
 </head>
-<body>
+<body onload="getQuote()">
 
 
 
@@ -31,51 +54,65 @@
 			<div id="header"></div>
 			   <div class="header-adjustment"></div>
 
-			   <div class = "login-bg">
-					<h2 style="opacity:90%;">Login</h2>
-					
-                    <br>
-					
-                    <div class="server-side-check" style="text-align: left;" <%= request.getAttribute("wrong_password")%> >Incorrect Password!</div>
-                    <div class="server-side-check" style="text-align: left;" <%= request.getAttribute("wrong_email")%> >Email ID not found!</div>
-                    <br>
 
-                    
-                    <form action="Login" name="form1" class="needs-validation" novalidate method="post">
-                        <div class="form-floating mb-3" >
-                            <input name="email" type = "email" class = "form-control"  id = "email" placeholder="mikehunt@panda.com" required>
-                            <label for = "email" style="opacity:70%;">Email ID</label> 
 
-                            <div class="invalid-feedback" style="text-align: left;">
-                               Enter valid email ID
-                           </div>
-                           
+               <div class="row d-flex align-items-center">
+                    <div class="col">
+                        <div class="quote-bg">
+                            <p id="quote"></p>
+                            <br>
+                            <br>
+                            <h5 id="quoter"></h5>
                         </div>
+                    </div>
+               
+               <div class="col">
+                <div class = "login-bg">
+                        <h2 style="opacity:90%;">Login</h2>
+                        
                         <br>
-                        <div class="form-floating mb-3">
-                            <input name="password" type = "password" class = "form-control"  id = "password1" placeholder="1234" required>
-                            <label for = "password" style="opacity:70%;">Password</label>
-                            <div class="invalid-feedback" style="text-align: left;">
-                                Enter password
-                            </div> 
-                        </div>
+                        
+                        <div class="server-side-check" style="text-align: left;" <%= request.getAttribute("wrong_password")%> >Incorrect Password!</div>
+                        <div class="server-side-check" style="text-align: left;" <%= request.getAttribute("wrong_email")%> >Email ID not found!</div>
                         <br>
-                        <div class="row">
-                            <div class="col">
-                                <button type="submit" class="btn btn-dark form-submit">Login</button>
-                            </div>
-                            <div class="col">
-                                <a href="Register">
-                                    <div type="sub" class="btn btn-outline-dark form-submit">Sign up</div>
-                                </a>
-                            </div>
-                        </div>
 
-                    </form>
-		   		</div>
+                        
+                        <form action="Login" name="form1" class="needs-validation" novalidate method="post">
+                            <div class="form-floating mb-3" >
+                                <input name="email" type = "email" class = "form-control"  id = "email" placeholder="mikehunt@panda.com" required>
+                                <label for = "email" style="opacity:70%;">Email ID</label> 
 
-			</div>
+                                <div class="invalid-feedback" style="text-align: left;">
+                                Enter valid email ID
+                            </div>
+                            
+                            </div>
+                            <br>
+                            <div class="form-floating mb-3">
+                                <input name="password" type = "password" class = "form-control"  id = "password1" placeholder="1234" required>
+                                <label for = "password" style="opacity:70%;">Password</label>
+                                <div class="invalid-feedback" style="text-align: left;">
+                                    Enter password
+                                </div> 
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col">
+                                    <button type="submit" class="btn btn-dark form-submit">Login</button>
+                                </div>
+                                <div class="col">
+                                    <a href="Register">
+                                        <div type="sub" class="btn btn-outline-dark form-submit">Sign up</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
 		</div>
+		
 
         <script>
             // Example starter JavaScript for disabling form submissions if there are invalid fields
