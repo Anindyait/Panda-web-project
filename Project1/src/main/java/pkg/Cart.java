@@ -166,13 +166,24 @@ public class Cart extends HttpServlet {
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); //DriverManager is a class 
 
-				pstm = con.prepareStatement("insert into cart_table(user_id, product_id, quantity, size) values(?, ?, 1, ?);");
-				
+				pstm = con.prepareStatement(" update cart_table set quantity = quantity + 1 where user_id = ? and product_id = ? and size = ? and order_id IS NULL;");
 				pstm.setString(1, user_id);
 				pstm.setString(2, pid);
 				pstm.setString(3, size);
 
 				int rs = pstm.executeUpdate(); 
+				
+				if (rs == 0)
+				{
+					pstm = con.prepareStatement("insert into cart_table(user_id, product_id, quantity, size) values(?, ?, 1, ?);");
+					
+					
+					pstm.setString(1, user_id);
+					pstm.setString(2, pid);
+					pstm.setString(3, size);
+	
+					rs = pstm.executeUpdate();
+				}
 				System.out.println("Successfully inserted into cart!");
 
 			
