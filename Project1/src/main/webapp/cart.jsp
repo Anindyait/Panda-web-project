@@ -58,6 +58,7 @@
                                 </div>
                                 <p id="no-items"></p>
 								<%= request.getAttribute("cart_list")%>
+								<div class="prices" id="tot-amount"></div>
                             </div>  
                         </div>
                     </div>
@@ -76,7 +77,8 @@
         var size = document.getElementsByClassName("subtitle-cart");
 
         var amount = [];
-
+		var tot = 0;
+		
         for (var i = 0; i < inputs.length; i++)
         {
             var inp = parseInt(inputs[i].value);
@@ -84,6 +86,7 @@
             amount[i] = inp * pri;
             console.log(i, inp, pri, amount[i]);
             amt[i].innerHTML = amount[i];
+            tot += amount[i];
             
             var lastTwoChars = size[i].innerHTML.substring(size[i].innerHTML.length - 2);
             var trimmedLastTwoChars = lastTwoChars.trim();
@@ -95,8 +98,10 @@
             http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
             var params = "pid=" + pid[i].innerHTML + "&" + "size=" + trimmedLastTwoChars +"&" + "qty=" + inputs[i].value + "&" + "job=quantity"; 
             http.send(params);
-        }   
-            
+        } 
+        
+        document.getElementById("tot-amount").innerHTML = "Total: " + tot;
+        console.log(tot);
     }  
 
     function RemovefromCart(y)
@@ -140,6 +145,7 @@
         }
         http.send(params);
     }
+    window.addEventListener("load", calcTotal);
     </script>
 </body>
-</html>  
+</html>    
