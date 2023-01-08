@@ -113,6 +113,7 @@
         
         if (y === 'all')
         {
+        	$(".Cart-Items").next().remove();
         	$(".Cart-Items").remove();
         	
             var params = "qty=all" + "&" + "job=remove" ; 
@@ -126,6 +127,9 @@
             }, 5000);
             
         	console.log("All items deleted");
+        	
+            document.getElementById("tot-amount").innerHTML = "Total: " + 0;
+
 
         }
         else
@@ -142,6 +146,9 @@
             var params = "pid=" + pid + "&" + "size=" + trimmedLastTwoChars + "&" + "qty=one" + "&" + "job=remove" ; 
             
         	console.log("Item successfully deleted");
+        	
+        	calcTotal();
+
         }
         http.send(params);
     }
