@@ -53,8 +53,8 @@
                         
                             <div class = "Cart-Container">
                                 <div class = "Header-cart">
-                                    <h3 class = "Heading-cart"> Shopping cart</h3>
-                                    <h5 class = "Action"> Remove All</h5>
+                                    <h3 class = "Heading-cart">Shopping cart</h3>
+                                    <h5 class = "Remove-Action" onclick = "RemovefromCart('all')">Remove All</h5>
                                 </div>
                                <div class="Cart-Items">
                                     <div class="row">
@@ -67,7 +67,8 @@
                                     
                                     <div class="about-cart">
                                         <h1 style = "font-size:21px">Hoodie 1</h1>
-                                        <h3 class="subtitle-cart">Size</h3>                        
+                                        <p class="pid" style="display:none;">P0001</p>
+                                        <h3 class="subtitle-cart">Size: XS</h3>
                                     </div>                                   
                                     								
 									<div class="col-md-3 col-lg-3 col-xl-2 d-flex" >                                   
@@ -85,6 +86,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <br>
 								<div class="Cart-Items">
                                     <div class="row">
                                         <div class="col">
@@ -96,7 +98,8 @@
                                     
                                     <div class="about-cart">
                                         <h1 style = "font-size:21px">Hoodie 2</h1>
-                                        <h3 class="subtitle-cart">Size</h3>                        
+                                        <p class="pid" style="display:none;">P0001</p>
+                                        <h3 class="subtitle-cart">Size: XS</h3>
                                     </div>                                   
                                     								
 									<div class="col-md-3 col-lg-3 col-xl-2 d-flex" >                                   
@@ -114,7 +117,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+                                <br>
                                 <div class="Cart-Items">
                                     <div class="row">
                                         <div class="col">
@@ -126,7 +129,8 @@
                                     
                                     <div class="about-cart">
                                         <h1 style = "font-size:21px">Hoodie 3</h1>
-                                        <h3 class="subtitle-cart">Size</h3>                        
+                                        <p class="pid" style="display:none;">P0001</p>
+                                        <h3 class="subtitle-cart">Size: XS</h3>
                                     </div>                                   
                                     								
 									<div class="col-md-3 col-lg-3 col-xl-2 d-flex" >                                   
@@ -144,7 +148,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+                                <br>
                             </div>  
                         </div>
                     </div>
@@ -153,7 +157,80 @@
             </div>
         </div>
 	<div id="footer"></div>
-    <script src = "cart.js">
+    <script>
+    function calcTotal()
+    {
+        var inputs = document.getElementsByClassName("quant");
+        var prices = document.getElementsByClassName("price");
+        var amt = document.getElementsByClassName("amount");
+        var pid = document.getElementsByClassName("pid");
+        var size = document.getElementsByClassName("subtitle-cart");
+
+        var amount = [];
+
+        for (var i = 0; i < inputs.length; i++)
+        {
+            var inp = parseInt(inputs[i].value);
+            var pri = parseInt(prices[i].innerHTML);
+            amount[i] = inp * pri;
+            console.log(i, inp, pri, amount[i]);
+            amt[i].innerHTML = amount[i];
+            
+            var lastTwoChars = size[i].innerHTML.substring(size[i].innerHTML.length - 2);
+            var trimmedLastTwoChars = lastTwoChars.trim();
+            
+            
+            // Preferrably shouldn't make this request if previous quantity isn't the same as the new one
+		    var http = new XMLHttpRequest();
+            http.open("POST", "Cart", true);
+            http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            var params = "pid=" + pid[i].innerHTML + "&" + "size=" + trimmedLastTwoChars +"&" + "qty=" + inputs[i].value + "&" + "job=quantity"; 
+            http.send(params);
+        }   
+            
+    }  
+
+    function RemovefromCart(y)
+    {     
+    	
+    	var http = new XMLHttpRequest();
+        http.open("POST", "Cart", true);
+        http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        
+        if (y === 'all')
+        {
+        	$(".Cart-Items").remove();
+        	
+            var params = "qty=all" + "&" + "job=remove" ; 
+            
+            var message = document.getElementById("no-items");
+            message.style.margin = "30px";
+            message.innerHTML = "There are no items in the cart currently.";
+			
+            setTimeout(function() {
+                message.hidden = true;
+            }, 5000);
+            
+        	console.log("All items deleted");
+
+        }
+        else
+        {
+        	y.parentElement.parentElement.parentElement.nextElementSibling.remove();
+        	y.parentElement.parentElement.parentElement.remove();
+        	
+        	var cartItem = y.closest(".Cart-Items");
+        	var pid = cartItem.querySelector(".pid").textContent;
+        	var size = cartItem.querySelector(".subtitle-cart").textContent;
+        	var lastTwoChars = size.substring(size.length - 2);
+            var trimmedLastTwoChars = lastTwoChars.trim();
+        	
+            var params = "pid=" + pid + "&" + "size=" + trimmedLastTwoChars + "&" + "qty=one" + "&" + "job=remove" ; 
+            
+        	console.log("Item successfully deleted");
+        }
+        http.send(params);
+    }
     </script>
 </body>
 </html>  
