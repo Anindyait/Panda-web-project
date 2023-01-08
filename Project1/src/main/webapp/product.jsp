@@ -47,7 +47,7 @@
                 var http = new XMLHttpRequest();
                 http.open("POST", "Cart", true);
                 http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-                var params = "pid=" + pid + "&" +"size="+ selected; 
+                var params = "pid=" + pid + "&" + "size=" + selected + "&" + "job=add"; 
                 http.send(params);
             }    
             

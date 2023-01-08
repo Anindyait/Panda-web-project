@@ -124,7 +124,7 @@ public class AdminProfile extends HttpServlet {
 			}
 			else if (job.equals("see product"))
 			{
-				pstm = con.prepareStatement("select product_id, p_name, price, sizes, stock, descr from product_table;");
+				pstm = con.prepareStatement("select product_id, p_name, price, sizes, stock, descr from product_table order by product_id;");
 				
 				ResultSet rs = pstm.executeQuery();
 
