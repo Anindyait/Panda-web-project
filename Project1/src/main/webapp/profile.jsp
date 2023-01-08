@@ -124,7 +124,7 @@
 			    <div class="profile-buttons">
 					<button type="sub" class="btn bamboo form-submit" onclick="show_details()">Details</button>
 					
-					<a href="#Cart" type="sub" class="btn form-submit bamboo">View Cart</a>
+					<a href="Cart" type="sub" class="btn form-submit bamboo">View Cart</a>
 					<a href="#Orders" type="sub" class="btn form-submit bamboo">View Orders</a>
 
 					<a href="Logout">
