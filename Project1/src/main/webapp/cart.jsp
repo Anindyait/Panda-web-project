@@ -44,21 +44,30 @@
             <div id = "header"></div>
             <div class = "header-adjustment"></div>
             <br>
-            <div class = "row justify-content-center">
-                
-                <div class = "col-md-6">
-                <div class = "container-fluid">
-                    <div class = "about">
-                        <div class = "about-head">
-                        
+			<div class = "container-fluid">
+			
                             <div class = "Cart-Container">
                                 <div class = "Header-cart">
-                                    <h3 class = "Heading-cart">Shopping cart</h3>
+                                    <h3 class = "Heading-cart">Panda Trolly</h3>
+                                    
                                     <h5 class = "Remove-Action" onclick = "RemovefromCart('all')">Remove All</h5>
                                 </div>
+                                <br>
                                 <p id="no-items"></p>
 								<%= request.getAttribute("cart_list")%>
-								<div class="prices" id="tot-amount"></div>
+								<div class="row total-checkout">
+                                    <div class="col">
+                                        <div class="prices" id="tot-amount"></div>
+                                    </div>
+                                    <div class="col">
+                                        <a href="#Checkout">
+                                        <button type="sub" class="btn form-submit bamboo" id="checkout">
+                                            Checkout
+                                            <i class="fa-solid fa-angle-right"></i>
+                                        </button>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>  
                         </div>
                     </div>
@@ -74,7 +83,7 @@
         var prices = document.getElementsByClassName("price");
         var amt = document.getElementsByClassName("amount");
         var pid = document.getElementsByClassName("pid");
-        var size = document.getElementsByClassName("subtitle-cart");
+        var size = document.getElementsByClassName("size");
 
         var amount = [];
 		var tot = 0;
@@ -82,25 +91,28 @@
         for (var i = 0; i < inputs.length; i++)
         {
             var inp = parseInt(inputs[i].value);
-            var pri = parseInt(prices[i].innerHTML);
+            var pri = parseInt(prices[i].innerHTML.slice(2));
             amount[i] = inp * pri;
             console.log(i, inp, pri, amount[i]);
-            amt[i].innerHTML = amount[i];
+            amt[i].innerHTML = "&#8377;&nbsp" + amount[i];
             tot += amount[i];
-            
-            var lastTwoChars = size[i].innerHTML.substring(size[i].innerHTML.length - 2);
-            var trimmedLastTwoChars = lastTwoChars.trim();
-            
-            
+             
             // Preferrably shouldn't make this request if previous quantity isn't the same as the new one
 		    var http = new XMLHttpRequest();
             http.open("POST", "Cart", true);
             http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-            var params = "pid=" + pid[i].innerHTML + "&" + "size=" + trimmedLastTwoChars +"&" + "qty=" + inputs[i].value + "&" + "job=quantity"; 
+            var params = "pid=" + pid[i].innerHTML + "&" + "size=" + size[i].innerHTML +"&" + "qty=" + inputs[i].value + "&" + "job=quantity"; 
             http.send(params);
         } 
+
+        if(tot == 0)
+        {
+            document.getElementById("no-items").innerHTML = "Wooh! &nbspThis looks empty.";
+            document.getElementById("checkout").style.display = "none";
+        }
         
-        document.getElementById("tot-amount").innerHTML = "Total: " + tot;
+        
+        document.getElementById("tot-amount").innerHTML = "Total:&nbsp&nbsp &#8377; " + tot;
         console.log(tot);
     }  
 
@@ -110,48 +122,35 @@
     	var http = new XMLHttpRequest();
         http.open("POST", "Cart", true);
         http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        
+
         if (y === 'all')
         {
-        	$(".Cart-Items").next().remove();
-        	$(".Cart-Items").remove();
         	
             var params = "qty=all" + "&" + "job=remove" ; 
             
-            var message = document.getElementById("no-items");
-            message.style.margin = "30px";
-            message.innerHTML = "There are no items in the cart currently.";
-			
-            setTimeout(function() {
-                message.hidden = true;
-            }, 5000);
-            
         	console.log("All items deleted");
-        	
-            document.getElementById("tot-amount").innerHTML = "Total: " + 0;
-
-
+            $(".Cart-Items").remove();
+            calcTotal();
         }
         else
         {
-        	y.parentElement.parentElement.parentElement.nextElementSibling.remove();
-        	y.parentElement.parentElement.parentElement.remove();
         	
         	var cartItem = y.closest(".Cart-Items");
         	var pid = cartItem.querySelector(".pid").textContent;
-        	var size = cartItem.querySelector(".subtitle-cart").textContent;
-        	var lastTwoChars = size.substring(size.length - 2);
-            var trimmedLastTwoChars = lastTwoChars.trim();
+        	var size = cartItem.querySelector(".size").textContent;
         	
-            var params = "pid=" + pid + "&" + "size=" + trimmedLastTwoChars + "&" + "qty=one" + "&" + "job=remove" ; 
+            var params = "pid=" + pid + "&" + "size=" + size + "&" + "qty=one" + "&" + "job=remove" ; 
             
-        	console.log("Item successfully deleted");
-        	
-        	calcTotal();
+            //.parentElement().parentElement() added.
 
+            y.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
+        	console.log("Item successfully deleted");
+            calcTotal();
         }
+
         http.send(params);
     }
+    
     window.addEventListener("load", calcTotal);
     </script>
 </body>
