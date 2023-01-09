@@ -145,7 +145,7 @@ public class Cart extends HttpServlet {
 		
 		String job = request.getParameter("job");
 				
-		if(user_id == null)
+		if(user_id == null )
 		{
 			request.getRequestDispatcher("Login").include(request, response);
 		}
@@ -260,7 +260,42 @@ public class Cart extends HttpServlet {
 		}
 		
 		
+		//Request send by addToCart.js to know no of items present in the cart.
+		else if(job.equals("no_of_items"))
+		{
+			String number = "0";
+			try {
+				Connection con;
+				PreparedStatement pstm;
+				
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); //DriverManager is a class 
+			
+				pstm = con.prepareStatement("select sum(quantity) as sum, order_id from cart_table group by user_id having order_id is null and user_id = ?");
+
+				pstm.setString(1, user_id);
+				
+				ResultSet rs = pstm.executeQuery();
+			
+				if(rs.next())
+				{
+					number = rs.getString("sum");
+					System.out.println("Items in cart = "+number);
+					pw.println(number);
+				}
+				else
+				{
+					pw.println("");
+				}
+				
+				
+			}catch(Exception e) {System.out.println(e);}
+		}
 		
+		
+	
 	}
+	
+		
 
 }

@@ -9,7 +9,8 @@
 	</script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="Bootstrap/CSS/style1.css">
-  
+  <script type='text/javascript' src='addToCart.js'></script>
+
 	<script>
 		$(document).on("scroll", function() {
 			var pageTop = $(document).scrollTop();
@@ -29,7 +30,7 @@
 
 	<script>
 		$(function () {
-			$("#header").load("header.html");
+			$("#header").load("header.jsp");
 			$("#footer").load("footer.html");
 		});
 	</script>
@@ -99,6 +100,11 @@
             var params = "pid=" + pid[i].innerHTML + "&" + "size=" + trimmedLastTwoChars +"&" + "qty=" + inputs[i].value + "&" + "job=quantity"; 
             http.send(params);
         } 
+
+        http.onreadystatechange = function()
+        {
+            cart_items();
+        }
         
         document.getElementById("tot-amount").innerHTML = "Total: " + tot;
         console.log(tot);
@@ -113,6 +119,7 @@
         
         if (y === 'all')
         {
+        	$(".Cart-Items").next().remove();
         	$(".Cart-Items").remove();
         	
             var params = "qty=all" + "&" + "job=remove" ; 
@@ -126,6 +133,9 @@
             }, 5000);
             
         	console.log("All items deleted");
+        	
+            document.getElementById("tot-amount").innerHTML = "Total: " + 0;
+
 
         }
         else
@@ -142,8 +152,16 @@
             var params = "pid=" + pid + "&" + "size=" + trimmedLastTwoChars + "&" + "qty=one" + "&" + "job=remove" ; 
             
         	console.log("Item successfully deleted");
+        	
+        	calcTotal();
+
         }
         http.send(params);
+
+        http.onreadystatechange = function()
+        {
+            cart_items();
+        }
     }
     window.addEventListener("load", calcTotal);
     </script>

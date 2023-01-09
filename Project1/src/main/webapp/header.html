@@ -31,6 +31,19 @@
                 }
             }
        }
+
+       function cart_items()
+       {
+           var cartItems = new XMLHttpRequest();
+            cartItems.open("POST", "Cart", true);
+            cartItems.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+            cartItems.onreadystatechange = function() {
+                if (cartItems.readyState == XMLHttpRequest.DONE) {
+                	console.log(cartItems.response);
+                }
+            }
+       }
     </script>
 
     <script>
@@ -93,12 +106,11 @@
 
                 </ul>
             </div>
-            
+           
         </nav>
          
-
         <div class="nav-item right-icons">
-            <i class="fa-solid fa-magnifying-glass fa-xl right-cons" data-bs-toggle="modal" data-bs-target="#searchModal" onclick="focus_text()"></i>
+            <i class="fa-solid fa-magnifying-glass fa-xl right-cons" data-bs-toggle="modal" data-bs-target="#searchModal"></i>
 
             <!--Search Modal-->
             <div class="modal fade" id="searchModal" aria-labelledby="searchModalLabel" aria-hidden="true">
@@ -135,11 +147,16 @@
                 </div>
             </div>
 
-            <a href="Cart" class="right-links"><i class="fa fa-cart-shopping fa-xl right-cons"></i></a>
+            <a href="Cart" class="right-links">
+                <div id="cart-item-numbers">55</div>
+                <i class="fa fa-cart-shopping fa-xl right-cons"></i>
+                
+            </a>
+
+            
 
             <!-- <input type="button"  value="   " data-bs-toggle="collapse" class="btn btn-secondary login-button round"/> -->
             <a href="Profile" class="right-links"><i class="fa-solid fa-user fa-xl right-cons"></i></a>
-            <a href="Profile" class="right-links"><img class ="profile-icon" src="Pics/icons8-male-user-50.png" class="profile-icon" hidden></a>
 
             
 
