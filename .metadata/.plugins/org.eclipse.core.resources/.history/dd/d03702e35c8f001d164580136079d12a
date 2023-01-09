@@ -127,7 +127,7 @@
 			   <div style="width:95%;margin: 0px auto;" id="ProductCarousel" class="carousel slide" data-bs-ride="carousel">
 			
 			   <div class="carousel-inner round" >
-		
+				
 				<div class="carousel-item active">
 					<a href="ProductList?category=Winter Collection">
 					<img src="Pics/banners/Winter_Sale.png" class="d-block w-100 img-size" alt="...">

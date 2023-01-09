@@ -121,14 +121,14 @@
 				<a href="ProductList?category=,Female,">
 					<div type="sub" class="btn btn index-link bamboo">Women</div>
 				</a>
-			
+				
 
 			   </div>
 			   <div style="width:95%;margin: 0px auto;" id="ProductCarousel" class="carousel slide" data-bs-ride="carousel">
 			
 			   <div class="carousel-inner round" >
-		
-				<div class="carousel-item active">
+				
+				<div class="carousel-item">
 					<a href="ProductList?category=Winter Collection">
 					<img src="Pics/banners/Winter_Sale.png" class="d-block w-100 img-size" alt="...">
 					</a>
@@ -138,7 +138,7 @@
 					<img src="Pics/banners/Panda_Royalty.png" class="d-block w-100 img-size" alt="...">
 					</a>
 				</div>
-				<div class="carousel-item" >
+				<div class="carousel-item active" >
 					<a href="ProductList?category=New Year's Collection">
 					<img src="Pics/banners/New Year banner.png" class="d-block w-100 img-size" alt="...">
 					</a>
@@ -148,7 +148,7 @@
 					<img src="Pics/banners/Formals2.png" class="d-block w-100 img-size" alt="...">
 					</a>
 				</div>
-				<div class="carousel-item" >
+				<div class="carousel-item active" >
 					<a href="ProductList?category=Formal Clothing Range&param=Female">
 					<img src="Pics/banners/female formals.png" class="d-block w-100 img-size" alt="...">
 					</a>
