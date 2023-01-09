@@ -65,13 +65,11 @@
 	</script>
 
     <link rel="stylesheet" href="Bootstrap/CSS/style1.css">
-    
-      <script>
-      window.onhashchange = function() {
-            window.location.reload();
-          };
+
+    <script>
+        window.history.forward(1); 
     </script>
-   
+
 </head>
 <body>
 

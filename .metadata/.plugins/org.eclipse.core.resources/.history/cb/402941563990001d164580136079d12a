@@ -54,10 +54,10 @@
 
     <script>
         window.onload(cart_items());
-        
+        window.history.forward(1); 
     </script>
-
-   
+    
+    
 </head>
 <body>
 

@@ -67,7 +67,7 @@
     <link rel="stylesheet" href="Bootstrap/CSS/style1.css">
     
       <script>
-      window.onhashchange = function() {
+        window.onpopstate = function() {
             window.location.reload();
           };
     </script>
