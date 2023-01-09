@@ -66,11 +66,7 @@
 
     <link rel="stylesheet" href="Bootstrap/CSS/style1.css">
     
-      <script>
-      window.onhashchange = function() {
-            window.location.reload();
-          };
-    </script>
+
    
 </head>
 <body>

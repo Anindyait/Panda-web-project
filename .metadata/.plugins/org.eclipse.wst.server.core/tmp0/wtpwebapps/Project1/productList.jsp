@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="ISO-8859-1">
+    <meta http-equiv="Expires" CONTENT="0">  
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">  
+    <meta http-equiv="Pragma" CONTENT="no-cache">  
+
     <script src="https://code.jquery.com/jquery-3.3.1.js"
 			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
 			crossorigin="anonymous">

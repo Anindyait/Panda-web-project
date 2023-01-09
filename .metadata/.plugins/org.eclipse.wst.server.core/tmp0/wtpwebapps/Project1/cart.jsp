@@ -27,7 +27,7 @@
 			}
 		  });
 	</script>
-	
+
 	<script>
 		$(function () {
 			$("#header").load("header.jsp");
@@ -104,6 +104,11 @@
             http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
             var params = "pid=" + pid[i].innerHTML + "&" + "size=" + size[i].innerHTML +"&" + "qty=" + inputs[i].value + "&" + "job=quantity"; 
             http.send(params);
+
+            http.onreadystatechange = function()
+            {
+                cart_items();
+            }
         } 
 
     
@@ -118,6 +123,9 @@
         document.getElementById("tot-amount").innerHTML = "Total:&nbsp&nbsp &#8377; " + tot;
         console.log(tot);
     }  
+
+
+
 
     function RemovefromCart(y)
     {     

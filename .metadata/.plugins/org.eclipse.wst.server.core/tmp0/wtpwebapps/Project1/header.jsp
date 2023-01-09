@@ -54,9 +54,10 @@
 
     <script>
         window.onload(cart_items());
+        
     </script>
-    
-    
+
+   
 </head>
 <body>
 

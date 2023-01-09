@@ -57,6 +57,12 @@
         
     </script>
 
+    <script>
+        window.onpopstate = function() {
+            window.location.reload();
+          };
+    </script>
+   
    
 </head>
 <body>
