@@ -76,8 +76,10 @@
                                                     <h5>Set Of Three : Corset Style Hoodie With Sleeveless Crop Top & Bottom In Black</h5>
                                                 </a>
                                                 <p class="pid" style="display:none;">P0001</p>
-                                                <h3 class="subtitle-cart">Size: XS<span class ="price">&#8377; 3000</span></h3>
-                                                
+												<h3 class="subtitle-cart">
+                                                	Size: <span class="size">XS</span>
+                                                	<span class ="price">&#8377; 20000</span>
+                                                </h3>                                                
                                             </div>  
                                         </div>                                 
                                     
@@ -116,7 +118,10 @@
                                                     <h5>Corset Style Tie Around Full Sleeve Ribbed Apricot Top</h5>
                                                 </a>
                                                 <p class="pid" style="display:none;">P0002</p>
-                                                <h3 class="subtitle-cart">Size: XS<span class ="price">&#8377; 100000</span></h3>
+                                                <h3 class="subtitle-cart">
+                                                	Size: <span class="size">XS</span>
+                                                	<span class ="price">&#8377; 10000</span>
+                                                </h3>
                                                 
                                             </div>  
                                         </div>                                 
@@ -156,7 +161,10 @@
                                                     <h5>Marble Print Trending Trouser</h5>
                                                 </a>
                                                 <p class="pid" style="display:none;">P0003</p>
-                                                <h3 class="subtitle-cart">Size: XS<span class ="price">&#8377; 20000</span></h3>
+                                                <h3 class="subtitle-cart">
+                                                	Size: <span class="size">XS</span>
+                                                	<span class ="price">&#8377; 20000</span>
+                                                </h3>
                                                 
                                             </div>  
                                         </div>                                 
@@ -194,13 +202,8 @@
                                         </a>
                                     </div>
                                 </div>
-
                             </div>  
-                        
-
-                </div>
-            
-            
+                </div>            
         </div>
 	<div id="footer"></div>
     <script>
@@ -210,7 +213,7 @@
         var prices = document.getElementsByClassName("price");
         var amt = document.getElementsByClassName("amount");
         var pid = document.getElementsByClassName("pid");
-        var size = document.getElementsByClassName("subtitle-cart");
+        var size = document.getElementsByClassName("size");
 
         var amount = [];
 		var tot = 0;
@@ -223,16 +226,12 @@
             console.log(i, inp, pri, amount[i]);
             amt[i].innerHTML = "&#8377;&nbsp" + amount[i];
             tot += amount[i];
-            
-            var lastTwoChars = size[i].innerHTML.substring(size[i].innerHTML.length - 2);
-            var trimmedLastTwoChars = lastTwoChars.trim();
-            
-            
+             
             // Preferrably shouldn't make this request if previous quantity isn't the same as the new one
 		    var http = new XMLHttpRequest();
             http.open("POST", "Cart", true);
             http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-            var params = "pid=" + pid[i].innerHTML + "&" + "size=" + trimmedLastTwoChars +"&" + "qty=" + inputs[i].value + "&" + "job=quantity"; 
+            var params = "pid=" + pid[i].innerHTML + "&" + "size=" + size[i].innerHTML +"&" + "qty=" + inputs[i].value + "&" + "job=quantity"; 
             http.send(params);
         } 
 
@@ -268,11 +267,9 @@
         	
         	var cartItem = y.closest(".Cart-Items");
         	var pid = cartItem.querySelector(".pid").textContent;
-        	var size = cartItem.querySelector(".subtitle-cart").textContent;
-        	var lastTwoChars = size.substring(size.length - 2);
-            var trimmedLastTwoChars = lastTwoChars.trim();
+        	var size = cartItem.querySelector(".size").textContent;
         	
-            var params = "pid=" + pid + "&" + "size=" + trimmedLastTwoChars + "&" + "qty=one" + "&" + "job=remove" ; 
+            var params = "pid=" + pid + "&" + "size=" + size + "&" + "qty=one" + "&" + "job=remove" ; 
             
             //.parentElement().parentElement() added.
 
@@ -287,4 +284,4 @@
     window.addEventListener("load", calcTotal);
     </script>
 </body>
-</html>    
+</html> 
