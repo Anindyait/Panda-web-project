@@ -253,7 +253,7 @@
     	var http = new XMLHttpRequest();
         http.open("POST", "Cart", true);
         http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        
+
         if (y === 'all')
         {
         	
@@ -280,6 +280,7 @@
         	console.log("Item successfully deleted");
             calcTotal();
         }
+
         http.send(params);
     }
     
