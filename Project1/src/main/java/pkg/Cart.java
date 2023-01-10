@@ -281,7 +281,7 @@ public class Cart extends HttpServlet {
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); //DriverManager is a class 
 			
-				pstm = con.prepareStatement("select sum(quantity) as sum, order_id from cart_table group by user_id having order_id is null and user_id = ?");
+				pstm = con.prepareStatement("select sum(quantity) sum, order_id from cart_table where order_id is null and user_id = ?;");
 
 				pstm.setString(1, user_id);
 				
