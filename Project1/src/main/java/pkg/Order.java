@@ -34,6 +34,7 @@ public class Order extends HttpServlet {
     String order_list = "";
 	String address = null;
 	String order_id = null;
+	String job = null;
     
     String checkoutTemplate = "					<div class=\"Cart-Items\">\r\n"
     		+ "                                    <div class=\"row justify-content-between align-items-center\">\r\n"
@@ -82,6 +83,7 @@ public class Order extends HttpServlet {
 		{
 			System.out.println("Checkout page");
 			order_list = "";
+			job = request.getParameter("job");
 			
 			try {
 				Connection con;
@@ -90,37 +92,103 @@ public class Order extends HttpServlet {
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); //DriverManager is a class 
 				
-				pstm = con.prepareStatement("select imgs, p_name, size, quantity, price, cart_table.product_id "
-						+ "from cart_table inner join product_table "
-						+ "on cart_table.product_id = product_table.product_id where user_id = ? and order_id IS NULL;");
-				// When order_id is null, those items are in the cart
-				
-				pstm.setString(1, user_id);
-				
-				ResultSet rs = pstm.executeQuery();
-				
-			    while (rs.next ())
-			    {			    	
-					String[] image = rs.getString("imgs").split(",");
+				if (job == null)
+				{
+					pstm = con.prepareStatement("select imgs, p_name, size, quantity, price, cart_table.product_id "
+							+ "from cart_table inner join product_table "
+							+ "on cart_table.product_id = product_table.product_id where user_id = ? and order_id IS NULL;");
+					// When order_id is null, those items are in the cart
 					
-					float amt = rs.getInt("quantity") * rs.getFloat("price");
+					pstm.setString(1, user_id);
 					
-			    	String eachProductOption = checkoutTemplate;
-			    	eachProductOption = eachProductOption.replaceAll("!IMGS!", "Pics/" + image[0] + ".jpg" );
-			    	eachProductOption = eachProductOption.replaceAll("!TITLE!",rs.getString ("p_name") );
-			    	eachProductOption = eachProductOption.replaceAll("!SIZE!", rs.getString ("size"));
-			    	eachProductOption = eachProductOption.replaceAll("!QUANTITY!", rs.getString ("quantity"));
-			    	eachProductOption = eachProductOption.replaceAll("!PRICE!", rs.getString ("price"));
-			    	eachProductOption = eachProductOption.replaceAll("!PID!", rs.getString ("cart_table.product_id"));
-			    	eachProductOption = eachProductOption.replaceAll("!AMT!", String.valueOf(amt) );
+					ResultSet rs = pstm.executeQuery();
+					
+				    while (rs.next ())
+				    {			    	
+						String[] image = rs.getString("imgs").split(",");
+						
+						float amt = rs.getInt("quantity") * rs.getFloat("price");
+						
+				    	String eachProductOption = checkoutTemplate;
+				    	eachProductOption = eachProductOption.replaceAll("!IMGS!", "Pics/" + image[0] + ".jpg" );
+				    	eachProductOption = eachProductOption.replaceAll("!TITLE!",rs.getString ("p_name") );
+				    	eachProductOption = eachProductOption.replaceAll("!SIZE!", rs.getString ("size"));
+				    	eachProductOption = eachProductOption.replaceAll("!QUANTITY!", rs.getString ("quantity"));
+				    	eachProductOption = eachProductOption.replaceAll("!PRICE!", rs.getString ("price"));
+				    	eachProductOption = eachProductOption.replaceAll("!PID!", rs.getString ("cart_table.product_id"));
+				    	eachProductOption = eachProductOption.replaceAll("!AMT!", String.valueOf(amt) );
+		
+				    	order_list = order_list.concat(eachProductOption);
+				    }
+				    
+				    // Sending address to checkout
+				    pstm = con.prepareStatement("select address from user_table where user_id = ? ;");
+				    pstm.setString(1, user_id);
+					rs = pstm.executeQuery();
+					if (rs.next())
+					{
+						address = rs.getString("address");
+					}
+				}
+			
+				else
+				{
+					
+				}
+				
+				    
+			}catch(Exception e) {}
+
+			if (job == null)
+			{
+				request.setAttribute("order_list", order_list);
+				request.setAttribute("address", address);
+				request.getRequestDispatcher("checkout.jsp").include(request, response);
+			}
+
+			else
+			{
+				request.getRequestDispatcher("error.html").include(request, response);
+			}
+		}
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		String user_id = Utilities.GetUID(request);
+		
+		String job = request.getParameter("job");
+				
+		if(user_id == null)
+		{
+			request.getRequestDispatcher("Login").include(request, response);
+		}
+		
+		else if (job.equals("checkout"))
+		{
+			System.out.println("Checkout page, job: " + job);
+			request.getRequestDispatcher("paymentgate.html").include(request, response);
+		}
+		
+		else if (job.equals("place order"))
+		{
+			
+			try {
+				Connection con;
+				PreparedStatement pstm;
+				
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); //DriverManager is a class 
 	
-			    	order_list = order_list.concat(eachProductOption);
-			    }
-			    
-			    // Assigning a new order_id and d_date
+				// Assigning a new order_id and d_date
 			    pstm = con.prepareStatement("select distinct(order_id) from cart_table where user_id = ? order by order_id desc limit 1;");
 				pstm.setString(1, user_id);
-				rs = pstm.executeQuery();
+				ResultSet rs = pstm.executeQuery();
 				if (rs.next())
 				{
 					order_id = rs.getString("order_id");
@@ -143,42 +211,28 @@ public class Order extends HttpServlet {
 			    Random rand = new Random();
 			    int daysToAdd = rand.nextInt(9) + 2; // random number of days between 2 and 10
 			    date = date.plusDays(daysToAdd);
-
+	
 				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 			    String dateString = date.format(formatter);
 				System.out.println("Delivery date: " + dateString);
-
+	
 			    pstm = con.prepareStatement("update cart_table set order_id = ? , d_date = ? where user_id = ? and order_id IS NULL;");
 			    pstm.setString(1, order_id);
 			    pstm.setString(2, dateString);
 			    pstm.setString(3, user_id);
 				int rs1 = pstm.executeUpdate();
 				
-				// Sending address to checkout
-			    pstm = con.prepareStatement("select address from user_table where user_id = ? ;");
-			    pstm.setString(1, user_id);
-				rs = pstm.executeQuery();
-				if (rs.next())
-				{
-					address = rs.getString("address");
-				}
+				if (rs1 > 0)
+					System.out.println("Order successfully placed!");
 				
-			    
 			}catch(Exception e) {}
-
-			request.setAttribute("order_list", order_list);
-			request.setAttribute("address", address);
-
-			request.getRequestDispatcher("checkout.jsp").include(request, response);
+			
 		}
-		
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		else
+		{
+			
+		}
+			
 	}
 
 }

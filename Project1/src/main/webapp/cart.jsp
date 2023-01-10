@@ -170,5 +170,6 @@
     
     window.addEventListener("load", calcTotal);
     </script>
+    <div id="footer"></div>
 </body>
 </html>    

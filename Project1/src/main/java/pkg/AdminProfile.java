@@ -219,7 +219,7 @@ public class AdminProfile extends HttpServlet {
 			}
 			else
 			{
-				
+				request.getRequestDispatcher("error.html").include(request, response);
 			}
 		}
 		

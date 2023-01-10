@@ -116,6 +116,7 @@
                                                     Net Banking
                                                     </label>
                                                 </div>
+                                                <div id="payment-select"></div>
                                           </div>
                                           
                                     </div>
@@ -127,7 +128,7 @@
                                         </div>
                                     </div>
                                     <div class="checkout-block" style="text-align:center">
-                                        <button type="button" value="place_order" class="btn btn-warning Order">Place Order</button>
+                                        <button type="button" value="place_order" class="btn btn-warning Order" id="place_order_button" disabled onclick="checkout()">Place Order</button>                                    
                                     </div>
 
                                 </div>
@@ -164,9 +165,52 @@
         tot_amount[1].innerHTML = "&#8377;&nbsp" + (total+99);
 
     }
-        
+    
+    var placeOrderButton = document.getElementById("place_order_button");
+    placeOrderButton.addEventListener("click", checkout);
 
+    
+    var paymentRadios = document.querySelectorAll(".payment-radio");
+	document.getElementById("payment-select").innerHTML="Select a payment option";
+	document.getElementById("payment-select").style.color = "green";
+	
+	for (var i = 0; i < paymentRadios.length; i++) 
+	{
+	    paymentRadios[i].addEventListener("change", enablePlaceOrderButton);
+	}
 
+ 	function enablePlaceOrderButton() 
+ 	{
+	     var isChecked = false;
+	     for (var i = 0; i < paymentRadios.length; i++) 
+	     {
+	         if (paymentRadios[i].checked) 
+	         {
+	             isChecked = true;
+	             break;
+	         }
+	     }
+	     if (isChecked) 
+	     {
+	        placeOrderButton.disabled = false;
+	     	document.getElementById("payment-select").innerHTML="";
+	     } 
+	     else 
+	     {
+	         placeOrderButton.disabled = true;
+	     }
+ 	}
+ 	
+ 	function checkout()
+ 	{
+ 		 var http = new XMLHttpRequest();
+         http.open("POST", "Order", true);
+         http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+         var params = "job=checkout";
+         console.log(params);
+         http.send(params);
+ 	}
     </script>
+<div id="footer"></div>
 </body>
 </html> 
