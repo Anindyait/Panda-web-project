@@ -161,6 +161,10 @@ public class ProductList extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
 		
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        response.setDateHeader("Expires", 0); // Proxies.
+		
 		
 		cat = request.getParameter("category");
 		
@@ -190,7 +194,7 @@ public class ProductList extends HttpServlet {
 		System.out.println("Post called");
 		doGet(request, response);
 		
-
+		
 	}
 
 }

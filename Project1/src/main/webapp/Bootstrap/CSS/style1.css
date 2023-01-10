@@ -212,7 +212,7 @@ a:hover{
 
 .desc{
 	height:290px;
-	width: 600px;
+	
 }
 
 .round{
@@ -334,7 +334,7 @@ a:hover{
 
 .img-size{
 	
-	width: 20px;
+
 }
 
 .list-title{
@@ -510,7 +510,6 @@ input:focus{
 	border-radius: 30px;
 }
 
-
 .modal{
 	z-index: 10000;
 }
@@ -663,7 +662,6 @@ input:focus{
 
 @media only screen and (max-width: 992px) {
 	 .quote-bg{
-	 
 		display: none;
 	 }
 }
@@ -1061,11 +1059,7 @@ input:focus{
  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
 }
 
-.Cart-Items hr{
-	padding-top: 10px;
-	margin: 0 auto;
-    
-}
+
 
 @media only screen and (max-width: 900px) 
 { 
@@ -1098,7 +1092,6 @@ input:focus{
 	align-items: center;
 	padding: 20px 0px 20px 0px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.162);
-	
    }
 
    .Cart-Items h5
@@ -1115,6 +1108,18 @@ input:focus{
    .Cart-Items .row{
 	width: 100%;
    }
+
+
+   .Checkout-Container{
+	padding-left: 5px;
+	padding-bottom: 10px;
+	width: 95%;
+	margin: 0 auto;
+	border-radius: 30px;
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+   }
+
+
 
 .image-box{
 	width: 15%;
@@ -1280,12 +1285,57 @@ input:focus{
 	margin: auto;
 	width: 90%;
 	height: 15%;
-	display: flex;
-	justify-content: space-between;
+	padding-top: 5px;
+	padding-bottom: 10px;
 	align-items: center;
    }
 
+   .delivery-address{
+	margin-top: 30px;
+    padding: 10px 15px;
+	width: 98%;
+	
+	font-size: 18px;
+	opacity: 90%;
+	border: 2px solid rgba(0, 0, 0, 0.093);
+	border-radius: 20px;
+    overflow: hidden;
+   }
 
+   .fa-location-dot{
+	color: red;
+	padding-right: 5px;
+	font-size: 17px;
+   }
+
+   .checkout-block{
+	border-top: 1px solid rgba(0, 0, 0, 0.097);
+	padding-top: 20px;
+    padding-bottom: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+    padding-bottom: 10px;;
+	padding-bottom: 30px;
+   }
+
+   .payment-radio{
+	width: 20px;
+	height: 20px;
+	margin-top: 14px;
+	margin-bottom: 10px;
+	
+   }
+
+   .payment-radio-label{
+	font-size: 20px;
+	padding: 8px 20px 8px 10px;
+	opacity: 80%;
+   }
+
+   .radio-buttons{
+	padding-left: 20px;
+	padding-top: 15px;
+   }
 
    
 
@@ -1317,13 +1367,41 @@ input:focus{
    }
 
    #tot-amount{
-	text-align: left;
+	text-align: center;
 	padding-left: 55px;
 	padding-bottom: 25px;
 	padding-top: 35px;
-    font-size: 14px;
 	font-size: 27px;
     color:green;
+    font-weight: bold;
+   }
+
+   .checkout-amount{
+	text-align: center;
+	font-size: 33px;
+    font-weight: bold;
+	padding-bottom: 1px;
+   }
+
+   .Order{
+	width: 100%;
+	padding: 12px;
+	font-size:18px;
+	font-weight: bold;
+	color: rgba(0, 0, 0, 0.732);
+	border-radius: 40px;
+	align-items: center;
+	letter-spacing: 1px;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+   }
+
+   .qt{
+	font-size: 18px;
+   }
+
+   .tot{
+	text-align: center;
+	font-size: 33px;
     font-weight: bold;
    }
 

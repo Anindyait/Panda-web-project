@@ -212,7 +212,7 @@ a:hover{
 
 .desc{
 	height:290px;
-	width: 600px;
+	
 }
 
 .round{
@@ -334,7 +334,7 @@ a:hover{
 
 .img-size{
 	
-	width: 20px;
+
 }
 
 .list-title{
@@ -509,7 +509,6 @@ input:focus{
 	background-color: rgb(0, 255, 89);
 	border-radius: 30px;
 }
-
 
 .modal{
 	z-index: 10000;

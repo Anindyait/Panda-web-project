@@ -155,7 +155,7 @@ public class Cart extends HttpServlet {
 		
 		String job = request.getParameter("job");
 				
-		if(user_id == null )
+		if(user_id == null && !job.equals("no_of_items"))
 		{
 			request.getRequestDispatcher("Login").include(request, response);
 		}
