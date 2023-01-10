@@ -128,9 +128,8 @@
                                         </div>
                                     </div>
                                     <div class="checkout-block" style="text-align:center">
-                                        <button type="button" value="place_order" class="btn btn-warning Order" id="place_order_button" disabled onclick="checkout()">Place Order</button>                                    
+                                        <button type="button" value="place_order" class="btn btn-warning Order" id="place_order_button" disabled>Place Order</button>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -169,7 +168,6 @@
     var placeOrderButton = document.getElementById("place_order_button");
     placeOrderButton.addEventListener("click", checkout);
 
-    
     var paymentRadios = document.querySelectorAll(".payment-radio");
 	document.getElementById("payment-select").innerHTML="Select a payment option";
 	document.getElementById("payment-select").style.color = "green";
@@ -203,12 +201,7 @@
  	
  	function checkout()
  	{
- 		 var http = new XMLHttpRequest();
-         http.open("POST", "Order", true);
-         http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-         var params = "job=checkout";
-         console.log(params);
-         http.send(params);
+ 		window.location = "Order?job=checkout";      
  	}
     </script>
 <div id="footer"></div>

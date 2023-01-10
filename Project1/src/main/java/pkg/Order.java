@@ -1,6 +1,7 @@
 package pkg;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -10,6 +11,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -145,6 +147,11 @@ public class Order extends HttpServlet {
 				request.setAttribute("address", address);
 				request.getRequestDispatcher("checkout.jsp").include(request, response);
 			}
+			else if (job.equals("checkout"))
+			{
+				System.out.println("Page after checkout: Payment Page");
+				request.getRequestDispatcher("paymentGate.html").include(request, response);
+			}
 
 			else
 			{
@@ -159,6 +166,10 @@ public class Order extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		PrintWriter pw=response.getWriter();
+		response.setContentType("text/html");
+		
+		ServletContext context=getServletContext();
 		
 		String user_id = Utilities.GetUID(request);
 		
@@ -167,12 +178,6 @@ public class Order extends HttpServlet {
 		if(user_id == null)
 		{
 			request.getRequestDispatcher("Login").include(request, response);
-		}
-		
-		else if (job.equals("checkout"))
-		{
-			System.out.println("Checkout page, job: " + job);
-			request.getRequestDispatcher("paymentgate.html").include(request, response);
 		}
 		
 		else if (job.equals("place order"))
