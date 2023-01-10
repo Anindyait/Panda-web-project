@@ -126,14 +126,15 @@ public class Order extends HttpServlet {
 					order_id = rs.getString("order_id");
 					if (order_id == null)
 					{
-						order_id = "OR001";
+						order_id = "OR00001";
 					}
 					else
-					{
-						String numericPart = order_id.substring(2); // Extract the characters after "OR"
+					{	
+						String numericPart = order_id.substring(2); 
 						int orderNumber = Integer.parseInt(numericPart);
 						orderNumber += 1;
-						order_id = "OR" + Integer.toString(orderNumber);
+						String formattedOrderNumber = String.format("%05d", orderNumber);
+						order_id = "OR" + formattedOrderNumber;
 					}
 					System.out.println("Order id: " + order_id);
 				}
