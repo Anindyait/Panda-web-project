@@ -137,7 +137,7 @@ public class ProductList extends HttpServlet {
 			
 
 			request.setAttribute("product_cards", allProductCards);
-			request.setAttribute("category_name", cat);
+			request.setAttribute("category_name", cat.replaceAll(",", ""));
 			request.setAttribute("param", param);
 			
 			System.out.println("Param before sending = "+param);

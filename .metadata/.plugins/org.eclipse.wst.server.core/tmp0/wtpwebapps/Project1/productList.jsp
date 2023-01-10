@@ -86,9 +86,15 @@
             selected_gender.value = ",Male,";
             selected_gender.dispatchEvent(new Event("change"));
         }
+        if(parameter == "Female")
+        {
+            console.log("It is Female");
+            selected_gender.value = ",Female,";
+            selected_gender.dispatchEvent(new Event("change"));
+        }
         else
         {
-            console.log("Not Male");
+            console.log("All");
 
         }
         

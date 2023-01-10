@@ -618,3 +618,11 @@ Jan 10, 2023 14:53:20.883 [29228:27508:0110/145320.883:ERROR:connection_factory_
 Jan 10, 2023 15:20:49.499 [29228:27508:0110/152049.498:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
 Jan 10, 2023 15:20:49.550 [29228:24376:0110/152049.550:ERROR:get_updates_processor.cc(260)] PostClientToServerMessage() failed during GetUpdates with error 2
 Jan 10, 2023 15:20:50.912 [29228:27508:0110/152050.912:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+Jan 10, 2023 16:42:26.272 [29228:28860:0110/164226.244:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+Jan 10, 2023 16:46:02.193 [29228:28860:0110/164602.192:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+Jan 10, 2023 16:50:49.50 [29228:28860:0110/165049.050:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+Jan 10, 2023 16:51:06.356 [29228:28860:0110/165106.356:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+Jan 10, 2023 16:51:15.469 [29228:28860:0110/165115.468:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+Jan 10, 2023 16:52:54.129 [29228:28860:0110/165254.129:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+Jan 10, 2023 16:53:24.799 [29228:28860:0110/165324.798:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+Jan 10, 2023 16:55:26.242 [29228:28860:0110/165526.241:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost

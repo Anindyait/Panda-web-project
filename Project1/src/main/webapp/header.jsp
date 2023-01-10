@@ -159,7 +159,7 @@
             </div>
 
             <a href="Cart" class="right-links">
-                <div id="cart-item-numbers">55</div>
+                <div id="cart-item-numbers"></div>
                 <i class="fa fa-cart-shopping fa-xl right-cons"></i>
                 
             </a>
