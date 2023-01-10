@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+
+	<meta http-equiv="Expires" CONTENT="0">  
+	<meta http-equiv="Cache-Control" CONTENT="no-cache">  
+	<meta http-equiv="Pragma" CONTENT="no-cache">  
+    <meta charset="ISO-8859-1">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			crossorigin="anonymous">
+	</script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="Bootstrap/CSS/style1.css">
+
+	<script>
+	console.log(performance.getEntriesByType("navigation")[0].type);
+	
+	if(performance.getEntriesByType("navigation")[0].type == "back_forward")
+		{
+		console.log("fb");
+		}
+	</script>
+
+
+	<script>
+		$(document).on("scroll", function() {
+			var pageTop = $(document).scrollTop();
+			var pageBottom = pageTop + $(window).height();
+			var tags = $(".tag");
+		  
+			for (var i = 0; i < tags.length; i++) {
+			  var tag = tags[i];
+			  if ($(tag).position().top < pageBottom) {
+				$(tag).addClass("visible");
+			  } else {
+				$(tag).removeClass("visible");
+			  }
+			}
+		  });
+	</script>
+
+	<script>
+		function control(video)
+		{
+			if(video.paused)
+			{
+				video.play();
+			}
+			else
+			{
+                video.pause();
+            }
+
+		}
+	</script>
+
+	<script src="https://kit.fontawesome.com/13deb536c6.js" crossorigin="anonymous"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home-Panda Shop</title>
+    <link rel="icon" href="Pics/panda.png">
+   
+    <script>
+		$(function () {
+			$("#header").load("Header");
+			$("#footer").load("footer.html");
+		});
+	</script>
+
+</head>
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <div class="font">
+		<div class="container-fluid">
+			<div id="header"></div>
+			   <div class="header-adjustment"></div>
+			   <div class="index-link-container">
+				
+
+				<a href="ProductList?category=New Arrivals">
+					<div type="sub" class="btn index-link bamboo">New&nbspArrivals</div>
+				</a>
+				<a href="ProductList?category=Best Sellers">
+					<div type="sub" class="btn index-link bamboo">Best&nbspSellers</div>
+				</a>
+				<a href="ProductList?category=Winter Collection">
+					<div type="sub" class="btn btn index-link bamboo">Winter&nbspCollection</div>
+				</a>
+
+				<a href="ProductList?category=New Year's Collection">
+					<div type="sub" class="btn btn index-link bamboo">New&nbspYear's&nbspCollection</div>
+				</a>
+				
+				<a href="ProductList?category=Valentine's Day">
+					<div type="sub" class="btn btn index-link bamboo">Valentine's&nbspDay</div>
+				</a>
+
+				<a href="ProductList?category=Saraswati Puja Collection">
+					<div type="sub" class="btn btn index-link bamboo">Saraswati&nbspPuja&nbspCollection</div>
+				</a>
+
+				<a href="ProductList?category=Shoes">
+					<div type="sub" class="btn btn index-link bamboo">Shoes</div>
+				</a>
+				
+				<a href="ProductList?category=Tops">
+					<div type="sub" class="btn btn index-link bamboo">Tops</div>
+				</a>
+
+				<a href="ProductList?category=Hoodies">
+					<div type="sub" class="btn btn index-link bamboo">Hoodies</div>
+				</a>
+
+				<a href="ProductList?category=Trousers">
+					<div type="sub" class="btn btn index-link bamboo">Trousers</div>
+				</a>
+
+				<a href="ProductList?category=Dresses">
+					<div type="sub" class="btn btn index-link bamboo">Dresses</div>
+				</a>
+
+				<a href="ProductList?category=Formal Clothing Range">
+					<div type="sub" class="btn btn index-link bamboo">Formal&nbspClothing&nbspRange</div>
+				</a>
+
+				<a href="ProductList?category=,Male,">
+					<div type="sub" class="btn btn index-link bamboo">Men</div>
+				</a>
+
+				<a href="ProductList?category=,Female,">
+					<div type="sub" class="btn btn index-link bamboo">Women</div>
+				</a>
+			
+
+			   </div>
+			   <div style="width:95%;margin: 0px auto;" id="ProductCarousel" class="carousel slide" data-bs-ride="carousel">
+			
+			   <div class="carousel-inner round" >
+		
+				<div class="carousel-item active">
+					<a href="ProductList?category=Winter Collection">
+					<img src="Pics/banners/Winter_Sale.png" class="d-block w-100 img-size" alt="...">
+					</a>
+				</div>
+				<div class="carousel-item">
+					<a href="#Royalty">
+					<img src="Pics/banners/Panda_Royalty.png" class="d-block w-100 img-size" alt="...">
+					</a>
+				</div>
+				<div class="carousel-item" >
+					<a href="ProductList?category=New Year's Collection">
+					<img src="Pics/banners/New Year banner.png" class="d-block w-100 img-size" alt="...">
+					</a>
+				</div>
+				<div class="carousel-item">
+					<a href="ProductList?category=Formal Clothing Range&param=Male">
+					<img src="Pics/banners/Formals2.png" class="d-block w-100 img-size" alt="...">
+					</a>
+				</div>
+				<div class="carousel-item" >
+					<a href="ProductList?category=Formal Clothing Range&param=Female">
+					<img src="Pics/banners/female formals.png" class="d-block w-100 img-size" alt="...">
+					</a>
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button"  data-bs-target="#ProductCarousel" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true" style="margin-left: -50px;"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#ProductCarousel" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true" style="margin-right: -50px;"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+
+			   </div>
+
+			  
+			<a href="ProductList?category=Valentine's Day" >
+				<img class="static-banner" src="Pics/banners/Valentine_Day_2.png">
+			</a>
+
+			<a href="ProductList?category=Formal Clothing Range&param=Male" >
+				<img class="static-banner" src="Pics/banners/Formals.png">
+			</a>
+
+			<div class="row">
+				<div class="col-lg" align="center">
+
+					<div class="category" style="background-color: #d4ccfb;">
+						<h2 class="shop-by">Shop by Types</h2>
+						
+							
+								<a href="ProductList?category=Dresses" class="category-links">
+									<div class="category-card">
+										<h5>Dresses</h5>
+										<img src="Pics/banners/dresses.png">
+
+									</div>
+								</a>
+						
+								<a href="ProductList?category=Tops" class="category-links">
+									<div class="category-card">
+										<h5>Tops</h5>
+										<img src="Pics/banners/tops.png">
+
+									</div>
+								</a>
+
+								<a href="ProductList?category=Hoodies" class="category-links">
+									<div class="category-card">
+										<h5>Hoodies</h5>
+										<img src="Pics/banners/hoodies.png">
+
+									</div>
+								</a>
+
+								<a href="ProductList?category=Trousers" class="category-links">
+									<div class="category-card">
+										<h5>Trousers</h5>
+										<img src="Pics/banners/trousers.png">
+
+									</div>
+								</a>
+
+								<a href="ProductList?category=Shoes" class="category-links">
+									<div class="category-card">
+										<h5>Shoes</h5>
+										<img src="Pics/banners/shoes.png">
+
+									</div>
+								</a>
+					</div>
+
+
+					
+				</div>
+
+
+				<div class="col-lg" align="center">
+					<div class="category" style="background-color: #ccfbce;">
+						<h2 class="shop-by">Shop by Collections</h2>
+						
+
+								<a href="ProductList?category=Royal Range" class="category-links">
+									<div class="category-card">
+										<h5>Best Sellers</h5>
+										<img src="Pics/banners/best sellers.png">
+
+									</div>
+								</a>
+								<a href="ProductList?category=New Year's Collection" class="category-links">
+									<div class="category-card">
+										<h5>New Year's</h5>
+										<img src="Pics/banners/new year.png">
+
+									</div>
+								</a>
+						
+								<a href="ProductList?category=Valentine's Day" class="category-links">
+									<div class="category-card">
+										<h5>Valentine's Day</h5>
+										<img src="Pics/banners/valentines day.png">
+
+									</div>
+								</a>
+
+								<a href="ProductList?category=Winter Collection" class="category-links">
+									<div class="category-card">
+										<h5>Winter</h5>
+										<img src="Pics/banners/winters.png">
+
+									</div>
+								</a>
+
+								<a href="ProductList?category=Saraswati Puja Collection" class="category-links">
+									<div class="category-card">
+										<h5>Saraswati Puja</h5>
+										<img src="Pics/banners/saraswati puja.png">
+
+									</div>
+								</a>
+
+								<a href="ProductList?category=Formal Clothing Range" class="category-links">
+									<div class="category-card">
+										<h5>Formals</h5>
+										<img src="Pics/banners/formal sq.png">
+
+									</div>
+								</a>		
+					</div>
+					
+				</div>
+
+
+
+				</div>
+
+				<div class="row">
+					<div class="col-lg">
+						<div class="video-container">
+							<video autoplay muted loop onclick="control(this)">
+								<source src="Pics/banners/panda drip.mp4">
+							</video>
+							
+						</div>
+					</div>
+				</div>
+
+
+		</div>
+	</div>
+	<br>
+	<br>
+	<div id="footer"></div>
+</body>
+</html>

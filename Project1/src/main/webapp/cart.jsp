@@ -62,7 +62,7 @@
                                         <div class="prices" id="tot-amount"></div>
                                     </div>
                                     <div class="col">
-                                        <a href="#Checkout">
+                                        <a href="Order">
                                         <button type="sub" class="btn form-submit bamboo" id="checkout">
                                             Checkout
                                             <i class="fa-solid fa-angle-right"></i>

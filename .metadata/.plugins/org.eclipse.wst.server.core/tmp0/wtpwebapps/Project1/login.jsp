@@ -57,7 +57,7 @@
 
 
                <div class="row d-flex align-items-center">
-                    <div class="col">
+                    <div class="col-lg">
                         <div class="quote-bg">
                             <p id="quote"></p>
                             <br>
