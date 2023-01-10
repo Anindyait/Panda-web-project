@@ -666,7 +666,72 @@ public class Startup extends HttpServlet {
 					+ "values ('P0080','Stylish Checked and Collared Grey Suit',2499.00,"
 					+ "'36,38,40,42,44','10,10,10,10,10','imgs/80a,imgs/80b','Material : Linen. "
 					+ "Perfect for an occasional formal look to impress your peers!',',Female,Others,','Suits','Formal Clothing Range')";
+			
+			String sqlProductInsert81 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0081','Appliques Royal Green Cocktail Dress',3499.00,"
+					+ "'XS,S,M,L,XL','10,10,10,10,10','imgs/81a,imgs/81b','Material : Appliques. "
+					+ "There is one thing higher than Royalty: and that is religion, which causes us to leave the world, and seek God!',',Female,Others,','Dresses','Royal Range')";
 
+			String sqlProductInsert82 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0082','Embroidery Royal Blue Cocktail Dress',3799.00,"
+					+ "'XS,S,M,L,XL','10,10,10,10,10','imgs/82a,imgs/82b','Material : Velvet. "
+					+ "We were descended from royalty.',',Female,Others,','Dresses','Royal Range')";
+			
+			String sqlProductInsert83 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0083','Deep Purple Velvet Knot Dress',4299.00,"
+					+ "'XS,S,M,L,XL','10,10,10,10,10','imgs/83a,imgs/83b','Material : Velvet. "
+					+ "I hope royalty continues forever. This is the thing that can contribute to peace throughout the world.',',Female,Others,','Dresses','Royal Range')";
+			
+			String sqlProductInsert84 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0084','Into The Night Dark Velvet Dress with Starry Pearls',5799.00,"
+					+ "'XS,S,M,L,XL','10,10,10,10,10','imgs/84a,imgs/84b','Material : Velvet. "
+					+ "In the past, people were born royal. Nowadays, royalty comes from what you wear.',',Female,Others,','Dresses','Royal Range')";
+			
+			String sqlProductInsert85 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0085','Embroidered Green Professional Dress For A Royal Mind',4199.00,"
+					+ "'XS,S,M,L,XL','10,10,10,10,10','imgs/85a,imgs/85b','Material : Linen. "
+					+ "Royalty is completely different than celebrity. Royalty has a magic all its own.',',Female,Others,','Dresses','Royal Range')";
+
+			String sqlProductInsert86 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0086','Iconic Princess Diana Revenge Dress',5999.00,"
+					+ "'XS,S,M,L,XL','10,10,10,10,10','imgs/86a,imgs/86b','Material : Linen. "
+					+ "What could be more royal than the very attitudinal statement this beautiful piece makes! "
+					+ "The iconic Revenge Dress Lady Diana wore, now you can wear a similar one!',',Female,Others,','Dresses','Royal Range')";
+
+			String sqlProductInsert87 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0087','Royal Navy Blue Printed Slim-Fit Blazers',3999.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/87a,imgs/87b','Material : Cotton Blend. "
+					+ " Beautiful mandarin collar, single-breasted with a full button placket, long sleeves, "
+					+ "two flap pockets, one chest welt pocket, an attached lining and a double-vented back hem.',',Male,Others,','Single-Breasted Jacket','Royal Range')";
+
+			String sqlProductInsert88 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0088','Indian Royal Cream-Coloured & Golden Embroidered Nehru Jacket',4199.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/88a,imgs/88b','Material : Cotton Blend. "
+					+ "Cream-coloured and golden embroidered Nehru jacket, has a stand collar, sleeveless, "
+					+ "button closures, three pockets, side slits and an attached lining.',',Male,Others,','Single-Breasted Jacket','Royal Range')";
+
+			String sqlProductInsert89 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0089','Black Ethnically Royal Velvet Blazer',4299.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/89a,imgs/89b','Material : Velvet. "
+					+ "Stylised mandarin collar, padded shoulders, a full button placket, long sleeves with buttoned detail, "
+					+ "one pocket on the front, an attached lining with four welt pockets.',',Male,Others,','Single-Breasted Jacket','Royal Range')";
+
+			String sqlProductInsert90 = "insert ignore into product_table "
+					+ "(product_id, p_name,price,sizes,stock,imgs,descr,cat1,cat2,cat3) "
+					+ "values ('P0090','Red Nehru Jacket With Royal Gold Woven Design',5299.00,"
+					+ "'36,38,40,42,44','10,10,10,10,10','imgs/90a,imgs/90b','Material : Cotton Blend. "
+					+ "Red with golden motifs woven design Nehru jacket, has a band collar, a full button closure, 3 pockets "
+					+ "and no sleeves, straight hem and an attached lining.',',Male,Others,','Single-Breasted Jacket','Royal Range')";
+			
 		    Statement stmt = con.createStatement();
 		    
 			stmt.addBatch(sqlUserCreate);
@@ -757,6 +822,16 @@ public class Startup extends HttpServlet {
             stmt.addBatch(sqlProductInsert78);
             stmt.addBatch(sqlProductInsert79);
             stmt.addBatch(sqlProductInsert80);
+            stmt.addBatch(sqlProductInsert81);
+            stmt.addBatch(sqlProductInsert82);
+            stmt.addBatch(sqlProductInsert83);
+            stmt.addBatch(sqlProductInsert84);
+            stmt.addBatch(sqlProductInsert85);
+            stmt.addBatch(sqlProductInsert86);
+            stmt.addBatch(sqlProductInsert87);
+            stmt.addBatch(sqlProductInsert88);
+            stmt.addBatch(sqlProductInsert89);
+            stmt.addBatch(sqlProductInsert90);
 
 		    stmt.executeBatch();
 			

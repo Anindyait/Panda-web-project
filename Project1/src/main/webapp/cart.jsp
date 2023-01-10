@@ -36,6 +36,7 @@
 	</script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cart</title>
     <link rel="icon" href="Pics/panda.png">
     
 </head>
