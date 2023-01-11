@@ -30,7 +30,7 @@
 
 	<script>
 		$(function () {
-			$("#header").load("header.html");
+			$("#header").load("header.jsp");
 			$("#footer").load("footer.html");
 		});
 	</script>
@@ -55,124 +55,8 @@
                             <div class = "Checkout-Container">
                                 <div class = "Header-cart">
                                     <h3 class = "Heading-cart">All items</h3>
-                                    
                                 </div>
-                              
-								<div class="Cart-Items">
-                                    <div class="row justify-content-between align-items-center" style="width: 100%;">
-                                        <div class="col-2" style="width: 100px;">
-                                            <div class="image-box">
-                                                <img src="Pics/imgs/4b.jpg" style= "height: 120px">
-                                            </div>
-                                        </div>                                        
-                                    
-                                        <div class="col-5">
-                                            <div class="about-cart">
-                                                <a href = "Product?pid=P0001">
-                                                    <h5>Set Of Three : Corset Style Hoodie With Sleeveless Crop Top & Bottom In Black</h5>
-                                                </a>
-                                                <p class="pid" style="display:none;">P0001</p>
-												<h3 class="subtitle-cart">
-                                                	Size: <span class="size">XS</span>
-                                                	<span class ="price">&#8377; 20000</span>
-                                                </h3>                                                
-                                            </div>  
-                                        </div>                                 
-                                    
-                                        <div class="col-1" style="width: 40px; padding:0px;">                    
-                                            <h4 class="qt">x 3</h4>								
-                                        </div>
-                                    
-                                        
-                                    
-                                        <div class="col-2">
-                                            <div class="prices">
-                                                <div class="amount">0</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                
-                                </div>
-                                
-
-                                <div class="Cart-Items">
-                                    <div class="row justify-content-between align-items-center">
-                                        <div class="col-2" style="width: 100px;">
-                                            <div class="image-box">
-                                                <img src="Pics/imgs/64a.jpg" style= "height: 120px">
-                                            </div>
-                                        </div>                                        
-                                    
-                                        <div class="col-5">
-                                            <div class="about-cart">
-                                                <a href = "Product?pid=P0002">
-                                                    <h5>Corset Style Tie Around Full Sleeve Ribbed Apricot Top</h5>
-                                                </a>
-                                                <p class="pid" style="display:none;">P0002</p>
-                                                <h3 class="subtitle-cart">
-                                                	Size: <span class="size">XS</span>
-                                                	<span class ="price">&#8377; 10000</span>
-                                                </h3>
-                                                
-                                            </div>  
-                                        </div>                                 
-                                    
-                                        <div class="col-1" style="width: 40px; padding:0px;">                    
-                                            <h4 class="qt">x 3</h4>								
-                                        </div>
-                                    
-                                        
-                                    
-                                        <div class="col-2">
-                                            <div class="prices">
-                                                <div class="amount">0</div>
-                                               
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-
-                                
-                                <div class="Cart-Items">
-                                    <div class="row justify-content-between align-items-center">
-                                        <div class="col-2" style="width: 100px;">
-                                            <div class="image-box">
-                                                <img src="Pics/imgs/1b.jpg" style= "height: 120px">
-                                            </div>
-                                        </div>                                        
-                                    
-                                        <div class="col-5">
-                                            <div class="about-cart">
-                                                <a href="Product?pid=P0003">
-                                                    <h5>Marble Print Trending Trouser</h5>
-                                                </a>
-                                                <p class="pid" style="display:none;">P0003</p>
-                                                <h3 class="subtitle-cart">
-                                                	Size: <span class="size">XS</span>
-                                                	<span class ="price">&#8377; 2000</span>
-                                                </h3>
-                                                
-                                            </div>  
-                                        </div>                                 
-                                    
-                                        <div class="col-1" style="width: 40px; padding:0px;">                    
-                                            <h4 class="qt">x 10</h4>								
-                                        </div>
-                                    
-                                        
-                                    
-                                        <div class="col-2">
-                                            <div class="prices">
-                                                <div class="amount">0</div>
-                                                
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    
-                                </div>
+								<%= request.getAttribute("order_list")%>
                                 <br>
                                 <br>
                                 
@@ -210,11 +94,11 @@
                                         </div>
                                         
                                     </div>
-
+                                    
                                     <div class="checkout-block">
                                         <h1 style="font-size: 33px;opacity:90%">1. Payment options</h1>
                                         
-                                         <div class="radio-buttons">
+                                        <div class="radio-buttons">
                                                 <div class="form-check">
                                                     <input class="form-check-input payment-radio" type="radio" name="Radio" id="Radio1" value="option1">
                                                     <label class="payment-radio-label" for="Radio1">Cash On Delivery
@@ -238,7 +122,7 @@
                                           <h1 style="font-size: 33px;opacity:90%;">2. Delivery address</h1>
                                           <div class="delivery-address">
                                             <i class="fa-solid fa-location-dot"></i>
-                                            18, Peterson Road, Chennai - 600001. I need a bigger address to check whether this overflows. 
+											<%= request.getAttribute("address")%>
                                         </div>
                                     </div>
                                     <div class="checkout-block" style="text-align:center">
