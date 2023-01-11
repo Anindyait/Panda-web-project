@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="Bootstrap/CSS/style1.css">
   <script type='text/javascript' src='addToCart.js'></script>
 
+
 	<script>
 		$(document).on("scroll", function() {
 			var pageTop = $(document).scrollTop();
@@ -54,7 +55,7 @@
                                     
                                     <h5 class = "Remove-Action" onclick = "RemovefromCart('all')">Remove All</h5>
                                 </div>
-                                <br>
+                    
                                 <p id="no-items"></p>
 								<%= request.getAttribute("cart_list")%>
 								<div class="row total-checkout">

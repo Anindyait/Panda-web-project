@@ -295,7 +295,7 @@ public class Cart extends HttpServlet {
 				}
 				else
 				{
-					pw.println("");
+					pw.println(" ");
 				}
 				
 				

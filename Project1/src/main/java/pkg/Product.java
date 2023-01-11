@@ -30,12 +30,36 @@ public class Product extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     
+    String productCardTemplate = "<span class=\"similar-product\">\r\n"
+			+ "                <a href=\"Product?pid=!P_ID!&category=!CAT!\" class=\"product-link\" data-toggle=\"tooltip\" title=\"!PRODUCT_NAME!\">\r\n"
+			+ "                    <div class=\"product\">\r\n"
+			+ "                        <img src=\"Pics/!IMAGE!.jpg\" class=\"card-img-top round\" alt=\"...\">\r\n"
+			+ "                        <div class=\"card-body\">\r\n"
+			+ "                                <h5 class=\" list-title\">!PRODUCT_NAME!</h5>\r\n"
+			+ "                                <p class=\"card-text list-price\">&#8377;!PRICE!<sup>.00</sup></p>\r\n"
+			+ "                            </div>\r\n"
+			+ "                    </div>\r\n"
+			+ "                </a>\r\n"
+			+ "            </span>"
+			+ "					";
+    
     String sizeSelectorTemplate = "<input type=\"radio\" class=\"btn-check\" name=\"btnradio\" id=\"!SIZE!\" autocomplete=\"off\">\r\n"
     		+ "                                    <label class=\"btn btn-outline-dark size-selector\" for=\"!SIZE!\" >!SIZE!</label>";
     
+    String allProductCards;
+    
+    String query = "select product_id, p_name, price, imgs, sizes, cat1 from product_table where (cat3 like(?) or cat2 like(?) or cat1 like(?)) and product_id != ? order by product_id desc limit 8";
+    
     //Method to get product info from pid.
-    protected boolean getProductDetails(String p_id, HttpServletRequest request)
+    protected boolean getProductDetails(String p_id, String cat, HttpServletRequest request)
     {
+    	
+    	String catLike = Utilities.LikeString(cat);
+    	
+    	System.out.println(catLike);
+    	
+    	allProductCards = " ";
+    	
     	try {
     		
     		Connection con;
@@ -88,7 +112,81 @@ public class Product extends HttpServlet {
 					allSizeSelectors = allSizeSelectors.concat(eachSizeSelector);
 				}
 				
+				
+				
 				request.setAttribute("size_selectors", allSizeSelectors);
+				//Product details done
+				//////////////////////////////////////////////////////
+				
+				//--------------------------------------------------------------------//
+				
+				//////////////////////////////////////////////////////
+				//From here on, similar products
+				if(cat.equals("All"))
+				{
+					pstm = con.prepareStatement("select product_id, p_name, price, imgs, sizes, cat1 from product_table where product_id != ? order by product_id DESC limit 8");
+					pstm.setString(1, pid);
+
+				}
+				if(cat.equals("All Panda Shop Products"))
+				{
+					pstm = con.prepareStatement("select product_id, p_name, price, imgs, sizes, cat1 from product_table where product_id != ? order by product_id DESC limit 8");
+					pstm.setString(1, pid);
+
+				}
+				else if(cat.equals("New Arrivals"))
+				{
+					pstm = con.prepareStatement("select product_id, p_name, price, imgs, sizes, cat1 from product_table where product_id != ? order by product_id DESC limit 8");
+					pstm.setString(1, pid);
+
+				}
+				
+				else {
+						pstm = con.prepareStatement(query);
+						pstm.setString(1, catLike);
+						pstm.setString(2, catLike);
+						pstm.setString(3, catLike);
+						pstm.setString(4, pid);
+
+				}
+				
+				
+				rs = pstm.executeQuery();
+				
+				while(rs.next())
+				{
+					
+					//Splitting the image address.
+					String[] s_image = rs.getString("imgs").split(",");
+					
+					//Getting price in String with the intent of remove dat ugly ".0".
+					String s_price = rs.getString("price");
+					
+					//Each Card String.
+					String eachProductCard = productCardTemplate;
+					
+					//putting the data in the template.
+					eachProductCard = eachProductCard.replaceAll("!PRICE!", s_price.substring(0, price.length() - 2));
+					
+					eachProductCard = eachProductCard.replaceAll("!PRODUCT_NAME!", rs.getString("p_name"));
+					
+					eachProductCard = eachProductCard.replaceAll("!IMAGE!", s_image[0]);
+					
+					eachProductCard = eachProductCard.replaceAll("!P_ID!", rs.getString("product_id"));
+										
+					eachProductCard = eachProductCard.replaceAll("!CAT!", cat);
+
+
+					//concat each card.
+					allProductCards = allProductCards.concat(eachProductCard);
+
+				}
+				
+				//putting the Cards in product.jsp.
+				
+
+				request.setAttribute("similar_product_cards", allProductCards);
+				
 				
 				return true;
 				
@@ -112,9 +210,11 @@ public class Product extends HttpServlet {
 		//Getting pid from productList.jsp.
 		String p_id = request.getParameter("pid");
 		
-		System.out.println(request.getHeader("referer"));
+		String cat = request.getParameter("category");
 		
-		if(getProductDetails(p_id, request))
+		System.out.println("Category from Product page = " + cat);
+		
+		if(getProductDetails(p_id, cat, request))
 		{
 			//Loading product.jsp will all the data.
 			request.getRequestDispatcher("product.jsp").include(request, response);

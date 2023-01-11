@@ -41,7 +41,7 @@ public class ProductList extends HttpServlet {
     //Note everything that is put from the DBMS is in the form !<NAME_IN_CAPS>! form,
     //this is just a protocol I followed, pls follow this gaiss. 
     String productCardTemplate = "<div class=\"col list-padding\" data-sizes=\",!SIZES!,\" data-genders=\",!GENDERS!,\" data-price=\"!PRICE!\" data-pid=\"!P_ID!\">\r\n"
-			+ "                <a href=\"Product?pid=!P_ID!\" class=\"product-link\" data-toggle=\"tooltip\" title=\"!PRODUCT_NAME!\">\r\n"
+			+ "                <a href=\"Product?pid=!P_ID!&category=!CAT!\" class=\"product-link\" data-toggle=\"tooltip\" title=\"!PRODUCT_NAME!\">\r\n"
 			+ "                    <div class=\"product\">\r\n"
 			+ "                        <img src=\"Pics/!IMAGE!.jpg\" class=\"card-img-top round\" alt=\"...\">\r\n"
 			+ "                        <div class=\"card-body\">\r\n"
@@ -82,7 +82,7 @@ public class ProductList extends HttpServlet {
 			
 			if(cat.equals("All"))
 				pstm = con.prepareStatement("select product_id, p_name, price, imgs, sizes, cat1 from product_table order by product_id DESC");
-			//The query has no where now, will change in near future.
+			
 			if(cat.equals("All Panda Shop Products"))
 				pstm = con.prepareStatement("select product_id, p_name, price, imgs, sizes, cat1 from product_table order by product_id DESC;");
 			
@@ -126,6 +126,8 @@ public class ProductList extends HttpServlet {
 				eachProductCard = eachProductCard.replaceAll("!SIZES!", rs.getString("sizes"));
 				
 				eachProductCard = eachProductCard.replaceAll("!GENDERS!", rs.getString("cat1"));
+				
+				eachProductCard = eachProductCard.replaceAll("!CAT!", cat);
 
 
 				//concat each card.

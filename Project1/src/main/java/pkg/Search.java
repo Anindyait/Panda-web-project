@@ -52,7 +52,7 @@ public class Search extends HttpServlet {
 		
 		System.out.println("Post "+ searchString);
 		
-		String suggestionTemplate = "<a href=\"Product?pid=!PID!\">!SUGGESTION!</a>";
+		String suggestionTemplate = "<a href=\"Product?pid=!PID!&category=New Arrivals\">!SUGGESTION!</a>";
 
 		
 		String suggestions = " ";

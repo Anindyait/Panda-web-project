@@ -626,3 +626,12 @@ Jan 10, 2023 16:51:15.469 [29228:28860:0110/165115.468:ERROR:interface_endpoint_
 Jan 10, 2023 16:52:54.129 [29228:28860:0110/165254.129:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
 Jan 10, 2023 16:53:24.799 [29228:28860:0110/165324.798:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
 Jan 10, 2023 16:55:26.242 [29228:28860:0110/165526.241:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+Jan 10, 2023 20:55:26.825 [29228:28860:0110/205526.824:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+Jan 10, 2023 20:55:30.453 [29228:28860:0110/205530.453:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+Jan 10, 2023 20:55:32.326 [29228:28860:0110/205532.326:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+Jan 10, 2023 20:55:34.590 [29228:28860:0110/205534.590:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+Jan 11, 2023 14:44:12.331 NEW SESSION
+Jan 11, 2023 14:44:12.331 [23496:11728:0111/144412.330:ERROR:device_event_log_impl.cc(215)] [14:44:12.329] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 11, 2023 18:34:55.590 [4904:12304:0111/183455.590:ERROR:device_event_log_impl.cc(215)] [18:34:55.589] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 11, 2023 18:35:08.221 [4904:12304:0111/183508.221:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost

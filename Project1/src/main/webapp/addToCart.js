@@ -46,7 +46,6 @@
         function cart_items()
         {
             var count = document.getElementById("cart-item-numbers");
-            console.log(count);
             console.log("hi from header");
             var cartItems = new XMLHttpRequest();
              cartItems.open("POST", "Cart", true);
