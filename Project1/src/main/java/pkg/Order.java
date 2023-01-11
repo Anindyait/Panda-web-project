@@ -140,7 +140,14 @@ public class Order extends HttpServlet {
 		else if (job.equals("checkout"))
 		{
 			System.out.println("Page after checkout: Payment Page");
-			request.getRequestDispatcher("paymentGate.html").include(request, response);
+			String payment = request.getParameter("payment");
+			if (payment.equals("Cash On Delivery") || payment.equals("UPI / QR Code") || payment.equals("Net Banking"))
+			{
+				request.setAttribute("payment", payment);
+				request.getRequestDispatcher("paymentGate.jsp").include(request, response);
+			}
+			else
+				request.getRequestDispatcher("error.html").include(request, response);
 		}
 
 		else
@@ -178,8 +185,10 @@ public class Order extends HttpServlet {
 				
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); //DriverManager is a class 
-	
+				
 				// Assigning a new order_id and d_date
+				String payment = request.getParameter("payment");
+
 			    pstm = con.prepareStatement("select distinct(order_id) from cart_table where user_id = ? order by order_id desc limit 1;");
 				pstm.setString(1, user_id);
 				ResultSet rs = pstm.executeQuery();
@@ -210,10 +219,11 @@ public class Order extends HttpServlet {
 			    String dateString = date.format(formatter);
 				System.out.println("Delivery date: " + dateString);
 	
-			    pstm = con.prepareStatement("update cart_table set order_id = ? , d_date = ? where user_id = ? and order_id IS NULL;");
+			    pstm = con.prepareStatement("update cart_table set order_id = ? , d_date = ?, payment = ? where user_id = ? and order_id IS NULL;");
 			    pstm.setString(1, order_id);
 			    pstm.setString(2, dateString);
-			    pstm.setString(3, user_id);
+			    pstm.setString(3, payment);
+			    pstm.setString(4, user_id);
 				int rs1 = pstm.executeUpdate();
 				
 				if (rs1 > 0)

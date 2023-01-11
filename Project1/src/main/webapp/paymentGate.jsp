@@ -49,7 +49,7 @@
         </div>
         <div class = "col-sm-6 text-center">
             <img src = "Pics/panda.png" >
-            <div style = "font-size: 30px">Payment Method: <span id="payment">COD</span></div>
+            <div style = "font-size: 30px">Payment Method: <span id="payment"><%= request.getAttribute("payment")%></span></div>
             <div >
                 <div style = "font-size: 60px">
                     Taka diyecho toh ?

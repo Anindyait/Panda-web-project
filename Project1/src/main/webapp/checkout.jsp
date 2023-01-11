@@ -36,6 +36,7 @@
 	</script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Checkout</title>
     <link rel="icon" href="Pics/panda.png">
     
 </head>
@@ -100,20 +101,17 @@
                                         <div class="radio-buttons">
                                                 <div class="form-check">
                                                     <input class="form-check-input payment-radio" type="radio" name="Radio" id="Radio1" value="option1">
-                                                    <label class="payment-radio-label" for="Radio1">
-                                                    Cash On Delivery
+                                                    <label class="payment-radio-label" for="Radio1">Cash On Delivery
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
                                                     <input class="form-check-input payment-radio" type="radio" name="Radio" id="Radio2" value="option2">
-                                                    <label class="payment-radio-label" for="Radio2">
-                                                    UPI / QR Code
+                                                    <label class="payment-radio-label" for="Radio2">UPI / QR Code
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
                                                     <input class="form-check-input payment-radio" type="radio" name="Radio" id="Radio3" value="option2">
-                                                    <label class="payment-radio-label" for="Radio3">
-                                                    Net Banking
+                                                    <label class="payment-radio-label" for="Radio3">Net Banking
                                                     </label>
                                                 </div>
                                                 <div id="payment-select"></div>
@@ -177,6 +175,8 @@
 	    paymentRadios[i].addEventListener("change", enablePlaceOrderButton);
 	}
 
+    var payment = "";
+
  	function enablePlaceOrderButton() 
  	{
 	     var isChecked = false;
@@ -185,6 +185,7 @@
 	         if (paymentRadios[i].checked) 
 	         {
 	             isChecked = true;
+	             payment = document.getElementsByClassName("payment-radio-label")[i].innerHTML;
 	             break;
 	         }
 	     }
@@ -201,7 +202,7 @@
  	
  	function checkout()
  	{
- 		window.location = "Order?job=checkout";      
+ 		window.location = "Order?job=checkout" + "&" + "payment=" + payment;      
  	}
     </script>
 <div id="footer"></div>
