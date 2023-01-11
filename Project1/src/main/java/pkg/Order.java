@@ -74,18 +74,19 @@ public class Order extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		String user_id = Utilities.GetUID(request);
+		job = request.getParameter("job");
 		
 		
 		if(user_id == null)
 		{
 			request.getRequestDispatcher("Login").include(request, response);
 		}
-		else
+		else if (job == null)
 		{
 			System.out.println("Checkout page");
 			order_list = "";
-			job = request.getParameter("job");
 			
 			try {
 				Connection con;
@@ -94,8 +95,6 @@ public class Order extends HttpServlet {
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); //DriverManager is a class 
 				
-				if (job == null)
-				{
 					pstm = con.prepareStatement("select imgs, p_name, size, quantity, price, cart_table.product_id "
 							+ "from cart_table inner join product_table "
 							+ "on cart_table.product_id = product_table.product_id where user_id = ? and order_id IS NULL;");
@@ -131,32 +130,22 @@ public class Order extends HttpServlet {
 					{
 						address = rs.getString("address");
 					}
-				}
-			
-				else
-				{
-					
-				}
-				
 				    
 			}catch(Exception e) {}
 
-			if (job == null)
-			{
-				request.setAttribute("order_list", order_list);
-				request.setAttribute("address", address);
-				request.getRequestDispatcher("checkout.jsp").include(request, response);
-			}
-			else if (job.equals("checkout"))
-			{
-				System.out.println("Page after checkout: Payment Page");
-				request.getRequestDispatcher("paymentGate.html").include(request, response);
-			}
+			request.setAttribute("order_list", order_list);
+			request.setAttribute("address", address);
+			request.getRequestDispatcher("checkout.jsp").include(request, response);
+		}
+		else if (job.equals("checkout"))
+		{
+			System.out.println("Page after checkout: Payment Page");
+			request.getRequestDispatcher("paymentGate.html").include(request, response);
+		}
 
-			else
-			{
-				request.getRequestDispatcher("error.html").include(request, response);
-			}
+		else
+		{
+			request.getRequestDispatcher("error.html").include(request, response);
 		}
 		
 	}
