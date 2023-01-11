@@ -73,6 +73,7 @@
                     <div class="col">
                         <div class="brand-name">Panda Shop</div>
                     </div>
+                
                 </div>
             </a>
 
@@ -171,7 +172,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <a href="ProductList?category=All Panda Shop Products" class="dropdown-item" style="background-color:#ebfceb;">
+                            <a href="ProductList?category=All Panda Shop Products" class="dropdown-item" style="background-color:#d6fdd6;">
                                 All Panda Shop Products
                             </a>
                         </div>

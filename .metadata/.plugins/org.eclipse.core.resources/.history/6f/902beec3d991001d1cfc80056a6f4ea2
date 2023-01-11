@@ -322,8 +322,6 @@ a:hover{
 	opacity: 100% !important;
   }
  
-
-
   .dropdown-item{
 	border-radius: 20px;
 	background-color: #f7fef7;

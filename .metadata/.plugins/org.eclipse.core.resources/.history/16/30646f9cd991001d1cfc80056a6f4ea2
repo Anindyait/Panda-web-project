@@ -323,7 +323,6 @@ a:hover{
   }
  
 
-
   .dropdown-item{
 	border-radius: 20px;
 	background-color: #f7fef7;
@@ -527,7 +526,7 @@ input:focus{
 	color: black;
 }
 
-.right-links:hover{
+.right-links a:hover{
     color: black;
 	text-decoration: none;
 }

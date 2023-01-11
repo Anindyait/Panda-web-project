@@ -322,7 +322,7 @@ a:hover{
 	opacity: 100% !important;
   }
  
-
+ 
 
   .dropdown-item{
 	border-radius: 20px;
@@ -527,11 +527,6 @@ input:focus{
 	color: black;
 }
 
-.right-links:hover{
-    color: black;
-	text-decoration: none;
-}
-
 
 #cart-item-numbers
 {
@@ -547,6 +542,11 @@ input:focus{
 	border-radius: 30px;
 }
 
+#cart-item-numbers a:hover
+{
+    color: black;
+	text-decoration: none;
+}
 
 .modal{
 	z-index: 10000;

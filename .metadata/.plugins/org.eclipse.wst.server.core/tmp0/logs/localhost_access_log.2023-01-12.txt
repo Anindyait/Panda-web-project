@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [12/Jan/2023:01:20:24 +0530] "GET /Project1/Profile HTTP/1.1" 200 5781
+0:0:0:0:0:0:0:1 - - [12/Jan/2023:01:20:24 +0530] "GET /Project1/Bootstrap/CSS/style1.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [12/Jan/2023:01:20:24 +0530] "GET /Project1/header.jsp HTTP/1.1" 200 10670
+0:0:0:0:0:0:0:1 - - [12/Jan/2023:01:20:24 +0530] "GET /Project1/addToCart.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [12/Jan/2023:01:20:24 +0530] "POST /Project1/Cart HTTP/1.1" 200 3

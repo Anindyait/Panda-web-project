@@ -318,11 +318,10 @@ a:hover{
   .dropdown-menu{
 	padding: 10px;
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-	background-color: white;
 	opacity: 100% !important;
+	background-color: black;
   }
- 
-
+  
 
   .dropdown-item{
 	border-radius: 20px;
@@ -336,7 +335,7 @@ a:hover{
 
   .dropdown-item:hover{
 	text-decoration: none;
-	background-color: #cdfecd;
+	background-color: #ebfceb;
 	transition: 0.5s;
   }
 
@@ -527,11 +526,6 @@ input:focus{
 	color: black;
 }
 
-.right-links:hover{
-    color: black;
-	text-decoration: none;
-}
-
 
 #cart-item-numbers
 {
@@ -546,7 +540,6 @@ input:focus{
 	background-color: rgb(0, 255, 89);
 	border-radius: 30px;
 }
-
 
 .modal{
 	z-index: 10000;
