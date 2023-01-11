@@ -60,6 +60,20 @@ public class Product extends HttpServlet {
     	
     	allProductCards = " ";
     	
+    	String user_id = Utilities.GetUID(request);
+    	
+    	if(user_id == null)
+    	{
+    		request.setAttribute("disable_buy", "disabled");
+    		request.setAttribute("disable_add_to_cart", "disabled");
+    	}
+    	else
+    	{
+    		request.setAttribute("disable_buy", "");
+    		request.setAttribute("disable_add_to_cart", "");
+    	}
+    	
+    	
     	try {
     		
     		Connection con;
@@ -166,7 +180,7 @@ public class Product extends HttpServlet {
 					String eachProductCard = productCardTemplate;
 					
 					//putting the data in the template.
-					eachProductCard = eachProductCard.replaceAll("!PRICE!", s_price.substring(0, price.length() - 2));
+					eachProductCard = eachProductCard.replaceAll("!PRICE!", s_price.substring(0, s_price.length() - 2));
 					
 					eachProductCard = eachProductCard.replaceAll("!PRODUCT_NAME!", rs.getString("p_name"));
 					

@@ -150,6 +150,7 @@ public class Cart extends HttpServlet {
 		response.setContentType("text/html");
 		
 		ServletContext context=getServletContext();
+		int post_status;
 		
 		String user_id = Utilities.GetUID(request);
 		
@@ -166,6 +167,7 @@ public class Cart extends HttpServlet {
 		{
 			String pid = request.getParameter("pid");
 			String size = request.getParameter("size");
+			String work = request.getParameter("work");
 			
 			System.out.println("Post " + pid + " " + size);
 			
@@ -195,10 +197,17 @@ public class Cart extends HttpServlet {
 					rs = pstm.executeUpdate();
 				}
 				System.out.println("Successfully inserted into cart!");
-
+				
+				post_status = 200;
 			
-	    	}catch(Exception e) {}
+	    	}catch(Exception e) {post_status = 300;}
 			
+			if(work.equals("buy"))
+			{
+				
+				response.setStatus(post_status);
+				response.setHeader("Content-Type", "text/html");
+			}
 		}
 		
 		// When cart.jsp sends a POST request for change in quantity of product
@@ -287,15 +296,19 @@ public class Cart extends HttpServlet {
 				
 				ResultSet rs = pstm.executeQuery();
 			
-				if(rs.next())
+				if(rs.next() && user_id != null)
 				{
 					number = rs.getString("sum");
+					if(number!=null)
+						pw.println(number);
+					else
+						pw.println("0");
 					System.out.println("Items in cart = "+number);
-					pw.println(number);
+
 				}
 				else
 				{
-					pw.println(" ");
+					pw.println("");
 				}
 				
 				

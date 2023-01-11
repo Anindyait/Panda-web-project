@@ -59,10 +59,9 @@
    
 </head>
 <body>
-
     
     <div class="font">
-        
+       
         <nav class="navbar navbar-expand-lg header">
             <!--Store name and Logo-->
 
@@ -92,21 +91,89 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="aboutUs.html" class="nav-link nav-link1 active">About Us</a>
+                        <a href="ProductList?category=New Arrivals" class="nav-link nav-link1 active">New Arrivals</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="ProductList?category=All Panda Shop Products" class="nav-link nav-link1 active">Products</a>
+                        <a href="aboutUs.html" class="nav-link nav-link1 active">About Us</a>
                     </li>
                     
                     <div class="nav-item dropdown">
                         <div class="nav-link nav-link1 dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
+                            Categories
                         </div>
                         <div class="dropdown-menu" style="border-radius:20px;">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+
+                            <div class="row">
+                                <div class="col">
+
+                                    
+
+                                    <a href="ProductList?category=Winter Collection" class="dropdown-item">
+                                        Winter&nbspCollection
+                                    </a>
+                    
+                                    <a href="ProductList?category=New Year's Collection" class="dropdown-item">
+                                        New&nbspYear's&nbspCollection
+                                    </a>
+                                    
+                                    <a href="ProductList?category=Valentine's Day" class="dropdown-item">
+                                        Valentine's&nbspDay
+                                    </a>
+
+                                    <a href="ProductList?category=Saraswati Puja Collection" class="dropdown-item">
+                                        Saraswati&nbspPuja&nbspCollection
+                                    </a>
+                                    <a href="ProductList?category=Best Sellers" class="dropdown-item">
+                                        Best&nbspSellers
+                                    </a>
+                    
+                                    <a href="ProductList?category=Royal Range" class="dropdown-item">
+                                        Royal&nbspRange
+                                    </a>
+                                    
+                    
+                                    <a href="ProductList?category=Shoes" class="dropdown-item">
+                                        Shoes
+                                    </a>
+                                </div>
+
+                                <div class="col">
+                                    
+                                    
+                                    
+                                    <a href="ProductList?category=Tops" class="dropdown-item">
+                                        Tops
+                                    </a>
+                    
+                                    <a href="ProductList?category=Hoodies" class="dropdown-item">
+                                        Hoodies
+                                    </a>
+                    
+                                    <a href="ProductList?category=Trousers" class="dropdown-item">
+                                        Trousers
+                                    </a>
+                    
+                                    <a href="ProductList?category=Dresses" class="dropdown-item">
+                                        Dresses
+                                    </a>
+                    
+                                    <a href="ProductList?category=Formal Clothing Range" class="dropdown-item">
+                                        Formal&nbspClothing&nbspRange
+                                    </a>
+                    
+                                    <a href="ProductList?category=,Male," class="dropdown-item">
+                                        Men
+                                    </a>
+                    
+                                    <a href="ProductList?category=,Female," class="dropdown-item">
+                                        Women
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="ProductList?category=All Panda Shop Products" class="dropdown-item" style="background-color:#ebfceb;">
+                                All Panda Shop Products
+                            </a>
                         </div>
                     </div>
 

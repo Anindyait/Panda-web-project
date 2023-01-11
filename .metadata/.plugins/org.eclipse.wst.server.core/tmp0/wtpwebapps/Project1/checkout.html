@@ -36,6 +36,7 @@
 	</script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Checkout</title>
     <link rel="icon" href="Pics/panda.png">
     
 </head>
@@ -209,43 +210,40 @@
                                         </div>
                                         
                                     </div>
-                                    
+
                                     <div class="checkout-block">
                                         <h1 style="font-size: 33px;opacity:90%">1. Payment options</h1>
                                         
-                                        <div class="radio-buttons">
+                                         <div class="radio-buttons">
                                                 <div class="form-check">
                                                     <input class="form-check-input payment-radio" type="radio" name="Radio" id="Radio1" value="option1">
-                                                    <label class="payment-radio-label" for="Radio1">
-                                                    Cash On Delivery
+                                                    <label class="payment-radio-label" for="Radio1">Cash On Delivery
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
                                                     <input class="form-check-input payment-radio" type="radio" name="Radio" id="Radio2" value="option2">
-                                                    <label class="payment-radio-label" for="Radio2">
-                                                    UPI / QR Code
+                                                    <label class="payment-radio-label" for="Radio2">UPI / QR Code
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
                                                     <input class="form-check-input payment-radio" type="radio" name="Radio" id="Radio3" value="option2">
-                                                    <label class="payment-radio-label" for="Radio3">
-                                                    Net Banking
+                                                    <label class="payment-radio-label" for="Radio3">Net Banking
                                                     </label>
                                                 </div>
+                                                <div id="payment-select"></div>
                                           </div>
                                           
                                     </div>
                                     <div class="checkout-block">
                                           <h1 style="font-size: 33px;opacity:90%;">2. Delivery address</h1>
                                           <div class="delivery-address">
-                                            <i class="fa-solid fa-location-dot ck"></i>
-                                            18, Peterson Road, Chennai-600001 I need a bigger address to see whether it overflows or not.
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            18, Peterson Road, Chennai - 600001. I need a bigger address to check whether this overflows. 
                                         </div>
                                     </div>
                                     <div class="checkout-block" style="text-align:center">
-                                        <button type="button" value="place_order" class="btn btn-warning Order">Place Order</button>
+                                        <button type="button" value="place_order" class="btn btn-warning Order" id="place_order_button" disabled>Place Order</button>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -280,9 +278,49 @@
         tot_amount[1].innerHTML = "&#8377;&nbsp" + (total+99);
 
     }
-        
+    
+    var placeOrderButton = document.getElementById("place_order_button");
+    placeOrderButton.addEventListener("click", checkout);
 
+    var paymentRadios = document.querySelectorAll(".payment-radio");
+	document.getElementById("payment-select").innerHTML="Select a payment option";
+	document.getElementById("payment-select").style.color = "green";
+	
+	for (var i = 0; i < paymentRadios.length; i++) 
+	{
+	    paymentRadios[i].addEventListener("change", enablePlaceOrderButton);
+	}
 
+    var payment = "";
+
+ 	function enablePlaceOrderButton() 
+ 	{
+	     var isChecked = false;
+	     for (var i = 0; i < paymentRadios.length; i++) 
+	     {
+	         if (paymentRadios[i].checked) 
+	         {
+	             isChecked = true;
+	             payment = document.getElementsByClassName("payment-radio-label")[i].innerHTML;
+	             break;
+	         }
+	     }
+	     if (isChecked) 
+	     {
+	        placeOrderButton.disabled = false;
+	     	document.getElementById("payment-select").innerHTML="";
+	     } 
+	     else 
+	     {
+	         placeOrderButton.disabled = true;
+	     }
+ 	}
+ 	
+ 	function checkout()
+ 	{
+ 		window.location = "Order?job=checkout" + "&" + "payment=" + payment;      
+ 	}
     </script>
+<div id="footer"></div>
 </body>
 </html> 
