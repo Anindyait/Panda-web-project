@@ -158,7 +158,7 @@ public class Register extends HttpServlet {
 	    char[] chars = password.toCharArray();
 	    byte[] salt = "[B@76ed5528".getBytes(); //Fixed salt to verify Register and Login passwords, 16-byte salt
 	    PBEKeySpec spec = new PBEKeySpec(chars, salt, iterations, 64 * 8); //Password based encryption 
-	    																   //Constructor that takes a password, salt, iteration count, 
+	    																   //Constructor that takes a password, salt, iteration count, to-be-derived key length for generating PBEKey of variable-key-size PBE ciphers.
 	    																   //and to-be-derived key length for generating PBEKey of variable-key-size PBE ciphers.
 
 	    SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1"); //Password based Key Derivation Function 2 

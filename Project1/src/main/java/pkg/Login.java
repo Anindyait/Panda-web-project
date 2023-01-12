@@ -84,7 +84,7 @@ public class Login extends HttpServlet {
 					
 					//Cookies
 					Cookie ck  =new Cookie("UID", rs.getString("user_id"));
-					ck.setMaxAge(60 * 60 * 24);
+					ck.setMaxAge(60 * 60 * 24 * 10);
 					response.addCookie(ck);
 					
 					//Converting dob to a suitable date format

@@ -326,15 +326,15 @@ public class Order extends HttpServlet {
 					order_id = rs.getString("order_id");
 					if (order_id == null)
 					{
-						order_id = "OR00001";
+						order_id = "U" + user_id + "OR00001";
 					}
 					else
 					{	
-						String numericPart = order_id.substring(2); 
+						String numericPart = order_id.substring(order_id.length() - 5); 
 						int orderNumber = Integer.parseInt(numericPart);
 						orderNumber += 1;
 						String formattedOrderNumber = String.format("%05d", orderNumber);
-						order_id = "OR" + formattedOrderNumber;
+						order_id = "U" + user_id + "OR" + formattedOrderNumber;
 					}
 					System.out.println("Order id: " + order_id);
 				}
