@@ -65,7 +65,7 @@
 						   <div class="admin-text">
 							   	<div class="row justify-content-center">
 							   		<div class="col">
-								   		<a href="AdminLogout">
+								   		<a href="AdminProfile?job=add product">
 											<div type="sub" class="btn btn-success form-submit">Add Products</div>
 					   					</a>
 								   	</div>
@@ -75,7 +75,7 @@
 					   					</a>
 								   	</div>
 								   	<div class="col">
-								   		<a href="AdminLogout">
+								   		<a href="AdminProfile?job=edit product">
 											<div type="sub" class="btn btn-warning form-submit">Edit Products</div>
 					   					</a>
 								   	</div>
