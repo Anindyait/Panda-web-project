@@ -57,6 +57,70 @@ public class AdminProfile extends HttpServlet {
     		+ "							      <td>!STOCK!</td>\r\n"
     		+ "							      <td>!DESC!</td>\r\n"
     		+ "							    </tr>";
+    
+    String editTemplate = "                                     <div class=\"row\">\r\n"
+    		+ "                                      <div class=\"col-3 admin-col\">PID:</div>\r\n"
+    		+ "                                      <div id=\"pid\" class=\"col-4 admin-col\">!PID!</div>\r\n"
+    		+ "                                   </div>\r\n"
+    		+ "                                   <div class=\"row\">\r\n"
+    		+ "                                        <div class=\"col-3 admin-col\">Name:</div>\r\n"
+    		+ "                                        <div class=\"col admin-col\">\r\n"
+    		+ "\r\n"
+    		+ "                                            <div id=\"name\">!TITLE!</div>\r\n"
+    		+ "                                            <textarea name=\"desc\" class=\"form-control\" id=\"name-textbox\" rows=\"3\" style=\"display:none;\" required></textarea>\r\n"
+    		+ "                                            <p id=\"status\" style=\"font-size: 15px;\"></p>\r\n"
+    		+ "                                        </div>\r\n"
+    		+ "                                        <div class=\"col-2\">\r\n"
+    		+ "                                            <i class=\"fa-solid fa-pen-to-square fa-xl\" id=\"edit-button\" onclick=\"product_edit(this,'name', 'name-textbox')\"></i>\r\n"
+    		+ "                                            <button type=\"sub\" class=\"btn bamboo\" id=\"submit-button\" style=\"display:none\" onclick=\"change_product_details(this,'name')\">Submit</button>\r\n"
+    		+ "\r\n"
+    		+ "                                        </div>\r\n"
+    		+ "                                    </div>\r\n"
+    		+ "                                    <div class=\"row\">\r\n"
+    		+ "                                        <div class=\"col-3 admin-col\">Price:</div>\r\n"
+    		+ "                                        <div class=\"col admin-col\">\r\n"
+    		+ "\r\n"
+    		+ "                                            <div id=\"price\">!PRICE!</div>\r\n"
+    		+ "                                            <textarea name=\"price\" class=\"form-control\" id=\"price-textbox\" rows=\"3\" style=\"display:none;\" required></textarea>\r\n"
+    		+ "                                            <p id=\"status\" style=\"font-size: 15px;\"></p>\r\n"
+    		+ "                                        </div>\r\n"
+    		+ "                                        <div class=\"col-2\">\r\n"
+    		+ "                                            <i class=\"fa-solid fa-pen-to-square fa-xl\" id=\"edit-button\" onclick=\"product_edit(this,'price', 'price-textbox')\"></i>\r\n"
+    		+ "                                            <button type=\"sub\" class=\"btn bamboo\" id=\"submit-button\" style=\"display:none\" onclick=\"change_product_details(this, 'price')\">Submit</button>\r\n"
+    		+ "\r\n"
+    		+ "                                        </div>\r\n"
+    		+ "                                    </div>\r\n"
+    		+ "                                   <div class=\"row\">\r\n"
+    		+ "                                        <div class=\"col-3 admin-col\">Description:</div>\r\n"
+    		+ "                                        <div class=\"col admin-col\">\r\n"
+    		+ "\r\n"
+    		+ "                                            <div id=\"desc\">!DESCR!</div>\r\n"
+    		+ "                                            <textarea name=\"desc\" class=\"form-control\" id=\"desc-textbox\" rows=\"3\" style=\"display:none;\" required></textarea>\r\n"
+    		+ "                                            <p id=\"status\" style=\"font-size: 15px;\"></p>\r\n"
+    		+ "                                        </div>\r\n"
+    		+ "                                        <div class=\"col-2\">\r\n"
+    		+ "                                            <i class=\"fa-solid fa-pen-to-square fa-xl\" id=\"edit-button\" onclick=\"product_edit(this,'desc', 'desc-textbox')\"></i>\r\n"
+    		+ "                                            <button type=\"sub\" class=\"btn bamboo\" id=\"submit-button\" style=\"display:none\" onclick=\"change_product_details(this, 'desc')\">Submit</button>\r\n"
+    		+ "\r\n"
+    		+ "                                        </div>\r\n"
+    		+ "                                    </div>\r\n"
+    		+ "                                   <div class=\"row\">\r\n"
+    		+ "                                      <div class=\"col-3 admin-col\">Sizes:</div>\r\n"
+    		+ "                                       <div class=\"col-4 admin-col\">!SIZES!</div>\r\n"
+    		+ "                                   </div>\r\n"
+    		+ "                                   \r\n"
+    		+ "                                   <div class=\"row\">\r\n"
+    		+ "                                    <div class=\"col-3 admin-col\">Category 1:</div>\r\n"
+    		+ "                                     <div class=\"col-4 admin-col\">!CAT1!</div>\r\n"
+    		+ "                                 </div>\r\n"
+    		+ "                                 <div class=\"row\">\r\n"
+    		+ "                                    <div class=\"col-3 admin-col\">Category 2:</div>\r\n"
+    		+ "                                     <div class=\"col-4 admin-col\">!CAT2!</div>\r\n"
+    		+ "                                 </div>\r\n"
+    		+ "                                 <div class=\"row\">\r\n"
+    		+ "                                    <div class=\"col-3 admin-col\">Category 3:</div>\r\n"
+    		+ "                                     <div class=\"col-4 admin-col\">!CAT3!</div>\r\n"
+    		+ "                                 </div>";
         
     void DB_Access(String admin_id, String job, String pid)
     {
@@ -217,6 +281,13 @@ public class AdminProfile extends HttpServlet {
 				 request.getRequestDispatcher("seeProduct.jsp").include(request, response);
 				
 			}
+			else if(job.equals("edit product page"))
+			{
+				 System.out.println("Edit Product page");
+				 DB_Access(admin_id, "delete product", " ");
+				 request.setAttribute("pid_list", pid_list);
+				 request.getRequestDispatcher("editProduct.jsp").include(request, response);			
+			}
 			else
 			{
 				request.getRequestDispatcher("error.html").include(request, response);
@@ -274,6 +345,94 @@ public class AdminProfile extends HttpServlet {
 				response.setHeader("Content-Type", "text/html");
 				response.getWriter().println(pid_list);
 				
+			}
+			else if(job.equals("see one product"))
+			{
+				System.out.println("Post Edit Product page - see details");
+				String pid = request.getParameter("pid");
+					
+				try {
+					Connection con;
+					PreparedStatement pstm;
+					
+					int aid = Integer.parseInt(admin_id);
+					System.out.println(aid*10);
+					
+					Class.forName("com.mysql.cj.jdbc.Driver");
+					con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); 
+					
+					pstm = con.prepareStatement("select product_id, p_name, price, descr, sizes, cat1, cat2, cat3 from product_table where product_id = ?;");
+					pstm.setString(1, pid);
+
+					ResultSet rs = pstm.executeQuery();
+
+				    if (rs.next ())
+				    {
+				    	String eachProduct = editTemplate;
+				    	eachProduct = eachProduct.replaceAll("!PID!", rs.getString("product_id"));
+				    	eachProduct = eachProduct.replaceAll("!TITLE!", rs.getString("p_name"));
+				    	eachProduct = eachProduct.replaceAll("!PRICE!", rs.getString("price"));
+				    	eachProduct = eachProduct.replaceAll("!DESCR!", rs.getString("descr"));
+				    	eachProduct = eachProduct.replaceAll("!SIZES!", rs.getString("sizes"));
+				    	eachProduct = eachProduct.replaceAll("!CAT1!", rs.getString("cat1").replace(",", " "));
+				    	eachProduct = eachProduct.replaceAll("!CAT2!", rs.getString("cat2"));
+				    	eachProduct = eachProduct.replaceAll("!CAT3!", rs.getString("cat3"));
+				    	
+					    pw.println(eachProduct);
+				    }
+					response.setStatus(200);
+					
+				}catch (Exception e) {
+					response.setStatus(300);
+				}
+				 
+			}
+			else if(job.equals("edit product"))
+			{
+				System.out.println("Post Edit Product page - edit details");
+				String pid = request.getParameter("pid");
+				String name = request.getParameter("name");
+				String price = request.getParameter("price");
+				String desc = request.getParameter("desc");
+
+				
+				try {
+					Connection con;
+					PreparedStatement pstm;
+					
+					int aid = Integer.parseInt(admin_id);
+					System.out.println(aid*10);
+					
+					Class.forName("com.mysql.cj.jdbc.Driver");
+					con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "abcd"); 
+					
+					if (name != null)
+					{
+						pstm = con.prepareStatement("update product_table set p_name = ? where product_id = ?;");
+						pstm.setString(1, name);
+						pstm.setString(2, pid);
+
+						int rs = pstm.executeUpdate();
+						
+					}
+					else if (price != null)
+					{
+						pstm = con.prepareStatement("update product_table set price = ? where product_id = ?;");
+						pstm.setString(1, price);
+						pstm.setString(2, pid);
+
+						int rs = pstm.executeUpdate();
+					}
+					else if (desc != null)
+					{
+						pstm = con.prepareStatement("update product_table set descr = ? where product_id = ?;");
+						pstm.setString(1, desc);
+						pstm.setString(2, pid);
+
+						int rs = pstm.executeUpdate();
+					}
+					
+				}catch(Exception e) {}
 			}
 		}
 		
