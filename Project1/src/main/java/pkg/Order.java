@@ -187,11 +187,12 @@ public class Order extends HttpServlet {
 		{
 			System.out.println("Page after checkout: Payment Page");
 			String payment = request.getParameter("payment");
+
+			//Dispatch order page directly on COD
 			if (payment.equals("Cash On Delivery") || payment.equals("UPI / QR Code") || payment.equals("Net Banking"))
 			{
 				request.setAttribute("payment", payment);
 				request.getRequestDispatcher("paymentGate.jsp").include(request, response);
-				//Dispatch order page directly on COD
 			}
 			else
 				request.getRequestDispatcher("error.html").include(request, response);
