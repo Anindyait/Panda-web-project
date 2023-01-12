@@ -166,7 +166,11 @@
 	                case "price": console.log(old_value[1]); 
 	                    var price_textbox = document.getElementById('price-textbox');
 	                    var price_div = price_textbox.previousSibling.previousSibling;
-	                    if(price_textbox.value == old_value[1] || price_textbox.value =="" || typeof price_textbox.value != 'number')
+	                    
+	                    const regex = new RegExp(/^(\d+(?:\.\d{1,3})?)$/);
+	                    console.log(regex.test(price_textbox.value)); 
+	                    
+	                    if(price_textbox.value == old_value[1] || price_textbox.value =="" || regex.test(price_textbox.value) == false)
 	                    {
 	                        price_div.innerHTML = old_value[1];
 	                    }    
