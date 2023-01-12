@@ -229,7 +229,8 @@
     
                         <br>
                         <br>
-                        <h4> <i class="fa-solid fa-circle-check fa-lg"></i>&nbsp&nbspThat's all!</h4>
+                    
+                        <h4 style="padding-top:40px;"> <i class="fa-solid fa-circle-check fa-lg"></i>&nbsp&nbspThat's all!</h4>
                 
                     </div>
                 </div>

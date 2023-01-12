@@ -140,7 +140,6 @@
 
                             <p id="select-size"></p>
 
-
                             <!--Description-->
                             <div class="desc overflow-auto">
                                 <!-- to be replaced by java -->
@@ -161,6 +160,26 @@
             </div>
         </div>
         <br>
+        <br>
+        <div class="cardnew" style="margin: 0 auto; width:85%;margin-bottom:100px">
+            
+            <div class="logos">
+                <div class="row text-center">
+                    <div class="col">
+                        <img src="Pics/earth.png" width="150px">
+                    </div>
+                    <div class="col">
+                        <img src="Pics/ethical.png" width="150px">
+                    </div>
+                    <div class="col">
+                        <img src="Pics/cruelty.png" width="150px">
+                    </div>
+                    <div class="col">
+                        <img src="Pics/panda2.png" width="150px">
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="cardnew" style="margin: 0 auto;">
             
             <h2 class="similar-products-heading">Similar products...</h2>

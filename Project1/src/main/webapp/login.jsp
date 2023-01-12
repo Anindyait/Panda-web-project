@@ -13,6 +13,7 @@
 			$("#header").load("header.jsp");
 			$("#footer").load("footer.html");
 		});
+		
 	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
@@ -98,11 +99,12 @@
                             <br>
                             <div class="row">
                                 <div class="col">
-                                    <button type="submit" class="btn btn-dark form-submit">Login</button>
+                                    <button type="submit" class="btn bamboo form-submit" style="margin-bottom:10px;">Login</button>
                                 </div>
+                                
                                 <div class="col">
                                     <a href="Register">
-                                        <div type="sub" class="btn btn-outline-dark form-submit">Sign up</div>
+                                        <div type="sub" class="btn bamboo-outline form-submit">Sign up</div>
                                     </a>
                                 </div>
                             </div>
