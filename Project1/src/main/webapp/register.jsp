@@ -11,7 +11,7 @@
     
 	<script>
 		$(function () {
-			$("#header").load("header.html");
+			$("#header").load("header.jsp");
 			$("#footer").load("footer.html");
 		});
 	</script>

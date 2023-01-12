@@ -9,7 +9,8 @@
 	</script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="Bootstrap/CSS/style1.css">
-  
+  <script src="https://kit.fontawesome.com/13deb536c6.js" crossorigin="anonymous"></script>
+
 	<script>
 		$(document).on("scroll", function() {
 			var pageTop = $(document).scrollTop();
@@ -35,6 +36,7 @@
 	</script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Order</title>
     <link rel="icon" href="Pics/panda.png">
     
 </head>
@@ -44,39 +46,18 @@
             <div id = "header"></div>
             <div class = "header-adjustment"></div>
             <br>
-    		<div class="about">
-				<h2>See Products</h2>
-			</div>
-			<div class="form-holder">
-		        <div class="col-sm">
-					<div class="table-responsive-md">
-  						<table class="table">
-							<thead>
-							    <tr style="background-color:#ebfceb";>
-							      <th scope="col">Product Id</th>
-							      <th scope="col">Product Name</th>
-							      <th scope="col">Product Price</th>
-							      <th scope="col">Available Sizes</th>
-   							      <th scope="col">Available Stock</th>
-   							      <th scope="col">Product Description</th>
-							    </tr>
-							 </thead>
-							 <tbody>
-							    <%= request.getAttribute("prod_list")%>
-							 </tbody>
- 				 		</table>
-					</div>
-		        </div>
-		        <br>
-		        <div class="col-sm" style="padding: 20px 1px;">
-		            <div class="form-floating mb-3" >
-		            	<a href="AdminProfile">
-		                	<button class="btn bamboo-outline form-submit">Back</button>
-		                </a>
-		            </div>
-	            </div>
-		    </div>
+            <div class = "container-fluid">
+                <div class = "Order-Container">
+                    <div class = "Header-cart">
+                        <h3 class = "Heading-cart">All Orders</h3>      
+                    </div>
+                    <p id="no-items"></p>
+                    <%= request.getAttribute("previous_order_list")%>
+                </div>  
+                <br>
+                <br>
+            </div>            
         </div>
-		<div id="footer"></div>
+	<div id="footer"></div>
 </body>
-</html>  
+</html> 
