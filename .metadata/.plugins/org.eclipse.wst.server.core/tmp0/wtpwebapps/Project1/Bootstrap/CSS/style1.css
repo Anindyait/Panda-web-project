@@ -662,12 +662,18 @@ input:focus{
 .signed-in-bg{
 	text-align: center;
 	padding: 60px 30px 50px 30px;
-	width:50%;
+	width:70%;
 	margin: 3% auto;
 	border-radius: 30px;
 	border: 0px solid rgba(0, 0, 0, 0.204);
 	box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
 	transition: 0.3s;
+	animation: fadeUp 0.5s;
+}
+
+.signed-in-bg button{
+	margin: 10px;
+	animation: fadeUp 1s;
 }
 
 .signed-in-bg:hover{
@@ -886,6 +892,23 @@ input:focus{
 .show > .bamboo.dropdown-toggle {
   color: rgb(25, 109, 54);
   background-color: #c1fec1;
+}
+
+.bamboo-outline{
+	background-color: white;
+	border: 1px solid rgb(25, 109, 54);
+	color:#057e05;
+}
+
+.bamboo-outline:hover{
+	background-color:rgb(25, 109, 54);
+	color:#e0fbe0;
+}
+
+.bamboo-outline:not(:disabled):not(.disabled):active, .bamboo-outline:not(:disabled):not(.disabled).active,
+.show > .bamboo-outline.dropdown-toggle {
+	background-color:rgb(19, 85, 42);
+	color:#e0fbe0;
 }
 
 .static-banner{

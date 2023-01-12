@@ -1725,3 +1725,7 @@ input:focus{
         width: 100%;
     }
 }
+
+.product-edit .row{
+	margin-bottom: 10px;
+}
