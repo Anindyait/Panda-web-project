@@ -74,6 +74,7 @@
                         <div class="brand-name">Panda Shop</div>
                     </div>
                 
+               
                 </div>
             </a>
 
@@ -103,7 +104,7 @@
                         <div class="nav-link nav-link1 dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Categories
                         </div>
-                        <div class="dropdown-menu" style="border-radius:20px;">
+                        <div class="dropdown-menu" style="border-radius:30px;">
 
                             <div class="row">
                                 <div class="col">
@@ -195,7 +196,9 @@
                 <div class="modal-dialog">
                     <div class="modal-content search" style="border:none; background:rgb(255, 255, 255)">
                         
-                        <form>
+
+                        <form action="Search" name="form1" method="get">
+
                         <div class="row">
                             <div class="col">
                                 <input name="search-text" type = "search" class = "form-control" id = "search-text" placeholder="Search..." onkeyup="search_suggestions()" required>

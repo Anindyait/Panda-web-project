@@ -645,3 +645,9 @@ Jan 12, 2023 04:24:31.601 [20716:6712:0112/042431.601:ERROR:device_event_log_imp
 Jan 12, 2023 11:18:14.774 [20716:20524:0112/111814.773:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -105
 Jan 12, 2023 11:18:14.848 [20716:26196:0112/111814.848:ERROR:get_updates_processor.cc(260)] PostClientToServerMessage() failed during GetUpdates with error 2
 Jan 12, 2023 11:18:16.303 [20716:20524:0112/111816.303:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+Jan 12, 2023 14:42:36.118 [20716:20524:0112/144236.102:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+Jan 12, 2023 14:42:40.77 [20716:20524:0112/144240.077:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+Jan 12, 2023 14:48:44.554 [20716:20524:0112/144844.554:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+Jan 12, 2023 14:48:46.23 [20716:20524:0112/144846.023:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+Jan 12, 2023 15:25:25.926 [20716:20524:0112/152525.925:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -118
+Jan 12, 2023 20:02:47.596 [20716:6712:0112/200247.595:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost

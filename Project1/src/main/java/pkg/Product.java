@@ -48,7 +48,7 @@ public class Product extends HttpServlet {
     
     String allProductCards;
     
-    String query = "select product_id, p_name, price, imgs, sizes, cat1 from product_table where (cat3 like(?) or cat2 like(?) or cat1 like(?)) and product_id != ? order by product_id desc limit 8";
+    String query = "select product_id, p_name, price, imgs, sizes, cat1 from product_table where (cat3 like(?) or cat2 like(?) or cat1 like(?) or p_name like(?) or descr like(?)) and product_id != ? order by product_id desc limit 8";
     
     //Method to get product info from pid.
     protected boolean getProductDetails(String p_id, String cat, HttpServletRequest request)
@@ -98,6 +98,7 @@ public class Product extends HttpServlet {
 				
 				//Getting price in String with the intent of remove dat ugly ".0".
 				String price = rs.getString("price");
+				
 				
 				String title = rs.getString("p_name");
 				
@@ -160,7 +161,9 @@ public class Product extends HttpServlet {
 						pstm.setString(1, catLike);
 						pstm.setString(2, catLike);
 						pstm.setString(3, catLike);
-						pstm.setString(4, pid);
+						pstm.setString(4, catLike);
+						pstm.setString(5, catLike);
+						pstm.setString(6, pid);
 
 				}
 				
