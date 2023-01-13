@@ -1281,7 +1281,7 @@ input:focus{
    .delivery-date{
 	font-size: 25px;
 	font-weight: bold;
-	
+	margin-bottom:12px;
     margin-top: 15px;
 	color: rgb(0, 179, 0)
    }
@@ -1292,6 +1292,11 @@ input:focus{
 	
     margin-top: 10px;
 	color: rgba(0, 0, 0, 0.605);
+   }
+   .payment-method{
+	font-size: 18px;
+	font-weight: bold;
+    margin-top: 2px;
    }
    
 .about-cart{

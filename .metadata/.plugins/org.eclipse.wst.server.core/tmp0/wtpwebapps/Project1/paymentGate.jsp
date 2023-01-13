@@ -91,6 +91,11 @@
         
     }
     
+    if (document.getElementById("payment").innerHTML == "Cash On Delivery")
+    {
+    	placeOrder();
+    }
+    
  	function placeOrder()
  	{
  		 var http = new XMLHttpRequest();
@@ -98,6 +103,8 @@
          http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
          var params = "job=place order" + "&" + "payment=" + document.getElementById("payment").innerHTML;
          http.send(params);
+         
+         window.location = "orderConfirmed.html";
  	}
     
 </script>

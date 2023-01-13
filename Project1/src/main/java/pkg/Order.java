@@ -108,7 +108,7 @@ public class Order extends HttpServlet {
    		+ "                                            <br>\r\n"
    		+ "                                                <div class=\"delivery-amount\">&#8377;&nbsp;!AMT!</div>\r\n"
    		+ "                                                <h4 class=\"delivery-date\">Delivery: !D_DATE!</h4>	\r\n"
-   		+ "                                                <div class=\"payment-method\">Mode of payment: </div>\r\n"
+   		+ "                                                <div class=\"payment-method\">Payment: </div>\r\n"
    		+ "                                                <div class=\"payment-method\">!PAYMENT!</div>	\r\n"
    		+ "                                        </div>\r\n"
    		+ "                                    </div>\r\n"
