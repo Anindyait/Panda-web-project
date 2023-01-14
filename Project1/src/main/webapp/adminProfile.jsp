@@ -63,7 +63,7 @@
 				   	   <h2>What would you like to work on today?</h2>
 					   <div class="col">
 						   <div class="admin-text">
-							   	<div class="row justify-content-center">
+							   	<div class="row text-center">
 								   	<div class="col">
 								   		<a href="AdminProfile?job=see product">
 											<div type="sub" class="btn btn-success form-submit">See Products</div>

@@ -62,9 +62,9 @@
 		        <div class="col-sm" style="padding: 20px 1px;">
 		            <div class="form-floating mb-3" >
 		            	<!--a href="AdminProfile?job=delete product&pid=output"-->
-		                <button onclick="sendPID()" class="btn btn-danger form-submit">Delete</button>
+		                <button onclick="sendPID()" class="btn btn-danger form-submit" style="margin-right:10px;margin-bottom:10px">Delete</button>
 		                <a href="AdminProfile">
-		                	<button class="btn bamboo-outline form-submit">Back</button>
+		                	<button class="btn bamboo-outline form-submit" style="margin-right:10px;margin-bottom:10px">Back</button>
 		                </a>
 		            </div>
 	            </div>
