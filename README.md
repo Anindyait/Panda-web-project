@@ -1,68 +1,127 @@
-# A web project with my buddies trying to figure out HTML, CSS, some Javascript, Servlet and JSP
+# Online Shopping Website in JAVA Using Servlet, JSP, JDBC, MySQL And Tomcat
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+    <img src="Project1/src/main/webapp/Pics/panda.png" alt="Logo" width="80" height="80">
+    <h3 align="center">The Panda Shop</h3>
+    <p align="center">
+        <!--PROJECT DESCRIPTION--!>
+    </p>
+</div>
+
+## Requirements
+
+Install the following as per your system's requirements:
+
+- [Eclipse for Enterprise and Java Developers v2022-06](https://www.eclipse.org/downloads/packages/release/2022-06/r)
+- [Tomcat v9.0](https://tomcat.apache.org/download-90.cgi)
+- [MySQL v8.0](https://dev.mysql.com/downloads/installer/)
+
+## Usage
+
+1.  Clone the repo
+   ```sh
+   git clone https://github.com/Anindyait/Panda-web-project
+   ```
+2. Import Project1 into Eclipse
+3. Run Startup.java on the Tomcat Server
+
+Now you can locally host the shopping website.
+
+## Features
+
+- User Registration and HTTP Cookie Based Login
+- Product Search implemented
+- Products can be sorted by size and gender
+- Cart functionality
+- Checkout Page
+- Previous Orders Page
+- Admin Functionality
+   - Edit a Product
+   - Delete a Product
+   - See all Products
 
 
-## <---Project1\src\main\webapp--->
-Pics - All the test images.
+## File Structure
 
-footer.html - Very bad footer which I need to work on.
-
-##header.html - Guess what? contains the header.
-
-list.html - Grid view of products.
-
-product.html - Product page.
-
-productExperiment.jsp - Basically product.html in a JSP format, use it change fields from servlet.
-
-Index.html - Just like your existence, useless. I need to delete that.
-
-## <---Project1\src\main\webapp\Bootstrap\CSS--->
-
-style.css - The secret sauce!
-
-
-
-## <---D:\Project\Project1\src\main\java\pkg--->
-
-Product.java - Tried linking header.html, product.html, footer.html using java - worked.
-
-ProductExperiment.java - can spit product page in jsp (productExperiment.jsp) depending on the anchor tag call parameters. 
-
-Run list.html through server and click on first product to understand the above(watch the url too).
- 
-
-
-## <---Project1\src\main\webapp--->
-
-Pics - All the test images.
-
-footer.html - Very bad footer which I need to work on.
-
-header.html - Guess what? contains the header.
-
-list.html - Grid view of products.
-
-product.html - Product page.
-
-productExperiment.jsp - Basically product.html in a JSP format, use it change fields from servlet.
-
-Index.html - Just like your existence, useless. I need to delete that.
-
-
-
-## <---Project1\src\main\webapp\Bootstrap\CSS--->
-
-style.css - The secret sauce!
-
-
-
-## <---D:\Project\Project1\src\main\java\pkg--->
-
-Product.java - Tried linking header.html, product.html, footer.html using java - worked.
-
-ProductExperiment.java - can spit product page in jsp (productExperiment.jsp) depending on the anchor tag call parameters. 
-
-Run list.html through server and click on first product to understand the above(watch the url too).
- 
-# Collaborators : Anindya Biswas, Priyanka Mazumdar, Rikathi Pal , Anik Basu Bhaumik,Puspendu Banerjee
-boom boom 
+```
+.
+├── LICENSE________________________________Distributed under the MIT License. 
+├── Project1
+│   ├── build
+│   └── src
+│       └── main
+│           ├── java
+│           │   └── pkg____________________Java package with Servlets that handle POST & GET requests for concerned jobs
+│           │       ├── AdminLogin.java
+│           │       ├── AdminLogout.java
+│           │       ├── AdminProfile.java
+│           │       ├── Cart.java
+│           │       ├── Header.java
+│           │       ├── Login.java
+│           │       ├── Logout.java
+│           │       ├── Order.java
+│           │       ├── Product.java
+│           │       ├── product.jsp
+│           │       ├── ProductList.java
+│           │       ├── Profile.java
+│           │       ├── Register.java
+│           │       ├── Search.java
+│           │       ├── Startup.java_______Responsible for initializing the database tables
+│           │       └── Utilities.java
+│           └── webapp_____________________Includes html, css, js, jsp files for displaying the webpages
+│               ├── aboutUs.html
+│               ├── addToCart.js
+│               ├── adminLogin.html
+│               ├── adminLogin.jsp
+│               ├── adminProfile.html
+│               ├── adminProfile.jsp
+│               ├── Bootstrap
+│               │   ├── CSS
+│               │   │   └──style1.css
+│               │   └── js
+│               ├── cart.html
+│               ├── cart.jsp
+│               ├── checkout.html
+│               ├── checkout.jsp
+│               ├── delProduct.html
+│               ├── delProduct.jsp
+│               ├── editProduct.html
+│               ├── editProduct.jsp
+│               ├── error.html
+│               ├── FAQ.html
+│               ├── footer.html
+│               ├── header.html
+│               ├── header.jsp
+│               ├── Index.html
+│               ├── login.html
+│               ├── login.jsp
+│               ├── orderConfirmed.html
+│               ├── order.html
+│               ├── order.jsp
+│               ├── paymentGate.html
+│               ├── paymentGate.jsp
+│               ├── Pics___________________Contains all banners and product images
+│               ├── postRegister.html
+│               ├── privacy.html
+│               ├── productExperiment.jsp
+│               ├── product.html
+│               ├── product.jsp
+│               ├── productList.html
+│               ├── productList.jsp
+│               ├── profile.html
+│               ├── profile.jsp
+│               ├── register.html
+│               ├── register.jsp
+│               ├── returnExchange.html
+│               ├── seeProduct.html
+│               ├── seeProduct.jsp
+│               └── WEB-INF
+│                   ├── lib
+│                   │   └── mysql-connector-java-8.0.30.jar
+│                   └── web.xml
+├── README.md
+└── Servers
+    └── Tomcat v9.0 Server at localhost-config
+```
