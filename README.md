@@ -25,7 +25,19 @@ Install the following as per your system's requirements:
    git clone https://github.com/Anindyait/Panda-web-project
    ```
 2. Import Project1 into Eclipse
-3. Run Startup.java on the Tomcat Server
+3. Run Startup.java on the Tomcat Server to get the database created.
+4. You can login with a dummy user or register a user.
+
+   - Dummy User Credentials  
+     
+     Email: 
+     ```
+     dummy@panda.com
+     ```
+     Password: 
+     ```
+     Qwerty1@
+     ```
 
 Now you can locally host the shopping website.
 

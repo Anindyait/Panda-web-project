@@ -131,6 +131,11 @@ public class Startup extends HttpServlet {
 					+ "values('Ford', 'Prefect', 'fordprefect@gmail.com', '9666766890', "
 					+ "'1000:5b42403736656435353238:1964f70cb9fc48c6ca92697072d776f7f85cc0089817485d9a3e72b833186724bd6231da03c6d7b4e67e2df60acf3cc6242cdd7823fb7b17e5c90d9747986c0f')";
 
+			//Creating a dummy user, password Qwerty1@ which will be hashed
+			String sqlUserInsert = "insert ignore into user_table (first_name, last_name, email, phone, dob, gender, address, password)"
+					+ "values('Dummy', 'User', 'dummy@panda.com', '1234567890', '2023-01-01', 'Others', 'Dummy Address', "
+					+ "'1000:5b42403736656435353238:710160293bea47f63d209f27e0c0161bbc2be01cc0f0e696202ce7d5b87a0c2b1c2cd4e3d9e237cee93c8406e4f2dba75b30a6f20be8f29462e053c0bcccfaa9')";
+	
 			//Inserting products into the product_table
             String[] products = {
 					  "('P0001','Hailey Style Two Piece Hoodie In Brown',899.00,"
@@ -561,7 +566,8 @@ public class Startup extends HttpServlet {
             stmt.addBatch(sqlProductCreate);
             stmt.addBatch(sqlCartOrderCreate);
             stmt.addBatch(sqlAdminCreate);
-
+            
+            stmt.addBatch(sqlUserInsert);
             stmt.addBatch(sqlAdminInsert1);
             stmt.addBatch(sqlAdminInsert2);
 

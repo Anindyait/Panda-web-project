@@ -247,7 +247,7 @@ function change_month(select) {
                                     <option selected value="" disabled>Choose...</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
-                                    <option value="Others">Casio WS-1400H-4AVDF-D272</option>
+                                    <option value="Others">Others</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Enter your gender
