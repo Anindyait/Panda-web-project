@@ -25,10 +25,8 @@ Install the following as per your system's requirements:
    git clone https://github.com/Anindyait/Panda-web-project
    ```
 2. Import Project1 into Eclipse
-3. Password for the JDBC connection string has been set as 
-   ```
-   abcd
-   ```
+3. Password for the JDBC connection string has been set as ```abcd```,  
+  
    Do change it (in all java files), to reflect your MySQL's password.
 4. Run Startup.java on the Tomcat Server to get the database created.
 5. You can login with a dummy user or register a user.
