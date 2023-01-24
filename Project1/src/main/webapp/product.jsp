@@ -146,10 +146,10 @@
                                 <div class="Description"><%= request.getAttribute("desc") %></div>
                             </div>
                             <div class="row justify-content-center button-grid ">
-                                <div class="col-4">
+                                <div class="col-5">
                                     <input type="button" value="Buy" class="btn btn-warning Buy" onclick="Add_to_Cart('buy')" <%= request.getAttribute("disable_buy") %> />
                                 </div>
-                                <div class="col-4">
+                                <div class="col-5" style="margin-left: 20px;">
                                     <input type="button" value="Add to Cart" class="btn btn-outline-primary AddtoCart" onclick="Add_to_Cart('cart')" <%= request.getAttribute("disable_add_to_cart") %> />
                                 </div>
                             </div>

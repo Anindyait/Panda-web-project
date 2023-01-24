@@ -58,7 +58,7 @@
             {
 
                 if(Number(up.value) < Number(lp.value)){
-                    up.value = lp.value+"00";
+                    up.value = lp.value;
                 }
                 
                 

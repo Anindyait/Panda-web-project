@@ -651,3 +651,6 @@ Jan 12, 2023 14:48:44.554 [20716:20524:0112/144844.554:ERROR:connection_factory_
 Jan 12, 2023 14:48:46.23 [20716:20524:0112/144846.023:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
 Jan 12, 2023 15:25:25.926 [20716:20524:0112/152525.925:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -118
 Jan 12, 2023 20:02:47.596 [20716:6712:0112/200247.595:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+Jan 19, 2023 14:50:22.914 NEW SESSION
+Jan 19, 2023 14:50:22.914 [25844:12732:0119/145022.913:ERROR:device_event_log_impl.cc(215)] [14:50:22.913] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
